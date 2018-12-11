@@ -15,7 +15,7 @@
 
 <body <?php body_class();?>>
 
-    <!-- Menu -->
+	<!-- Menu -->
 	<div class="container-flex fixed-top bg-primary border-bottom shadow-lg">
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container">
@@ -75,5 +75,5 @@
 	</div>
 	<!-- // menu -->
 
-    <!-- Inicio template -->
+	<!-- Inicio template -->
 	<div class="container-fluid margin-top-home px-0">
