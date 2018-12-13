@@ -1,8 +1,17 @@
 <?php
 if (have_posts()) {
     $args = array(
-        'post_type' => 'obras',
-        'post_per_page' => 1,
+		'post_type' => 'obras',
+		//'category_name' => 'obra_do_mes',
+		'tax_query' => array(
+			array(
+				'taxonomy' => 'classificacao',
+				'field' => 'slug',
+				'terms' => 'obra-do-mes',
+			),
+		),
+		'order' => 'ASC',
+		'posts_per_page' => 1,
     );
     $loop = new WP_Query($args);
     while ($loop->have_posts()): $loop->the_post();
@@ -73,10 +82,13 @@ if (have_posts()) {
 
 		<!-- detalhes -->
 		<div class="col-12 col-lg-5">
-			<!-- autor -->
+
 			<div class="row my-4">
 
 				<?php
+				/**
+				 * Autor
+				 */
     $connected = new WP_Query(
             array(
                 'relationship' => array(
@@ -101,8 +113,7 @@ if (have_posts()) {
 					</div>
 					<div class="col-12 px-0">
 						<p class="text-muted">
-							(
-							<?php echo $fichatecnica_autor['dataperiodo_inicial'] ?>
+							(<?php echo $fichatecnica_autor['dataperiodo_inicial'] ?>
 							—
 							<?php echo $fichatecnica_autor['dataperiodo_final'] ?>)
 						</p>
@@ -115,9 +126,10 @@ if (have_posts()) {
 				<?php
     endwhile;
         wp_reset_postdata();
-        ?>
+		?>
+
 			</div>
-			<!-- autor -->
+
 			<!-- informações -->
 			<div class="row">
 				<div class="col-12">
@@ -169,8 +181,9 @@ if (have_posts()) {
 		</div>
 		<!-- //descrição -->
 
-	</div><!-- /.blog-post -->
-	<?php
+		<?php
 endwhile;
 }
 ?>
+
+</div>

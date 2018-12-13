@@ -1,6 +1,6 @@
 
-</div><!-- /.container -->
 
+</div><!-- /.container -->
 <!-- rodapé wiki -->
 <footer class="blog-footer container-fluid rodape-bg-color mt-5 border-top border-white shadow-lg">
 	<div class="container bg-transparent text-light">
