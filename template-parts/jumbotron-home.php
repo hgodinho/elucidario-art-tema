@@ -1,4 +1,13 @@
-<!-- jumbtron descrubra a coleção ema klabin -->
+<?php
+/**
+ * Template para o Jumbotron da home page
+ * 
+ * Inclui formulário de busca, features list e imagem de fundo
+ * 
+ * @since 0.1
+ */
+?>
+
 <div class="jumbotron jumbotron-fluid margin-top-home text-center jumbotron-bg text-primary">
 	<div class="container">
 		<h1>Descubra a Coleção Ema Klabin!</h1>
@@ -86,4 +95,3 @@
 
 	</div>
 </div>
-<!-- // jumbotron descubra a coleção ema klabin -->

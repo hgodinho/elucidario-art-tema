@@ -1,8 +1,16 @@
 <?php
+/**
+ * Template da Obra do mês
+ *
+ * utilizada na home page
+ *
+ * @since 0.1
+ *
+ */
+
 if (have_posts()) {
     $args = array(
 		'post_type' => 'obras',
-		//'category_name' => 'obra_do_mes',
 		'tax_query' => array(
 			array(
 				'taxonomy' => 'classificacao',
@@ -18,6 +26,7 @@ if (have_posts()) {
 
         /**
          * ficha técnica => obra variaveis
+         * ficha técnica 'ACF' => obra
          */
         $fichatecnica_obra = get_field('ficha_tecnica');
         $fotografo = get_field('fotografo');
@@ -25,6 +34,7 @@ if (have_posts()) {
 		$thumbnail = get_the_post_thumbnail(get_the_ID(), 'medium_large', array('class' => 'img-fluid d-block'));
 		$linkobra = get_permalink();
 
+<<<<<<< HEAD:template-parts/obra/content-obradomes.php
         /**
          * taxonomias obras variaveis
          */
@@ -48,12 +58,25 @@ if (have_posts()) {
         $classificacao_url = get_term_link($classificacao_list, 'classificacao');
 
         ?>
+=======
+        /** taxonomias obras */
+        /** ambientes */
+		$ambiente = get_the_term_list( get_the_ID(), 'ambiente', '' , ', ' , '');
+
+        /** nucleos */
+		$nucleo = get_the_term_list( get_the_ID(), 'nucleo', '' , ', ' , '');
+
+        /** classificacao */
+		$classificacao = get_the_term_list( get_the_ID(), 'classificacao', '' , ', ' , '');
+
+		?>
+>>>>>>> acb16f3ca5fc64b4cbb0d110743ffcdcd49bcd5e:template-parts/content-obradomes.php
 
 <!-- abre obra do mês -->
 <div class="row pb-4">
 	<div class="col mt-4">
 		<h2>Obra do mês
-			<p class="h5 text-muted">destaques selecionados mensalmente.</p>
+			<p class="h5 text-muted">destaque selecionado mensalmente.</p>
 		</h2>
 	</div>
 </div>
@@ -70,7 +93,7 @@ if (have_posts()) {
 					<?php echo $fichatecnica_obra['dataperiodo'] .'. '; ?>
 					<span style="font-size:80%"><a href="<?php the_permalink();?>">Ver obra →</a></span>
 					</small>
-					
+
 			</h3>
 		</div>
 	</div>
@@ -157,14 +180,11 @@ if (have_posts()) {
 							<?php echo $fichatecnica_obra['dimensoes']; ?>
 						</dd>
 						<dt class="col-12 col-sm-5">Classificação:</dt>
-						<dd class="col-12 col-sm-7 blog-post-meta"><a href="<?php $classificacao_url; ?>">
-								<?php echo $classificacao_list; ?></a></dd>
+						<dd class="col-12 col-sm-7 blog-post-meta"><?php echo $classificacao; ?></dd>
 						<dt class="col-12 col-sm-5">Ambiente:</dt>
-						<dd class="col-12 col-sm-7 blog-post-meta"><a href="<?php $ambiente_url; ?>">
-								<?php echo $ambiente_list; ?></a></dd>
+						<dd class="col-12 col-sm-7 blog-post-meta"><?php echo $ambiente; ?></dd>
 						<dt class="col-12 col-sm-5">Núcleo:</dt>
-						<dd class="col-12 col-sm-7 blog-post-meta"><a href="<?php $nucleo_url; ?>">
-								<?php echo $nucleo_list; ?></a></dd>
+						<dd class="col-12 col-sm-7 blog-post-meta"><?php echo $nucleo; ?></dd>
 						<dt class="col-12 col-sm-5">Fotografia:</dt>
 						<dd class="col-12 col-sm-7 blog-post-meta">
 							<?php echo $fotografo; ?>
