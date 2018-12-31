@@ -1,3 +1,15 @@
+<?php 
+/**
+ * Header do tema Wiki-Ema
+ * 
+ * @package WordPress
+ * @subpackage Wiki-Ema
+ * 
+ * @version 0.2
+ * @since 0.1
+ * @author hgodinho.com 
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes();?>>
 
@@ -75,5 +87,14 @@
 	</div>
 	<!-- // menu -->
 
+	<!-- Breadcrumb @since 0.2 -->
+	<div class="container margin-top">
+		<div class="breadcrumb-wrap">
+			<nav aria-label="breadcrumb">
+				<?php get_breadcrumb(); ?>
+			</nav>
+		</div>
+	</div>
+
 	<!-- Inicio template -->
-	<div class="container-fluid margin-top-home px-0">
+	<div class="container-fluid px-0">

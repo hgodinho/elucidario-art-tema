@@ -17,15 +17,16 @@ if (have_posts()) {
     while ($loop->have_posts()): $loop->the_post();
 
         /**
-         * ficha técnica => obra
+         * ficha técnica => obra variaveis
          */
         $fichatecnica_obra = get_field('ficha_tecnica');
         $fotografo = get_field('fotografo');
         $descricao = get_field('descricao');
-        $thumbnail = get_the_post_thumbnail(get_the_ID(), 'medium_large', array('class' => 'img-fluid d-block'));
+		$thumbnail = get_the_post_thumbnail(get_the_ID(), 'medium_large', array('class' => 'img-fluid d-block'));
+		$linkobra = get_permalink();
 
         /**
-         * taxonomias obras
+         * taxonomias obras variaveis
          */
         /**
          * ambientes
@@ -63,10 +64,13 @@ if (have_posts()) {
 	<!-- titulo obra -->
 	<div class="row pb-2">
 		<div class="col">
-			<h3 class="blog-post-tutle">
+			<h3 class="blog-post-title">
 				<?php the_title();?>,
 				<small class="text-muted">
-					<?php echo $fichatecnica_obra['dataperiodo']; ?></small>
+					<?php echo $fichatecnica_obra['dataperiodo'] .'. '; ?>
+					<span style="font-size:80%"><a href="<?php the_permalink();?>">Ver obra →</a></span>
+					</small>
+					
 			</h3>
 		</div>
 	</div>
@@ -170,7 +174,6 @@ if (have_posts()) {
 			</div>
 			<!-- // informações -->
 		</div>
-		<!-- //detalhes -->
 
 		<!-- descrição -->
 		<div class="col-12 mt-4">
