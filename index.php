@@ -10,12 +10,11 @@
  */
 
 get_header();
-?>
 
-<?php get_template_part('template-parts/jumbotron', 'home'); ?>
+get_template_part('template-parts/jumbotron', 'home'); ?>
 
 <div class="blog-main container">
-	<?php get_template_part('template-parts/obra/content', 'obradomes'); ?>
+	<?php get_template_part('template-parts/obra/content', 'obra-do-mes'); ?>
 </div>
 
 <?php get_footer();?>

@@ -1,13 +1,13 @@
-<?php 
+<?php
 /**
  * Header do tema Wiki-Ema
- * 
+ *
  * @package WordPress
  * @subpackage Wiki-Ema
- * 
+ *
  * @version 0.2
  * @since 0.1
- * @author hgodinho.com 
+ * @author hgodinho.com
  */
 ?>
 <!DOCTYPE html>
@@ -22,12 +22,12 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<?php wp_head(); ?>
+	<?php wp_head();?>
 </head>
 
 <body <?php body_class();?>>
 
-	<!-- Menu -->
+	<!-- Menu FALTA FAZER AS QUERIES -->
 	<div class="container-flex fixed-top bg-primary border-bottom shadow-lg">
 		<nav class="navbar navbar-expand-lg navbar-light">
 			<div class="container">
@@ -84,16 +84,6 @@
 				</div>
 			</div>
 		</nav>
-	</div>
-	<!-- // menu -->
-
-	<!-- Breadcrumb @since 0.2 -->
-	<div class="container margin-top">
-		<div class="breadcrumb-wrap">
-			<nav aria-label="breadcrumb">
-				<?php get_breadcrumb(); ?>
-			</nav>
-		</div>
 	</div>
 
 	<!-- Inicio template -->

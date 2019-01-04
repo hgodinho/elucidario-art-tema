@@ -86,3 +86,16 @@ body {
 .rodape-bg-color {
   background-color: #009045;
 }
+
+.grade-botoes{
+  border-radius: 0;
+}
+
+/**
+ * Fix para content-box: border-box padrão do bootstrap
+ *
+ * para ser usado em alguns casos específicos para ter um design pixel-perfect
+**/
+.content-box{
+  box-sizing: content-box;
+}
