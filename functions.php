@@ -25,7 +25,6 @@ function wikiema_enqueue_styles()
 
     $dependencies = array('bootstrap', 'font-awesome', 'estilos', 'owlcarousel', 'owlcarousel2');
     wp_enqueue_style('wikiema-style', get_stylesheet_uri(), $dependencies);
-
 }
 
 /**
@@ -37,7 +36,7 @@ function wikiema_enqueue_scripts()
 {
     $dependencies = array('jquery');
     wp_enqueue_script('bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', $dependencies, '3.3.6', true);
-    wp_enqueue_script('popper', get_template_directory_uri() . '/js/popper.min.js', $dependencies );
+    wp_enqueue_script('popper', get_template_directory_uri() . '/js/popper.min.js', $dependencies);
 
     /**
      * @subpackage OwlCarousel
@@ -64,3 +63,8 @@ function wikiema_wp_setup()
 add_action('wp_enqueue_scripts', 'wikiema_enqueue_styles');
 add_action('wp_enqueue_scripts', 'wikiema_enqueue_scripts');
 add_action('after_setup_theme', 'wikiema_wp_setup');
+
+/**
+ * add_filter
+ */
+

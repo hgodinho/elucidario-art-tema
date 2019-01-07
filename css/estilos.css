@@ -99,3 +99,16 @@ body {
 .content-box{
   box-sizing: content-box;
 }
+
+/**
+ * fix para corrigir position do menu quando está logado
+ * assim a admin-bar não se sobrepõe ao menu
+**/
+.fixed-top {
+  top: 32px;
+}
+@media screen and (max-width: 782px) {
+  .fixed-top {
+    top: 46px;
+  }
+}
