@@ -16,10 +16,10 @@
 $terms = get_the_terms($post->ID, 'classificacao', 'string');
 
 //Pluck out the IDs to get an array of IDS
-$term_slug = wp_list_pluck($terms, 'slug');
+if(!empty($terms)){
+    $term_slug = wp_list_pluck($terms, 'slug');
+} 
 
-//Query posts with tax_query. Choose in 'IN' if want to query posts with any of the terms
-//Chose 'AND' if you want to query for posts with all terms
 $relacionado_query = new WP_Query(array(
     'post_type' => 'obras',
     'tax_query' => array(
@@ -35,13 +35,10 @@ $relacionado_query = new WP_Query(array(
     'post__not_in' => array($post->ID),
 ));
 
-//print_r($relacionado_query);
-
 ?>
 
 <?php
 if ($relacionado_query->have_posts()) {
-
 
     echo '<div class="container border-top m-3">';
     echo '<div class="row pt-3">';

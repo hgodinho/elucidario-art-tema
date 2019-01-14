@@ -25,8 +25,8 @@ get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
 
-<div class="container">
-<div class="row">
+
+
 <?php
 
 foreach ($terms as $term) {
@@ -49,8 +49,8 @@ foreach ($terms as $term) {
     echo '</div>';
 }
 ?>
-</div>
-</div>
+
+
 
 <?php
 get_footer();
