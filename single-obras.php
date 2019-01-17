@@ -22,6 +22,10 @@ while (have_posts()): the_post();
 <?php get_template_part('template-parts/header/header', 'breadcrumb');?>
 
 <div class="container blog-post">
+<?php 
+$post_object = get_post_meta($post->ID);
+
+?>
 	<?php get_template_part('template-parts/obra/content', 'obra');?>
 
 	<?php get_template_part('template-parts/obra/content', 'campos_clonaveis');?>
