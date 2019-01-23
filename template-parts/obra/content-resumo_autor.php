@@ -30,12 +30,26 @@ while ($connected->have_posts()): $connected->the_post();
 		<h3>
 			<?php the_title();?>
 		</h3>
-		<p class="text-muted h5">
+
+        <?php 
+        if(get_the_title() != 'Autor Desconhecido'){
+            ?>
+            <p class="text-muted h5">
 			(<?php echo $fichatecnica_autor['dataperiodo_inicial'] ?> —
 			<?php echo $fichatecnica_autor['dataperiodo_final'] ?>)
 		</p>
 		<span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
 				autor →</a></span>
+        <?php
+        }
+        else{
+            ?>
+            <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
+				autor →</a></span>
+        <?php
+        }
+        ?>
+		
 	</div>
 </div>
 <?php

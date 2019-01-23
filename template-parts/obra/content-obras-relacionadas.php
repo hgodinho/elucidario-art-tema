@@ -17,24 +17,27 @@ $terms = get_the_terms($post->ID, 'classificacao', 'string');
 
 //Pluck out the IDs to get an array of IDS
 if(!empty($terms)){
-    $term_slug = wp_list_pluck($terms, 'slug');
+    $term_slug = wp_list_pluck($terms, 'slug', 'id');
 } 
+
+print_r($term_slug);
 
 $relacionado_query = new WP_Query(array(
     'post_type' => 'obras',
+    'post_status' => 'any',
     'tax_query' => array(
         array(
             'taxonomy' => 'classificacao',
             'field' => 'slug',
-            'terms' => $term_slug,
-            'operator' => 'IN', //Or 'AND' or 'NOT IN'
+            'terms' => $term_slug
+           // 'operator' => 'IN', //Or 'AND' or 'NOT IN'
         )),
     'posts_per_page' => 5,
-    'ignore_sticky_posts' => 1,
+    //'ignore_sticky_posts' => 1,
     'orderby' => 'rand',
+    //'order' => 'DESC',
     'post__not_in' => array($post->ID),
 ));
-
 ?>
 
 <?php
@@ -46,6 +49,9 @@ if ($relacionado_query->have_posts()) {
     echo '<div class="owl-carousel owl-theme py-2">';
 
     while ($relacionado_query->have_posts()): $relacionado_query->the_post();
+    
+
+
         $thumbnail = get_the_post_thumbnail(get_the_ID(), 'medium_large', array('class' => 'card-img-top img-fluid d-block mb-2'));
 		$fichatecnica_obra = get_field('ficha_tecnica');
 		$permalink = get_permalink();
