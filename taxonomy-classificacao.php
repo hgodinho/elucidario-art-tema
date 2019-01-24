@@ -16,6 +16,7 @@ get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
 
 single_term_title('<h1>','</h1>');
+echo '<br>teste';
 
 get_footer();
 ?>
