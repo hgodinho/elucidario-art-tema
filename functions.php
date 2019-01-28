@@ -55,7 +55,7 @@ function wikiema_wp_setup()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
-    add_image_size( 'cartoes-thumb-obra', 300, 180, true);
+    add_image_size( 'cartoes-thumb-obra', 300, 180, array( 'left', 'top' ));
     //add_image_size( 'cartoes-tete-obra', 180, 180);
     //set_post_thumbnail_size( 300, 180, true );
 }

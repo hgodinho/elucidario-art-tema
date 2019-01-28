@@ -40,6 +40,7 @@ $classificacoes = get_terms(
  * Loop
  */
 if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
+
     ?>
         <div class="row">
             <div class="col-12">
