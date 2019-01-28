@@ -52,7 +52,7 @@ if ($relacionado_query->have_posts()) {
     
 
 
-        $thumbnail = get_the_post_thumbnail(get_the_ID(), 'medium_large', array('class' => 'card-img-top img-fluid d-block mb-2'));
+        $thumbnail = get_the_post_thumbnail(get_the_ID(), 'cartoes-thumb-obra', array('class' => 'card-img-top img-fluid d-block mb-2'));
 		$fichatecnica_obra = get_field('ficha_tecnica');
 		$permalink = get_permalink();
 

@@ -55,6 +55,18 @@ function wikiema_wp_setup()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_image_size( 'cartoes-thumb-obra', 300, 180, true);
+    //add_image_size( 'cartoes-tete-obra', 180, 180);
+    //set_post_thumbnail_size( 300, 180, true );
+}
+
+/**
+ * 
+ */
+function tamanho_imagem_personalizado( $sizes ) {
+    return array_merge( $sizes, array(
+        'cartoes-thumb-obra' => __( 'Thumb Obra' ),
+    ) );
 }
 
 /**
@@ -67,4 +79,6 @@ add_action('after_setup_theme', 'wikiema_wp_setup');
 /**
  * add_filter
  */
+add_filter( 'image_size_names_choose', 'tamanho_imagem_personalizado' );
+ 
 
