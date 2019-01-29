@@ -40,18 +40,21 @@
         <div class="row pb-4">
 
             <?php
+            $autor = get_the_ID();
 $connected = new WP_Query(
     array(
         'post_type' => 'obras',
         'relationship' => array(
             'id' => 'obras_to_autores',
-            'to' => get_the_ID(),
+            'from' => $autor,
             //'sibling' => true,
         ),
         'posts_per_page' => '6',
-        'post__not_in' => array($post->ID),
+        //'post__not_in' => array($post->ID),
     )
 );
+
+print_r($connected);
 
 while ($connected->have_posts()): $connected->the_post();
 

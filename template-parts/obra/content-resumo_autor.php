@@ -25,33 +25,40 @@ while ($connected->have_posts()): $connected->the_post();
      */
     $fichatecnica_autor = get_field('ficha_tecnica');
     ?>
-<div class="col-12">
-	<div class="col-12 px-0">
-		<h3>
-			<?php the_title();?>
-		</h3>
 
-        <?php 
+
+<div class="col-12 px-0">
+    <h3>
+        <?php the_title();?>
+    </h3>
+    <?php 
         if(get_the_title() != 'Autor Desconhecido'){
+            if( $fichatecnica_autor['dataperiodo_inicial'] ){
+                echo '<p class="text-muted h5">(';
+                echo $fichatecnica_autor['dataperiodo_inicial']; 
+                if( $fichatecnica_autor['dataperiodo_final'] ){
+                    echo ' — ';
+                    echo $fichatecnica_autor['dataperiodo_final'];
+                    echo ')</p>';
+                    } else{
+                        echo ')</p>';
+                    }
+                }
             ?>
-            <p class="text-muted h5">
-			(<?php echo $fichatecnica_autor['dataperiodo_inicial'] ?> —
-			<?php echo $fichatecnica_autor['dataperiodo_final'] ?>)
-		</p>
-		<span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
-				autor →</a></span>
-        <?php
+    <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
+            autor →</a></span>
+    <?php
         }
         else{
             ?>
-            <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
-				autor →</a></span>
-        <?php
+    <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
+            autor →</a></span>
+    <?php
         }
         ?>
-		
-	</div>
+
 </div>
+
 <?php
 endwhile;
 wp_reset_postdata();

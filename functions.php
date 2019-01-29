@@ -43,7 +43,6 @@ function wikiema_enqueue_scripts()
      */
     wp_enqueue_script('owlcarousel', get_template_directory_uri() . '/inc/owl/owl.carousel.min.js', $dependencies);
     wp_enqueue_script('owl-slide', get_template_directory_uri() . '/js/owl-slide.js', $dependencies);
-
 }
 
 /**

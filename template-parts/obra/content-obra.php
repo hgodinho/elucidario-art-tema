@@ -14,7 +14,8 @@
 $fichatecnica_obra = get_field('ficha_tecnica');
 $fotografo = get_field('fotografo');
 $descricao = get_field('descricao');
-$thumbnail = get_the_post_thumbnail(get_the_ID(), 'medium_large', array('class' => 'img-fluid d-block'));
+$thumbnail = get_the_post_thumbnail(get_the_ID(), '', array('class' => 'img-thumbnail mx-auto d-block', 'style' => 'width: 100%; height: 100%; object-fit: cover;'));
+$thumbnail_link = get_the_post_thumbnail_url(get_the_ID(),'full');
 $linkobra = get_permalink();
 
 /**
@@ -42,10 +43,14 @@ $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 
 <!-- infos obra -->
 <div class="row pb-3 mb-2">
-	
+
 	<div class="col-12 col-lg-7">
 		<!-- imagem obra -->
-		<?php echo $thumbnail; ?>
+		<div style="max-height:480px; height: 480px;">
+			<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal">
+				<?php echo $thumbnail; ?>
+			</a>
+		</div>
 		<!-- // imagem obra -->
 
 		<!-- grade de botoes de ações rápidas -->
@@ -147,3 +152,12 @@ if ($descricao) {
     echo '</div>';
 }
 ?>
+
+<?php
+/**
+ * Image Modal
+ */
+?>
+<div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="image" aria-hidden="true">
+    <?php get_template_part('template-parts/modal/modal', 'image'); ?>
+</div>

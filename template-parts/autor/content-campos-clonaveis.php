@@ -16,6 +16,8 @@ $autorprefix = 'autor-metabox_';
 $referencias = rwmb_meta($autorprefix . 'referencias');
 $externos = rwmb_meta($autorprefix . 'externo');
 
+
+
 if ($referencias[0]['titulo']) {
     echo '<div class="col-12 mt-4">';
     echo '<h4>Referências</h4>';

@@ -59,5 +59,8 @@ $post_object = get_post_meta($post->ID);
 
 <?php
 endwhile;
+?>
+
+<?php
 get_footer();
 ?>
