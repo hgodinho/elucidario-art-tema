@@ -6,7 +6,9 @@
  * @since 0.2
  *
  * @author hgodinho.com
+ *
  */
+
 ?>
 
 <div class="row py-4 border-top">
@@ -22,15 +24,7 @@
             <!-- formulario de busca -->
             <div class="col-12 col-sm-5 pb-4">
                 <div class="col-12">
-                    <form class="form-inline justify-content-end">
-                        <div class="input-group input-group">
-                            <input type="text" class="form-control" placeholder="encontre uma obra" aria-label="Encontre uma obra"
-                                aria-describedby="button-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>
             </div>
             <!-- // formulario de busca -->
@@ -40,31 +34,32 @@
         <div class="row pb-4">
 
             <?php
-            $autor = get_the_ID();
-$connected = new WP_Query(
-    array(
-        'post_type' => 'obras',
-        'relationship' => array(
-            'id' => 'obras_to_autores',
-            'from' => $autor,
-            //'sibling' => true,
-        ),
-        'posts_per_page' => '6',
-        //'post__not_in' => array($post->ID),
-    )
+$autor = get_the_ID();
+$args = array(
+    'post_type' => 'obras',
+    'post_status' => 'any',
+    'relationship' => array(
+        'id' => 'obras_to_autores',
+        'to' => $post->ID,
+    ),
+    'posts_per_page' => 6,
+    //'post__not_in' => array($post->ID),
 );
+$connected = new WP_Query($args);
 
-print_r($connected);
+//$connected[$found_posts];
+//var_dump($connected);
 
 while ($connected->have_posts()): $connected->the_post();
-
     get_template_part('template-parts/obra/content', 'cartao-obra');
-
 endwhile;
-
-wp_reset_query();
 ?>
 
+            <?php
+if (function_exists('bootstrap_pagination')) {
+    bootstrap_pagination($connected);
+}
+?>
         </div>
     </div>
 </div>

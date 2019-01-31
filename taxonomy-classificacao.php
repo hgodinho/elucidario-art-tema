@@ -40,15 +40,7 @@ get_template_part('template-parts/header/header', 'breadcrumb');
             <div class="col-12 col-sm-5 pb-4">
                 <!-- formulario de busca -->
                 <div class="col-12">
-                    <form class="form-inline justify-content-end">
-                        <div class="input-group input-group">
-                            <input type="text" class="form-control" placeholder="encontre uma obra" aria-label="Encontre uma obra"
-                                aria-describedby="button-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
+                <?php get_search_form(); ?>
                 </div>
                 <!-- // formulario de busca -->
             </div>
@@ -57,23 +49,24 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
         <!-- cartoes de obras -->
         <div class="row pb-4">
-
             <?php
+            //var_dump($wp_query);
 if (have_posts()): while (have_posts()): the_post();
-
         get_template_part('template-parts/obra/content', 'cartao-obra');
-
     endwhile;
-
 endif;
-
 ?>
         </div>
+    </div>
+    <div class="cointainer">
+        <?php
+if (function_exists('bootstrap_pagination')) {
+    bootstrap_pagination();
+}
+?>
+    </div>
 </main>
-
 <?php
-/**
- * End
- */
+
 get_footer();
 ?>

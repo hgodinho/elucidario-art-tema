@@ -3,9 +3,35 @@
 - @version `0.4`
 - @source https://emaklabin.org.br
 
+***
+## @todo
+- arrumar menu
+- arrumar paginação da lista de autores;
+- arrumar searchform 
+- desenhar a home
+- alerta de pre-alfa
 
-### 0.4
+***
+## 0.4
+### added
+- query_arquivo_principal() no functions.php
+- archive-obras.pgp
+- /inc/pagination/wp-bootstrap4.1-pagination.php
+- search.php
+- searchform.php
+- /template-parts/autor/content-lista-autor.php
 
+### changed
+- archive-autores.ph
+- functions.php
+- single-obras.php
+- single-wiki_ema-classificacoes.php
+- taxonomy-classificacao.php
+- /template-parts/ambiente/content-obras-no-ambiente.php
+- /template-parts/autor/content-obras-do-autor.php
+- /template-parts/header/header-breadcrumb.php
+- /template-parts/header/header-menu.php
+- /template-parts/obra/content-cartao-obra.php
 
 ***
 ## 0.3

@@ -22,14 +22,14 @@ while (have_posts()): the_post();
 <?php get_template_part('template-parts/header/header', 'breadcrumb');?>
 
 <div class="container blog-post">
-<?php 
+    <?php 
 $post_object = get_post_meta($post->ID);
 
 ?>
-	<?php get_template_part('template-parts/obra/content', 'obra');?>
+    <?php get_template_part('template-parts/obra/content', 'obra');?>
 
-	<?php get_template_part('template-parts/obra/content', 'campos_clonaveis');?>
-	<?php
+    <?php get_template_part('template-parts/obra/content', 'campos_clonaveis');?>
+    <?php
     // If comments are open or we have at least one comment, load up the comment template.
     /*
     if (comments_open() || get_comments_number()):
@@ -43,15 +43,30 @@ $post_object = get_post_meta($post->ID);
     <?php get_template_part('template-parts/obra/content', 'obras-relacionadas');?>
 
 
-	<?php
-    the_post_navigation(array(
-        'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'twentyfifteen') . '</span> ' .
-        '<span class="screen-reader-text">' . __('Next post:', 'twentyfifteen') . '</span> ' .
+    <?php
+    
+    the_post_navigation(
+        array(
+        'next_text' => '
+
+        <span class="meta-nav" aria-hidden="true">' . 
+            __('Next', 'twentyfifteen') . 
+        '</span> ' .
+        '<span class="screen-reader-text">' . 
+            __('Next post:', 'twentyfifteen') . 
+        '</span> ' .
         '<span class="post-title">%title</span>',
-        'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __('Previous', 'twentyfifteen') . '</span> ' .
-        '<span class="screen-reader-text">' . __('Previous post:', 'twentyfifteen') . '</span> ' .
+
+        'prev_text' => '
+        <span class="meta-nav" aria-hidden="true">' 
+            . __('Previous', 'twentyfifteen') . 
+        '</span> ' .
+        '<span class="screen-reader-text">' . 
+            __('Previous post:', 'twentyfifteen') . 
+        '</span> ' .
         '<span class="post-title">%title</span>',
     ));
+    
     ?>
 </div>
 

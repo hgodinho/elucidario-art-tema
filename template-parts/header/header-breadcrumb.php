@@ -23,7 +23,8 @@ if (!is_home()) {
 
     if (is_singular('autores')) {
         echo '<li class="breadcrumb-item"><a href="';
-        echo get_post_type_archive_link('autores') . '">';
+        echo get_post_type_archive_link('autores') . '">'; //@deprecated 0.15
+        //echo get_permalink(get_page_by_path('autores', '', 'wiki_ema')) . '">';
         echo 'Autores</a>';
         if (is_single()) {
             echo "</li><li class='breadcrumb-item active'>";
@@ -74,7 +75,12 @@ if (!is_home()) {
         echo "</li><li class='breadcrumb-item active'>";
         the_title();
         echo '</li>';
+    } elseif (is_archive()){
+        echo "</li><li class='breadcrumb-item active'>";
+        post_type_archive_title();
+        echo "</li>";
     }
+
 
 } elseif (is_tag()) {
     single_tag_title();

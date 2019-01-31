@@ -1,8 +1,8 @@
 <?php
 /**
- * Archive template para Autores
+ * Archive template para Obras
  *
- * responsável por exibir o arquivo de autores
+ * responsável por exibir o arquivo de obras
  *
  * @package WordPress
  * @subpackage Wiki-Ema
@@ -15,6 +15,7 @@
 
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
+
 ?>
 <main role="main" class="container">
     <div class="container">
@@ -28,21 +29,23 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
                 <!-- formulario de busca -->
                 <div class="col-12">
-                    <?php get_search_form(); ?>
+                <?php get_search_form(); ?>
                 </div>
                 <!-- // formulario de busca -->
             </div>
-
         </div>
-        <?php
+
+        <!-- cartoes de obras -->
+        <div class="row pb-4">
+            <?php
 if (have_posts()): while (have_posts()): the_post();
-        get_template_part('template-parts/autor/content', 'lista-autor');
+        get_template_part('template-parts/obra/content', 'cartao-obra');
     endwhile;
 endif;
-
 ?>
+        </div>
     </div>
-    <div class="cointainer mt-4">
+    <div class="cointainer">
         <?php
 if (function_exists('bootstrap_pagination')) {
     bootstrap_pagination();
@@ -51,5 +54,6 @@ if (function_exists('bootstrap_pagination')) {
     </div>
 </main>
 <?php
+
 get_footer();
 ?>

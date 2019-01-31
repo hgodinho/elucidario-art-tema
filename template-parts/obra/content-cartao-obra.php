@@ -11,7 +11,9 @@ $permalink = get_permalink();
 
 echo '<div class="col-md-4 mb-5">';
 echo '<div class="card" style="width: 18rem;">';
+echo '<a href="' . $permalink . '">';
 echo $thumbnail;
+echo '</a>';
 echo '<div class="card-body">';
 echo '<h5 class="card-title">';
 the_title();

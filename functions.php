@@ -7,6 +7,8 @@
  * @author hgodinho <henriquegodinho@emaklabin.org.br>
  */
 
+require_once('inc/pagination/wp-bootstrap4.1-pagination.php');
+
 /**
  * CSS
  *
@@ -43,6 +45,7 @@ function wikiema_enqueue_scripts()
      */
     wp_enqueue_script('owlcarousel', get_template_directory_uri() . '/inc/owl/owl.carousel.min.js', $dependencies);
     wp_enqueue_script('owl-slide', get_template_directory_uri() . '/js/owl-slide.js', $dependencies);
+
 }
 
 /**
@@ -56,6 +59,7 @@ function wikiema_wp_setup()
     add_theme_support('post-thumbnails');
     add_image_size( 'cartoes-thumb-obra', 300, 180, array( 'left', 'top' ));
     add_image_size('admin-thumbnail',100,100);
+    register_nav_menu('primario', 'Primário');
     //add_image_size( 'cartoes-tete-obra', 180, 180);
     //set_post_thumbnail_size( 300, 180, true );
 }
@@ -70,15 +74,36 @@ function tamanho_imagem_personalizado( $sizes ) {
 }
 
 /**
+ * Ajuste na query principal dos arquivos
+ *
+ * @param $query
+ * @since 0.4
+ */
+function query_arquivo_principal( $query )
+{
+    if ($query->is_post_type_archive( 'obras' ) && !is_admin() && $query->is_main_query()) {
+        $query->set('posts_per_page', '9');
+    }
+    if ($query->is_tax() && !is_admin() && $query->is_main_query()) {
+        $query->set('posts_per_page', '9');
+    }
+    if ($query->is_post_type_archive( 'autores' ) && !is_admin() && $query->is_main_query()) {
+        $query->set('posts_per_page', '20');
+        $query->set('orderby', 'post_title');
+        $query->set('order', 'ASC');
+    }
+}
+
+/**
  * add_action
  */
 add_action('wp_enqueue_scripts', 'wikiema_enqueue_styles');
 add_action('wp_enqueue_scripts', 'wikiema_enqueue_scripts');
 add_action('after_setup_theme', 'wikiema_wp_setup');
+add_action('pre_get_posts', 'query_arquivo_principal');
 
 /**
  * add_filter
  */
 add_filter( 'image_size_names_choose', 'tamanho_imagem_personalizado' );
  
-

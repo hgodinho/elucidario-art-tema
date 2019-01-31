@@ -1,7 +1,9 @@
 <?php
 /**
  * template para página 'Classificação' no Custom-post wiki_ema
- *
+ * 
+ * @url wiki-ema/pag/classificacoes/
+ * 
  * responsável por exibir o arquivo de taxonomias classificação,
  * listando cada classificação criada na custom taxonomy
  *
@@ -32,6 +34,8 @@ $classificacoes = get_terms(
     array(
         'taxonomy' => 'classificacao',
         'hide_empty' => true,
+        'orderby' => 'count',
+        'order' => 'DESC',
         'parent' => 0,
     )
 );
@@ -61,7 +65,7 @@ if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
              * @todo arrumar query para conseguir pegar a imagem de uma obra presente
              * em alguma 'classificacao' para utilizar como imagem do cartão
              */
-    /**
+    /*
     $thumbnail = get_posts(
     array(
     'posts_per_page' => 1,
@@ -83,8 +87,8 @@ if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
                             <h2 class="card-title">
                                 <?php echo $classificacao->name; ?>
                             </h2>
-                            <p class="card-text"><small class="text-muted">
-                                    <?php echo $classificacao->count; ?> obras</small></p>
+                            <p class="card-text"><span class="text-muted">→ 
+                                    <?php echo $classificacao->count; ?> itens</span></p>
                             <a class="btn btn-primary" href="<?php echo $link ?>" role="button">Veja mais</a>
                         </div>
                     </div>

@@ -15,22 +15,26 @@
  /**
   * @todo arrumar essa condicional que checa que o usuário está logado para corrigir a sobreposição da admin-bar no menu
   */
-if (is_user_logged_in()) {
+  /*
+  if (is_admin_bar_showing()) {
     echo '<div class="container-flex fixed-top fixed-top-correcao bg-primary border-bottom shadow-lg">';
 } else {
     echo '<div class="container-flex fixed-top bg-primary border-bottom shadow-lg">';
 }
-
+*/
 ?>
+<div class="container-flex fixed-top bg-primary border-bottom shadow-lg">
 
-<nav class="navbar navbar-expand-lg navbar-collapse navbar-light">
-    <div class="container">
-        <a class="navbar-brand text-white" href="index.html">Wiki-Ema</a>
-        <button class="navbar-toggler rounded-circle border border-white shadow-lg" type="button" data-toggle="collapse"
-            data-target="#menuWikiEma" aria-controls="menuWikiEma" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="menuWikiEma">
+    <nav class="navbar navbar-expand-lg navbar-collapse navbar-light">
+        <div class="container">
+            <a class="navbar-brand text-white" href="index.html">Wiki-Ema</a>
+            <button class="navbar-toggler rounded-circle border border-white shadow-lg" type="button" data-toggle="collapse"
+                data-target="#menuWikiEma" aria-controls="menuWikiEma" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuWikiEma">
+
+                <?php /*
             <!-- links -->
             <ul class="navbar-nav mr-auto">
                 <!--Ema Klabin-->
@@ -45,14 +49,6 @@ if (is_user_logged_in()) {
                 <li class="nav-item">
                     <a class="nav-link text-white" href="ambientes.html">Ambientes</a>
                 </li>
-
-
-                <!-- exemplo disabled
-                                        <li class="nav-item">
-                                            <a class="nav-link disabled " href="#">Disabled</a>
-                                        </li>
-                                        -->
-
                 <!-- Institucional -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-white" id="dropdown-menu" data-toggle="dropdown"
@@ -64,18 +60,24 @@ if (is_user_logged_in()) {
                     </div>
                 </li>
             </ul>
-            <!-- formulario de busca -->
-            <form class="form-inline mt-3">
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Encontre uma obra" aria-label="Encontre uma obra"
-                        aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-light" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
-                    </div>
+            */?>
+
+                <?php 
+            $args = array(
+                'theme_location' => 'primario',
+                'menu_class' => 'navbar-nav mr-auto',
+                'before' => '<li class="nav-item">',
+                'after' => '</li>',
+            );
+            wp_nav_menu($args); ?>
+
+
+                <!-- formulario de busca -->
+                <div class="col-12">
+                    <?php get_search_form(); ?>
                 </div>
-            </form>
-            <!-- // formulario de busca -->
+                <!-- // formulario de busca -->
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 </div>
