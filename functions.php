@@ -7,7 +7,8 @@
  * @author hgodinho <henriquegodinho@emaklabin.org.br>
  */
 
-require_once('inc/pagination/wp-bootstrap4.1-pagination.php');
+//require_once('inc/pagination/wp-bootstrap4.1-pagination.php');
+require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/class-wp-bootstrap-navwalker.php';
 
 /**
  * CSS
@@ -55,14 +56,49 @@ function wikiema_enqueue_scripts()
  */
 function wikiema_wp_setup()
 {
+    /**
+     * funcionalidades do tema
+     */
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+
+    /**
+     * tamanhos personalizados de imagem
+     */
     add_image_size( 'cartoes-thumb-obra', 300, 180, array( 'left', 'top' ));
     add_image_size('admin-thumbnail',100,100);
+
+    /**
+     * registra menu personalizado
+     */
     register_nav_menu('primario', 'Primário');
-    //add_image_size( 'cartoes-tete-obra', 180, 180);
-    //set_post_thumbnail_size( 300, 180, true );
+
+    /**
+     * teste de Paginação AJAX 
+     * 
+     * js criado na pasta js -> ajax.pagination.js
+     *
+     * @todo estudar melhor essa possibilidade
+     * @source https://premium.wpmudev.org/blog/load-posts-ajax/
+     */
+    /*
+    wp_enqueue_script( 'ajax-pagination',  get_stylesheet_directory_uri() . '/js/ajax-pagination.js', array( 'jquery' ), '1.0', true );
+    wp_localize_script( 'ajax-pagination', 'ajaxpagination', array(
+        'ajaxurl' => admin_url( 'admin-ajax.php' )
+    ));
+    */
+}   
+
+/**
+ * Adiciona Formulário de buscas customizado no menu
+ * 
+ */
+function add_search_form($items, $args) {
+if( $args->theme_location == 'primario' )
+        $items .= '<li class="justify-content-end mx-md-4">' . get_search_form(false) . '</li>';
+        return $items;
 }
+
 
 /**
  * 
@@ -106,4 +142,6 @@ add_action('pre_get_posts', 'query_arquivo_principal');
  * add_filter
  */
 add_filter( 'image_size_names_choose', 'tamanho_imagem_personalizado' );
+add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
+
  

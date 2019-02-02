@@ -14,30 +14,22 @@
         <p class="h5">
             <?php the_title();?>
             <?php
-//$autor_id = get_the_ID();
-//echo $autor_id;
 
-/*
-$args = array(
-    'post_type' => 'obras',
-    'relationships' => array(
-        'id' => 'obras_to_autores',
-        'to' => $autor_id,
-        'sibling' => true,
-    ),
-    'posts_per_page' => 1,
-);
-$conectados = new WP_Query($args);
-//var_dump($conectados);
-/*
-$conectados = MB_Relationships_API::each_connected(
+MB_Relationships_API::each_connected(
     array(
     'id' => 'obras_to_autores',
-    'from' => $wp_query->posts,
-));
-*/
-
-//$obras_contagem = $conectados->found_posts;
+    'to' => $wp_query->posts,
+    )
+);
+if (have_posts()): while (have_posts()): the_post();
+    foreach ( $post->connected as $post ) : setup_postdata( $post );
+            the_title();
+            count($post->connected);
+            echo count($post->connected);
+    endforeach;
+    wp_reset_postdata(); // Set $post back to original post
+    endwhile;
+endif;
 ?>          
               <!--  
             <span class="badge badge-secondary badge-pill">
@@ -46,3 +38,6 @@ $conectados = MB_Relationships_API::each_connected(
         </p>
     </a>
 </div>
+
+
+        

@@ -6,7 +6,7 @@
 ***
 ## @todo
 - arrumar menu
-- arrumar paginação da lista de autores;
+- arrumar paginação da lista de obras de autores
 - arrumar searchform 
 - desenhar a home
 - alerta de pre-alfa

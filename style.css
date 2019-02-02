@@ -1,4 +1,3 @@
-
 /*
 Theme Name: Wiki-Ema
 Theme URI: http://blablabla.whiskas.sachet
@@ -9,3 +8,7 @@ Version: 01
 Text Domain: wiki-ema-template
 */
 
+.searchbox-position {
+    margin-top: 15px;
+    margin-right: 90px;
+}

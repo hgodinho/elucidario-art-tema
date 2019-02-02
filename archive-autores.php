@@ -35,11 +35,7 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
         </div>
         <?php
-if (have_posts()): while (have_posts()): the_post();
-        get_template_part('template-parts/autor/content', 'lista-autor');
-    endwhile;
-endif;
-
+get_template_part('template-parts/autor/content', 'lista-autor');
 ?>
     </div>
     <div class="cointainer mt-4">
