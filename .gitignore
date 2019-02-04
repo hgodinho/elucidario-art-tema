@@ -1,4 +1,4 @@
 .DS_Store
-
+/.vscode/
 /vendor/
 wiki-ema.code-workspace
