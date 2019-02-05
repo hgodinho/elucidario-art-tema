@@ -2,12 +2,13 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.2
+ * @version 0.5
  * @since 0.1
- * @author hgodinho <henriquegodinho@emaklabin.org.br>
+ * @author hgodinho <ola@hgodinho.com>
  */
 
-//require_once('inc/pagination/wp-bootstrap4.1-pagination.php');
+require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
+require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/class-wp-bootstrap-navwalker.php';
 
 /**
@@ -65,48 +66,47 @@ function wikiema_wp_setup()
     /**
      * tamanhos personalizados de imagem
      */
-    add_image_size( 'cartoes-thumb-obra', 300, 180, array( 'left', 'top' ));
-    add_image_size('admin-thumbnail',100,100);
+    add_image_size('cartoes-thumb-obra', 300, 180, array('left', 'top'));
+    add_image_size('admin-thumbnail', 100, 100);
 
     /**
      * registra menu personalizado
      */
     register_nav_menu('primario', 'Primário');
 
-    /**
-     * teste de Paginação AJAX 
-     * 
-     * js criado na pasta js -> ajax.pagination.js
-     *
-     * @todo estudar melhor essa possibilidade
-     * @source https://premium.wpmudev.org/blog/load-posts-ajax/
-     */
-    /*
-    wp_enqueue_script( 'ajax-pagination',  get_stylesheet_directory_uri() . '/js/ajax-pagination.js', array( 'jquery' ), '1.0', true );
-    wp_localize_script( 'ajax-pagination', 'ajaxpagination', array(
-        'ajaxurl' => admin_url( 'admin-ajax.php' )
-    ));
-    */
-}   
+    if (class_exists('WP_Glossary_Bootstrap')) {
+        $glossary_post_types = array('autores', 'obras');
+        $slug_rewrite = PLUGIN_SLUG . '/glossario';
+        $glossary = new WP_Glossary_Bootstrap($glossary_post_types, $slug_rewrite);
+        /**
+         * chamar a action 'auto_recursive_glossary' somente 1 vez
+         */
+        add_action('init', array( $glossary ,'auto_recursive_glossary'));
+        add_action('save_post', array($glossary, 'auto_glossary_on_save'));
+    }
+}
 
 /**
  * Adiciona Formulário de buscas customizado no menu
- * 
+ *
  */
-function add_search_form($items, $args) {
-if( $args->theme_location == 'primario' )
+function add_search_form($items, $args)
+{
+    if ($args->theme_location == 'primario') {
         $items .= '<li class="justify-content-end mx-md-4">' . get_search_form(false) . '</li>';
-        return $items;
+    }
+
+    return $items;
 }
 
-
 /**
- * 
+ *
  */
-function tamanho_imagem_personalizado( $sizes ) {
-    return array_merge( $sizes, array(
-        'cartoes-thumb-obra' => __( 'Thumb Obra' ),
-    ) );
+function tamanho_imagem_personalizado($sizes)
+{
+    return array_merge($sizes, array(
+        'cartoes-thumb-obra' => __('Thumb Obra'),
+    ));
 }
 
 /**
@@ -115,15 +115,15 @@ function tamanho_imagem_personalizado( $sizes ) {
  * @param $query
  * @since 0.4
  */
-function query_arquivo_principal( $query )
+function query_arquivo_principal($query)
 {
-    if ($query->is_post_type_archive( 'obras' ) && !is_admin() && $query->is_main_query()) {
+    if ($query->is_post_type_archive('obras') && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
     }
     if ($query->is_tax() && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
     }
-    if ($query->is_post_type_archive( 'autores' ) && !is_admin() && $query->is_main_query()) {
+    if ($query->is_post_type_archive('autores') && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '20');
         $query->set('orderby', 'post_title');
         $query->set('order', 'ASC');
@@ -141,7 +141,5 @@ add_action('pre_get_posts', 'query_arquivo_principal');
 /**
  * add_filter
  */
-add_filter( 'image_size_names_choose', 'tamanho_imagem_personalizado' );
+add_filter('image_size_names_choose', 'tamanho_imagem_personalizado');
 add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
-
- 

@@ -5,13 +5,38 @@
 
 ***
 ## @todo
-- arrumar menu
+- arrumar menu 
+> adicionado a classe wp-bootstrap-navwalker @source https://github.com/wp-bootstrap/wp-bootstrap-navwalker @status em teste
+
 - arrumar paginação da lista de obras de autores
+> o problema está no CPT. como o autor é criado em formato 'post' (hierarchical => false), não consigo criar uma paginação dentro dele, uma vez que não é possivel transformar um post em archive-page. precisa de uma outra solução que possa criar algum tipo de paginação com query no mb-relationships
+
+> @update [2019-02-05] pode ser que usando a paginação em ordem alfabetica solucione, uma vez que o core dela é em custom taxonomy. continuar desenvolvimento da classe inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php
+
 - arrumar searchform 
+
 - desenhar a home
+
 - alerta de pre-alfa
 
 ***
+## 0.5
+### added
+- inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php
+
+### changed
+- archive-autores.php
+- function.php
+- single-autores.php
+- taxonomy-classificacao.php
+- template-partes/autor/content-obras-do-autor.php
+- template-parts/autor/content-lista-autor.php
+
+### removed
+- taxonomy-tipo_autor.php
+- js/ajax-pagination.js
+
+
 ## 0.4
 ### added
 - query_arquivo_principal() no functions.php

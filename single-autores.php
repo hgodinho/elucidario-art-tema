@@ -11,31 +11,27 @@
  * @since 0.1
  */
 get_header();
-
+get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
 
 <?php
 while (have_posts()): the_post();
+    //var_dump($wp_query);
     ?>
-<!-- Breadcrumb @since 0.2 -->
-<?php get_template_part('template-parts/header/header', 'breadcrumb');?>
 
-<div class="container">
+	<div class="container">
+	    <!-- a mágica inicia aqui -->
+	    <!-- Autor -->
+	    <div class="row">
+	        <?php get_template_part('template-parts/autor/content', 'autor');?>
+	        <?php get_template_part('template-parts/autor/content', 'obra-em-destaque');?>
+	    </div>
+	    <!-- // Autor -->
 
-    <!-- a mágica inicia aqui -->
-    <!-- Autor -->
-    <div class="row">
-        <?php get_template_part('template-parts/autor/content', 'autor'); ?>
-        <?php get_template_part('template-parts/autor/content', 'obra-em-destaque'); ?>
-    </div>
-    <!-- // Autor -->
+	    <?php get_template_part('template-parts/autor/content', 'obras-do-autor');?>
 
-    <?php get_template_part('template-parts/autor/content', 'obras-do-autor'); ?>
-
-    <!-- a mágica termina aqui -->
-
-
-    <?php
+	    <!-- a mágica termina aqui -->
+	    <?php
 endwhile;
 get_footer();
 ?>

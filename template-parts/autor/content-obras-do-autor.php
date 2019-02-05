@@ -24,7 +24,7 @@
             <!-- formulario de busca -->
             <div class="col-12 col-sm-5 pb-4">
                 <div class="col-12">
-                    <?php get_search_form(); ?>
+                    <?php get_search_form();?>
                 </div>
             </div>
             <!-- // formulario de busca -->
@@ -43,17 +43,17 @@ $args = array(
         'to' => $post->ID,
     ),
     'posts_per_page' => 6,
-    //'post__not_in' => array($post->ID),
 );
 $connected = new WP_Query($args);
-
-//$connected[$found_posts];
-//var_dump($connected);
-
+?>
+            
+                <?php
 while ($connected->have_posts()): $connected->the_post();
     get_template_part('template-parts/obra/content', 'cartao-obra');
 endwhile;
+wp_reset_query();
 ?>
+            </div>
 
             <?php
 if (function_exists('bootstrap_pagination')) {

@@ -20,7 +20,7 @@
  *       echo bootstrap_pagination($query);
  *     ?>
  */
-function bootstrap_pagination(\WP_Query $wp_query = null, $echo = true)
+function bootstrap_pagination(WP_Query $wp_query = null, $echo = true)
 {
 
     if (null === $wp_query) {
@@ -35,7 +35,7 @@ function bootstrap_pagination(\WP_Query $wp_query = null, $echo = true)
         'type' => 'array',
         'show_all' => false,
         'end_size' => 1,
-        'mid_size' => 2,
+        'mid_size' => 1,
         'prev_next' => true,
         'prev_text' => __('&laquo;'),
         'next_text' => __('&raquo;'),

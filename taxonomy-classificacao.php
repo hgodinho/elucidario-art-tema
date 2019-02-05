@@ -59,11 +59,13 @@ endif;
         </div>
     </div>
     <div class="cointainer">
+        
         <?php
 if (function_exists('bootstrap_pagination')) {
     bootstrap_pagination();
 }
 ?>
+
     </div>
 </main>
 <?php
