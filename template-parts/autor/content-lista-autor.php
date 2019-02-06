@@ -14,9 +14,23 @@
 <div class="list-group">
 <a href="<?php the_permalink();?>" class="">
     <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-                <?php the_title();
-$obras_contagem = count($post->connected);
-?>
+                <span>
+                <?php the_title(); 
+                $fichatecnica_autor = get_field('ficha_tecnica');
+if( $fichatecnica_autor['dataperiodo_inicial'] ){
+                echo ', <span class="text-muted">(';
+                echo $fichatecnica_autor['dataperiodo_inicial']; 
+                if( $fichatecnica_autor['dataperiodo_final'] ){
+                    echo ' — ';
+                    echo $fichatecnica_autor['dataperiodo_final'];
+                    echo ')</span>';
+                    } else{
+                        echo ')</span>';
+                    }
+                }?>
+</span>
+
+<?php $obras_contagem = count($post->connected); ?>
             
             <span class="badge badge-secondary badge-pill">
                 <?php echo $obras_contagem; ?></span>
