@@ -43,6 +43,7 @@ $args = array(
         'to' => $post->ID,
     ),
     'posts_per_page' => 6,
+    'paged' => $paged,
 );
 $connected = new WP_Query($args);
 ?>

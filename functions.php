@@ -11,6 +11,8 @@ require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/class-wp-bootstrap-navwalker.php';
 
+//const PLUGIN_SLUG = "wiki-ema";
+
 /**
  * CSS
  *
@@ -74,15 +76,32 @@ function wikiema_wp_setup()
      */
     register_nav_menu('primario', 'Primário');
 
+    /**
+     * Cria taxonomias para menu alfabético.
+     */
     if (class_exists('WP_Glossary_Bootstrap')) {
-        $glossary_post_types = array('autores', 'obras');
-        $slug_rewrite = PLUGIN_SLUG . '/glossario';
-        $glossary = new WP_Glossary_Bootstrap($glossary_post_types, $slug_rewrite);
-        /**
-         * chamar a action 'auto_recursive_glossary' somente 1 vez
-         */
-        add_action('init', array( $glossary ,'auto_recursive_glossary'));
+        $tax_name_a = 'autor_a_z';
+        $tax_name_b = 'obra_a_z';
+        $post_types_a = array('autores');
+        $post_types_b = array('obras');
+        $slug_rewrite_a = PLUGIN_SLUG . '/autor-a-z';
+        $slug_rewrite_b = PLUGIN_SLUG . '/obra-a-z';
+
+        $glossary = new WP_Glossary_Bootstrap(
+            $tax_name_a,
+            $tax_name_b,
+            $post_types_a, 
+            $post_types_b, 
+            $slug_rewrite_a, 
+            $slug_rewrite_b
+        );
         add_action('save_post', array($glossary, 'auto_glossary_on_save'));
+        
+        /**
+         * chamar actions seguintes somente 1 vez
+         */
+        //add_action('init', array( $glossary ,'recursive_glossary_post_a'));
+        //add_action('init', array( $glossary ,'recursive_glossary_post_b'));
     }
 }
 
