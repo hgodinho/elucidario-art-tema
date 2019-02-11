@@ -1,9 +1,9 @@
 <?php
 /**
- * template para página 'Classificação' no Custom-post wiki_ema
- * 
+ * Template para página 'Classificação' no Custom-post wiki_ema
+ *
  * @url wiki-ema/pag/classificacoes/
- * 
+ *
  * responsável por exibir o arquivo de taxonomias classificação,
  * listando cada classificação criada na custom taxonomy
  *
@@ -18,7 +18,7 @@
 
 /**
  * Start
-*/
+ */
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
@@ -53,35 +53,35 @@ if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
         </div>
         <div class="row py-4">
             <?php
-    foreach ($classificacoes as $classificacao) {
-            $link = get_term_link($classificacao);
-            ?>
+foreach ($classificacoes as $classificacao) {
+        $link = get_term_link($classificacao);
+        ?>
             <div class="col-md-4">
                 <div class="card mb-3">
                     <?php
-    /**
-             * Imagem do cartão
-             *
-             * @todo arrumar query para conseguir pegar a imagem de uma obra presente
-             * em alguma 'classificacao' para utilizar como imagem do cartão
-             */
-    /*
-    $thumbnail = get_posts(
-    array(
-    'posts_per_page' => 1,
-    'post_type' => 'obras',
-    'tax_query' => array(
-    'taxonomy' => 'classificacao',
-    'field' => 'slug',
-    'terms' => $classificacao->slug,
-    ),
-    )
-    );
-    // print_r($thumbnail);
-    // echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'card-img-top' ) );
-    wp_reset_postdata();
-    */
-            ?>
+/**
+         * Imagem do cartão
+         *
+         * @todo arrumar query para conseguir pegar a imagem de uma obra presente
+         * em alguma 'classificacao' para utilizar como imagem do cartão
+         */
+        /*
+        $thumbnail = get_posts(
+        array(
+        'posts_per_page' => 1,
+        'post_type' => 'obras',
+        'tax_query' => array(
+        'taxonomy' => 'classificacao',
+        'field' => 'slug',
+        'terms' => $classificacao->slug,
+        ),
+        )
+        );
+        // print_r($thumbnail);
+        // echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'card-img-top' ) );
+        wp_reset_postdata();
+         */
+        ?>
 
                     <div class="card-body">
                         <h2 class="card-title">
@@ -94,7 +94,7 @@ if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
                 </div>
             </div>
             <?php
-    }
+}
 }
 ?>
 
