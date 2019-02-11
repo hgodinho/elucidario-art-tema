@@ -16,16 +16,16 @@
  * @author hgodinho.com
  */
 
- /**
-  * Start
-  */
+/**
+ * Start
+*/
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
 
 <main role="main" class="container">
     <div class="container">
-        
+
         <?php
 /**
  * Query principal
@@ -56,9 +56,9 @@ if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
     foreach ($classificacoes as $classificacao) {
             $link = get_term_link($classificacao);
             ?>
-                <div class="col-md-4">
-                    <div class="card mb-3">
-                        <?php
+            <div class="col-md-4">
+                <div class="card mb-3">
+                    <?php
     /**
              * Imagem do cartão
              *
@@ -83,17 +83,17 @@ if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
     */
             ?>
 
-                        <div class="card-body">
-                            <h2 class="card-title">
-                                <?php echo $classificacao->name; ?>
-                            </h2>
-                            <p class="card-text"><span class="text-muted">→ 
-                                    <?php echo $classificacao->count; ?> itens</span></p>
-                            <a class="btn btn-primary" href="<?php echo $link ?>" role="button">Veja mais</a>
-                        </div>
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <?php echo $classificacao->name; ?>
+                        </h2>
+                        <p class="card-text"><span class="text-muted">→
+                                <?php echo $classificacao->count; ?> itens</span></p>
+                        <a class="btn btn-primary" href="<?php echo $link ?>" role="button">Veja mais</a>
                     </div>
                 </div>
-                <?php
+            </div>
+            <?php
     }
 }
 ?>

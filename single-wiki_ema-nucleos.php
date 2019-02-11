@@ -39,7 +39,6 @@ $nucleos = get_terms(
         'parent' => 0,
     )
 );
-//var_dump($nucleos);
 
 /**
  * Loop
@@ -62,8 +61,7 @@ foreach ($nucleos as $nucleo) {
 
                         <div class="card-body">
                             <h2 class="card-title">
-                                <?php echo $nucleo
-            ->name; ?>
+                                <?php echo $nucleo->name; ?>
                             </h2>
                             <p class="card-text"><span class="text-muted">→
                                     <?php 
