@@ -31,6 +31,8 @@
 - taxonomy-classificacao.php
 - template-partes/autor/content-obras-do-autor.php
 - template-parts/autor/content-lista-autor.php
+- single-wiki_ema-nucleos.php
+- taxonomy-nucleo.php
 
 ### removed
 - taxonomy-tipo_autor.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * template para taxonomia ambiente single term
+ * template para taxonomia autor_a_z single term
  *
  * @package WordPress
  * @subpackage Wiki-Ema
@@ -13,6 +13,11 @@
 
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
+
+MB_Relationships_API::each_connected(array(
+    'id' => 'obras_to_autores',
+    'to' => $wp_query->posts, // Set to $my_query.
+));
 $count = $wp_query->found_posts;
 ?>
 
@@ -20,16 +25,13 @@ $count = $wp_query->found_posts;
     <div class="container pb-4 mb-4 border-bottom">
         <!-- a magica inicia aqui -->
         <div class="row">
-            <div class="col-12 col-lg-7">
-                <?php get_template_part('template-parts/carousel/carousel', 'ambiente'); ?>
-            </div>
-            <div class="col-12 col-lg-5 pt-4">
+            <div class="col-12 pt-4">
                 <h1>
                     <?php single_term_title();?>
                     <span class="small text-muted">
                         <?php 
                         echo ' → ';
-                        echo $count; ?> itens.
+                        echo $count; ?> autores.
                     </span>
                 </h1>
                 <p>
@@ -40,7 +42,18 @@ $count = $wp_query->found_posts;
     </div>
 </main>
 <div class="container">
-    <?php get_template_part('template-parts/ambiente/content','obras-no-ambiente'); ?>
+    <?php
+if (class_exists('WP_Glossary_Bootstrap')) {
+    $glossary = new WP_Glossary_Bootstrap;
+    $glossary_menu = $glossary->glossary_menu_front_end('autor_a_z', null);
+}
+$wp_query->set('posts_per_page', -1);
+
+if (have_posts()): while (have_posts()): the_post();
+        get_template_part('template-parts/autor/content', 'lista-autor');
+    endwhile;
+endif;
+?>
 </div>
 
 <?php

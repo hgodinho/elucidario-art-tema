@@ -16,6 +16,7 @@
  */
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
+$count = $wp_query->found_posts;
 ?>
 
 <main role="main" class="container">
@@ -24,6 +25,11 @@ get_template_part('template-parts/header/header', 'breadcrumb');
             <div class="col-12 pb-4 mb-4">
                 <h1>
                     <?php single_term_title();?>
+                    <span class="small text-muted">
+                        <?php 
+                        echo ' → ';
+                        echo $count; ?> itens.
+                    </span>
                 </h1>
                 <p>
                     <?php echo term_description(); ?>
@@ -40,7 +46,7 @@ get_template_part('template-parts/header/header', 'breadcrumb');
             <div class="col-12 col-sm-5 pb-4">
                 <!-- formulario de busca -->
                 <div class="col-12">
-                <?php get_search_form(); ?>
+                    <?php get_search_form(); ?>
                 </div>
                 <!-- // formulario de busca -->
             </div>
@@ -59,7 +65,7 @@ endif;
         </div>
     </div>
     <div class="cointainer">
-        
+
         <?php
 if (function_exists('bootstrap_pagination')) {
     bootstrap_pagination();

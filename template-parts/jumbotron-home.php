@@ -31,34 +31,44 @@
 		<div class="row justify-content-start">
 			<div class="col-lg-3"></div>
 			<div class="col-lg-6 text-left">
-			
-				<?php 
-		$classificacao = array(
-			'taxonomy' => 'classificacao',
-			'orderby' => 'name',
-			'show_count' => false,
-			'pad_counts' => false,
-			'title_li' => '',
-			'separator' => ', ',
-			'style' => 'none',
-			'number' => 3,
-		);
-		$nucleo = array(
-			'taxonomy' => 'nucleo',
-			'orderby' => 'name',
-			'show_count' => false,
-			'pad_counts' => false,
-			'title_li' => '',
-			'separator' => ', ',
-			'style' => 'none',
-			'number' => 3,
-		);
-		?>
 				<ul>
 					<li>
-						<?php wp_list_categories($classificacao); ?> ...</li>
+						<?php
+						$ambiente = array(
+							'taxonomy' => 'ambiente',
+							'order' => 'DESC',
+							'orderby' => 'RAND',
+							//'show_count' => false,
+							'pad_counts' => false,
+							// 'title_li' => '',
+							'separator' => ', ',
+							'style' => 'none',
+							'number' => 3,
+						);
+						wp_list_categories($ambiente); 					
+						?>
+						<a href="<?php echo get_bloginfo('url') . '/pag/classificacoes' ?>">
+							Todos os cômodos →
+						</a>
+					</li>
 					<li>
-						<?php wp_list_categories($nucleo); ?> ...</li>
+						<?php
+						$nucleo = array(
+							'taxonomy' => 'nucleo',
+							'order' => 'ASC',
+							'orderby' => 'rand',
+							//'show_count' => false,
+							'pad_counts' => false,
+							//'title_li' => '',
+							'separator' => ', ',
+							'style' => 'none',
+							'number' => 3,
+						);
+						wp_list_categories($nucleo); ?>
+						<a href="<?php echo get_bloginfo('url') . '/pag/nucleos' ?>">
+							Todo o acervo →
+						</a>
+					</li>
 					<li>
 						<?php
 						/**
@@ -67,15 +77,19 @@
 				$autores_loop = new WP_Query(
 					array(
 						'post_type' => 'autores',
-						'post_per_page' => 3,
-						'order' => 'ASC',
-						'orderby' => 'name',
+						'posts_per_page' => 3,
+						'posts_per_archive_page' => 3,
+						'order' => 'DESC',
+						'orderby' => 'rand',
 					)
 					);
 					while ( $autores_loop->have_posts()) : $autores_loop->the_post();
 					the_title('<a href="' . get_permalink() . '" title="' . the_title_attribute( 'echo=0' ) . '" rel="bookmark">', '</a>, ' );
 				endwhile;
-					?>...
+					?>
+						<a href="<?php echo get_post_type_archive_link( 'autores' ); ?>">
+							Todos os autores →
+						</a>
 					</li>
 				</ul>
 			</div>

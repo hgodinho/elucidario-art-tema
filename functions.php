@@ -79,29 +79,31 @@ function wikiema_wp_setup()
     /**
      * Cria taxonomias para menu alfabético.
      */
-    if (class_exists('WP_Glossary_Bootstrap')) {
-        $tax_name_a = 'autor_a_z';
-        $tax_name_b = 'obra_a_z';
-        $post_types_a = array('autores');
-        $post_types_b = array('obras');
-        $slug_rewrite_a = PLUGIN_SLUG . '/autor-a-z';
-        $slug_rewrite_b = PLUGIN_SLUG . '/obra-a-z';
+    if (!taxonomy_exists('autor_a_z') && !taxonomy_exists('obra_a_z')) {
+        if (class_exists('WP_Glossary_Bootstrap')) {
+            $tax_name_a = 'autor_a_z';
+            $tax_name_b = 'obra_a_z';
+            $post_types_a = array('autores');
+            $post_types_b = array('obras');
+            $slug_rewrite_a = PLUGIN_SLUG . '/autor-a-z';
+            $slug_rewrite_b = PLUGIN_SLUG . '/obra-a-z';
 
-        $glossary = new WP_Glossary_Bootstrap(
-            $tax_name_a,
-            $tax_name_b,
-            $post_types_a, 
-            $post_types_b, 
-            $slug_rewrite_a, 
-            $slug_rewrite_b
-        );
-        add_action('save_post', array($glossary, 'auto_glossary_on_save'));
-        
-        /**
-         * chamar actions seguintes somente 1 vez
-         */
-        //add_action('init', array( $glossary ,'recursive_glossary_post_a'));
-        //add_action('init', array( $glossary ,'recursive_glossary_post_b'));
+            $glossary = new WP_Glossary_Bootstrap(
+                $tax_name_a,
+                $tax_name_b,
+                $post_types_a,
+                $post_types_b,
+                $slug_rewrite_a,
+                $slug_rewrite_b
+            );
+            add_action('save_post', array($glossary, 'auto_glossary_on_save'));
+
+            /**
+             * chamar actions seguintes somente 1 vez
+             */
+            //add_action('init', array($glossary, 'recursive_glossary_post_a'));
+            //add_action('init', array($glossary, 'recursive_glossary_post_b'));
+        }
     }
 }
 
@@ -139,14 +141,32 @@ function query_arquivo_principal($query)
     if ($query->is_post_type_archive('obras') && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
     }
-    if ($query->is_tax() && !is_admin() && $query->is_main_query()) {
+
+    if ($query->is_tax(array('classificacao','nucleo')) && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
     }
+
+    if ($query->is_tax(array('autor_a_z', 'obra_a_z')) && !is_admin() && $query->is_main_query()) {
+        $query->set('posts_per_page', '-1');
+    }
+
     if ($query->is_post_type_archive('autores') && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '20');
         $query->set('orderby', 'post_title');
         $query->set('order', 'ASC');
     }
+}
+
+/**
+ * Pass in a taxonomy value that is supported by WP's `get_taxonomy`
+ * and you will get back the url to the archive view.
+ * @param $taxonomy string|int
+ * @return string
+ */
+function get_taxonomy_archive_link(string $taxonomy = null)
+{
+    $tax = get_taxonomy($taxonomy);
+    echo get_bloginfo('url') . '/' . $tax->rewrite['slug'];
 }
 
 /**
