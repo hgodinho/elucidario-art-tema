@@ -23,16 +23,19 @@
 ## 0.5
 ### added
 - inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php
+- taxonomy-autor_a_z.php
 
 ### changed
 - archive-autores.php
-- function.php
+- functions.php
 - single-autores.php
 - taxonomy-classificacao.php
-- template-partes/autor/content-obras-do-autor.php
+- template-parts/autor/content-obras-do-autor.php
 - template-parts/autor/content-lista-autor.php
+- template-parts/jumbotron-home.php
 - single-wiki_ema-nucleos.php
 - taxonomy-nucleo.php
+- taxonomy-ambiente.php
 
 ### removed
 - taxonomy-tipo_autor.php
