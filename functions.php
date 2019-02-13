@@ -79,7 +79,7 @@ function wikiema_wp_setup()
     /**
      * Cria taxonomias para menu alfabético.
      */
-    if (!taxonomy_exists('autor_a_z') && !taxonomy_exists('obra_a_z')) {
+    //if (!taxonomy_exists('autor_a_z') && !taxonomy_exists('obra_a_z')) {
         if (class_exists('WP_Glossary_Bootstrap')) {
             $tax_name_a = 'autor_a_z';
             $tax_name_b = 'obra_a_z';
@@ -87,6 +87,7 @@ function wikiema_wp_setup()
             $post_types_b = array('obras');
             $slug_rewrite_a = PLUGIN_SLUG . '/autor-a-z';
             $slug_rewrite_b = PLUGIN_SLUG . '/obra-a-z';
+            $show_ui = true;
 
             $glossary = new WP_Glossary_Bootstrap(
                 $tax_name_a,
@@ -94,9 +95,10 @@ function wikiema_wp_setup()
                 $post_types_a,
                 $post_types_b,
                 $slug_rewrite_a,
-                $slug_rewrite_b
+                $slug_rewrite_b,
+                $show_ui
             );
-            add_action('save_post', array($glossary, 'auto_glossary_on_save'));
+            //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
 
             /**
              * chamar actions seguintes somente 1 vez
@@ -104,7 +106,7 @@ function wikiema_wp_setup()
             //add_action('init', array($glossary, 'recursive_glossary_post_a'));
             //add_action('init', array($glossary, 'recursive_glossary_post_b'));
         }
-    }
+    //}
 }
 
 /**
@@ -142,7 +144,7 @@ function query_arquivo_principal($query)
         $query->set('posts_per_page', '9');
     }
 
-    if ($query->is_tax(array('classificacao','nucleo')) && !is_admin() && $query->is_main_query()) {
+    if ($query->is_tax(array('classificacao', 'nucleo')) && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
     }
 

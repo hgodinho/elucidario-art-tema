@@ -40,8 +40,9 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
             string $tax_name_b = NULL,
             array $post_types_a = array('post'), 
             array $post_types_b = array('post'), 
-            string $slug_rewrite_a = null, 
-            string $slug_rewrite_b = null)
+            string $slug_rewrite_a = NULL, 
+            string $slug_rewrite_b = NULL,
+            bool $show_ui)
         {
             if (!taxonomy_exists( $tax_name_a ) && $tax_name_a != NULL ) {
                 register_taxonomy(
@@ -49,12 +50,12 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                     $post_types_a,
                     array(
                         'public' => true,
-                        'show_ui' => true,
+                        'show_ui' => $show_ui,
                         'rewrite' => array('slug' => $slug_rewrite_a),
                         'hierarchical' => true,
                     )
                 );
-                return $post_types_a;
+                //return $post_types_a;
                 //add_action('save_post', array($this, 'auto_glossary_on_save'));
             }
 
@@ -64,12 +65,12 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                     $post_types_b,
                     array(
                         'public' => true,
-                        'show_ui' => true,
+                        'show_ui' => $show_ui,
                         'rewrite' => array('slug' => $slug_rewrite_b),
                         'hierarchical' => true,
                     )
                 );
-                return $post_types_b;
+                //return $post_types_b;
                 //add_action('save_post', array($this, 'auto_glossary_on_save'));
             }
         }
@@ -115,7 +116,6 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                 $args = array(
                     'post_type' => 'autores',
                     'posts_per_page' => -1,
-                    //'show_ui' => true,
                 );
                 $posts = get_posts($args);
                 
@@ -140,9 +140,8 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                 $taxonomy = 'obra_a_z';
                 $alphabet = array();
                 $args = array(
-                    'post_type' => 'obra',
+                    'post_type' => 'obras',
                     'posts_per_page' => -1,
-                    //'show_ui' => true,
                 );
                 $posts = get_posts($args);
                 
