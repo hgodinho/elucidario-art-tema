@@ -29,9 +29,9 @@ $count = $wp_query->found_posts;
                 <h1>
                     <?php single_term_title();?>
                     <span class="small text-muted">
-                        <?php 
-                        echo ' → ';
-                        echo $count; ?> autores.
+                        <?php
+echo ' → ';
+echo $count; ?> autores.
                     </span>
                 </h1>
                 <p>

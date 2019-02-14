@@ -43,12 +43,21 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
             string $slug_rewrite_a = null,
             string $slug_rewrite_b = null) {
             if (!taxonomy_exists($tax_name_a) && $tax_name_a != null) {
+            string $tax_name_a = NULL,
+            string $tax_name_b = NULL,
+            array $post_types_a = array('post'), 
+            array $post_types_b = array('post'), 
+            string $slug_rewrite_a = NULL, 
+            string $slug_rewrite_b = NULL,
+            bool $show_ui)
+        {
+            if (!taxonomy_exists( $tax_name_a ) && $tax_name_a != NULL ) {
                 register_taxonomy(
                     $tax_name_a,
                     $post_types_a,
                     array(
                         'public' => true,
-                        'show_ui' => true,
+                        'show_ui' => $show_ui,
                         'rewrite' => array('slug' => $slug_rewrite_a),
                         'hierarchical' => true,
                     )
@@ -63,7 +72,7 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                     $post_types_b,
                     array(
                         'public' => true,
-                        'show_ui' => true,
+                        'show_ui' => $show_ui,
                         'rewrite' => array('slug' => $slug_rewrite_b),
                         'hierarchical' => true,
                     )
