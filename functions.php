@@ -96,13 +96,13 @@ function wikiema_wp_setup()
                 $slug_rewrite_a,
                 $slug_rewrite_b
             );
-            add_action('save_post', array($glossary, 'auto_glossary_on_save'));
+            //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
 
             /**
              * chamar actions seguintes somente 1 vez
              */
             //add_action('init', array($glossary, 'recursive_glossary_post_a'));
-            //add_action('init', array($glossary, 'recursive_glossary_post_b'));
+            add_action('init', array($glossary, 'recursive_glossary_post_b'));
         }
     }
 }
