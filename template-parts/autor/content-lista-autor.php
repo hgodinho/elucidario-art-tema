@@ -12,7 +12,7 @@
 
 
 <div class="list-group">
-    <a href="<?php the_permalink();?>" class="">
+    <a href="<?php the_permalink();?>" class="text-decoration-none">
         <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             <span>
                 <?php the_title();

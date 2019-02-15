@@ -2,7 +2,7 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.5
+ * @version 0.6
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  */
@@ -81,30 +81,31 @@ function wikiema_wp_setup()
      */
     //if (!taxonomy_exists('autor_a_z') && !taxonomy_exists('obra_a_z')) {
         if (class_exists('WP_Glossary_Bootstrap')) {
-            $tax_name_a = 'autor_a_z';
-            $tax_name_b = 'obra_a_z';
-            $post_types_a = array('autores');
-            $post_types_b = array('obras');
-            $slug_rewrite_a = PLUGIN_SLUG . '/autor-a-z';
-            $slug_rewrite_b = PLUGIN_SLUG . '/obra-a-z';
-            $show_ui = true;
-
-            $glossary = new WP_Glossary_Bootstrap(
-                $tax_name_a,
-                $tax_name_b,
-                $post_types_a,
-                $post_types_b,
-                $slug_rewrite_a,
-                $slug_rewrite_b,
-                $show_ui
-            );
+            /*
+                $tax_name_1 = 'autor_a_z',
+                $tax_name_2 = 'obra_a_z',
+                $post_types_1 = array('autores'),
+                $post_types_2 = array('obras'),
+                $slug_rewrite_1 = PLUGIN_SLUG . '/autor-a-z',
+                $slug_rewrite_2 = PLUGIN_SLUG . '/obra-a-z',
+                $show_ui = true,
+            */
+            $glossary = new WP_Glossary_Bootstrap( 
+                'autor_a_z',
+                'obra_a_z',
+                array('autores'),
+                array('obras'),
+                PLUGIN_SLUG . '/autor-a-z',
+                PLUGIN_SLUG . '/obra-a-z',
+                true
+             );
             //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
 
             /**
              * chamar actions seguintes somente 1 vez
              */
-            //add_action('init', array($glossary, 'recursive_glossary_post_a'));
-            add_action('init', array($glossary, 'recursive_glossary_post_b'));
+            //add_action('init', array($glossary, 'recursive_glossary_post_1'));
+            //add_action('init', array($glossary, 'recursive_glossary_post_2'));
         }
     //}
 }

@@ -1,23 +1,32 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.5`
+- @version `0.6`
 - @source https://emaklabin.org.br
 
 ***
 ## @todo
-- arrumar menu 
-> adicionado a classe wp-bootstrap-navwalker @source https://github.com/wp-bootstrap/wp-bootstrap-navwalker @status em teste
 
 - arrumar paginação da lista de obras de autores
-> o problema está no CPT. como o autor é criado em formato 'post' (hierarchical => false), não consigo criar uma paginação dentro dele, uma vez que não é possivel transformar um post em archive-page. precisa de uma outra solução que possa criar algum tipo de paginação com query no mb-relationships
-
-> @update [2019-02-05] pode ser que usando a paginação em ordem alfabetica solucione, uma vez que o core dela é em custom taxonomy. continuar desenvolvimento da classe inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php
 
 - arrumar searchform 
 
 - desenhar a home
 
 - alerta de pre-alfa
+
+## `0.6`
+### added
+- taxonomy-obra_a_z.php
+
+### changed
+- archive-autor.php
+- archive-obra.php
+- estilos.php
+- functions.php
+- alphabetical pagination class
+- content-lista-autor.php
+- header-breadcruumb.php
+- header-menu.php
 
 ***
 ## 0.5
