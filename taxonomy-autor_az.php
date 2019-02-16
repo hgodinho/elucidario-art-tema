@@ -1,6 +1,6 @@
 <?php
 /**
- * Template para taxonomia autor_az single term
+ * template para taxonomia autor_az single term
  *
  * @package WordPress
  * @subpackage Wiki-Ema

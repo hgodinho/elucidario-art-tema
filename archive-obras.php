@@ -47,7 +47,7 @@ echo $count; ?> itens.
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap(
         null,
-        'obra_a_z',
+        'obra_az',
         null,
         array('obras'),
         null,

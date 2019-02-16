@@ -16,7 +16,7 @@
 
 ## `0.6`
 ### added
-- taxonomy-obra_a_z.php
+- taxonomy-obra_az.php
 
 ### changed
 - archive-autor.php
@@ -32,7 +32,7 @@
 ## 0.5
 ### added
 - inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php
-- taxonomy-autor_a_z.php
+- taxonomy-autor_az.php
 
 ### changed
 - archive-autores.php

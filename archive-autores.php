@@ -45,7 +45,7 @@ MB_Relationships_API::each_connected(array(
         <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap(
-        'autor_a_z',
+        'autor_az',
         null,
         array('autores'),
         null,
