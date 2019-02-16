@@ -79,35 +79,26 @@ function wikiema_wp_setup()
     /**
      * Cria taxonomias para menu alfabético.
      */
-    //if (!taxonomy_exists('autor_a_z') && !taxonomy_exists('obra_a_z')) {
+    if (!taxonomy_exists('autor_az') && !taxonomy_exists('obra_az')) {
         if (class_exists('WP_Glossary_Bootstrap')) {
-            /*
-                $tax_name_1 = 'autor_a_z',
-                $tax_name_2 = 'obra_a_z',
-                $post_types_1 = array('autores'),
-                $post_types_2 = array('obras'),
-                $slug_rewrite_1 = PLUGIN_SLUG . '/autor-a-z',
-                $slug_rewrite_2 = PLUGIN_SLUG . '/obra-a-z',
-                $show_ui = true,
-            */
-            $glossary = new WP_Glossary_Bootstrap( 
-                'autor_a_z',
-                'obra_a_z',
+            $glossary = new WP_Glossary_Bootstrap(
+                'autor_az',
+                'obra_az',
                 array('autores'),
                 array('obras'),
                 PLUGIN_SLUG . '/autor-a-z',
                 PLUGIN_SLUG . '/obra-a-z',
                 true
-             );
+            );
             //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
 
             /**
              * chamar actions seguintes somente 1 vez
              */
-            //add_action('init', array($glossary, 'recursive_glossary_post_1'));
-            //add_action('init', array($glossary, 'recursive_glossary_post_2'));
+            add_action('init', array($glossary, 'recursive_glossary_post_1'));
+            add_action('init', array($glossary, 'recursive_glossary_post_2'));
         }
-    //}
+    }
 }
 
 /**
@@ -149,7 +140,7 @@ function query_arquivo_principal($query)
         $query->set('posts_per_page', '9');
     }
 
-    if ($query->is_tax(array('autor_a_z', 'obra_a_z')) && !is_admin() && $query->is_main_query()) {
+    if ($query->is_tax(array('autor_az', 'obra_az')) && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '-1');
     }
 
@@ -184,4 +175,4 @@ add_action('pre_get_posts', 'query_arquivo_principal');
  * add_filter
  */
 add_filter('image_size_names_choose', 'tamanho_imagem_personalizado');
-add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
+//add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);

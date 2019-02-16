@@ -25,13 +25,11 @@
 <div class="container-flex sticky-top bg-primary border-bottom shadow-lg ">
     <nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
         <div class="container">
-
-            <button class="navbar-toggler rounded-circle shadow-lg laranja" type="button" data-toggle="collapse" data-target="#menuWikiEma"
+            <button class="navbar-toggler rounded-circle shadow-lg nav-bar-toggle-color" type="button" data-toggle="collapse" data-target="#menuWikiEma"
                 aria-controls="menuWikiEma" aria-expanded="false" aria-label="Alternar navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
-            <a class="navbar-brand" href="/wiki-ema">Wiki-Ema <span class="badge badge-pill badge-light" style="font-size:10px">pré-alfa</span></a>
+            <span class="mr-5"><a class="navbar-brand" href="/wiki-ema">Wiki-Ema</a><a href="https://github.com/hgodinho/wiki-ema-template/blob/master/README.md" class="badge badge-pill badge-light mt-2" style="font-size:11px">pré-alfa</a></span>
             <?php
 		wp_nav_menu( array(
 			'theme_location'    => 'primario',

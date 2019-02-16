@@ -43,7 +43,7 @@ echo $wp_query->found_posts; ?> itens.
         <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
-    $glossary_menu = $glossary->glossary_menu_front_end('obra_a_z', null);
+    $glossary_menu = $glossary->glossary_menu_front_end('obra_az', null);
 }
 $wp_query->set('posts_per_page', -1);?>
         <div class="row pb-4">

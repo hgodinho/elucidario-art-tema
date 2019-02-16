@@ -53,7 +53,7 @@ if (class_exists('WP_Glossary_Bootstrap')) {
         null,
         null
     );
-    $glossary_menu = $glossary->glossary_menu_front_end( 'autor_a_z', NULL );
+    $glossary_menu = $glossary->glossary_menu_front_end( 'autor_az', NULL );
 }
 
 if (have_posts()): while (have_posts()): the_post();

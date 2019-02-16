@@ -1,6 +1,6 @@
 <?php
 /**
- * template para taxonomia autor_a_z single term
+ * Template para taxonomia autor_az single term
  *
  * @package WordPress
  * @subpackage Wiki-Ema
@@ -45,7 +45,7 @@ echo $count; ?> autores.
     <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
-    $glossary_menu = $glossary->glossary_menu_front_end('autor_a_z', null);
+    $glossary_menu = $glossary->glossary_menu_front_end('autor_az', null);
 }
 $wp_query->set('posts_per_page', -1);
 

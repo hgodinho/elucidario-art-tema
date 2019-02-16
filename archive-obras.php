@@ -54,7 +54,7 @@ if (class_exists('WP_Glossary_Bootstrap')) {
         null,
         null
     );
-    $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_a_z');
+    $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_az');
 }
 ?>
         <div class="row pb-4">
