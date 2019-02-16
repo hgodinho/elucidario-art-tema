@@ -1,12 +1,12 @@
 <?php
 /**
- * template para taxonomia autor_a_z single term
+ * template para taxonomia autor_az single term
  *
  * @package WordPress
  * @subpackage Wiki-Ema
  *
  * @version 0.1
- * @since 0.5
+ * @since 0.3
  *
  * @author hgodinho.com
  */
@@ -14,6 +14,10 @@
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
 
+MB_Relationships_API::each_connected(array(
+    'id' => 'obras_to_autores',
+    'to' => $wp_query->posts, // Set to $my_query.
+));
 $count = $wp_query->found_posts;
 ?>
 
@@ -26,9 +30,8 @@ $count = $wp_query->found_posts;
                     <?php single_term_title();?>
                     <span class="small text-muted">
                         <?php
-//var_dump($wp_query->found_posts);
 echo ' → ';
-echo $wp_query->found_posts; ?> itens.
+echo $count; ?> autores.
                     </span>
                 </h1>
                 <p>
@@ -37,24 +40,22 @@ echo $wp_query->found_posts; ?> itens.
             </div>
         </div>
     </div>
-
-
-    <div class="container">
-        <?php
+</main>
+<div class="container">
+    <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
-    $glossary_menu = $glossary->glossary_menu_front_end('obra_a_z', null);
+    $glossary_menu = $glossary->glossary_menu_front_end('autor_az', null);
 }
-$wp_query->set('posts_per_page', -1);?>
-        <div class="row pb-4">
-            <?php
+$wp_query->set('posts_per_page', -1);
+
 if (have_posts()): while (have_posts()): the_post();
-        get_template_part('template-parts/obra/content', 'cartao-obra');
+        get_template_part('template-parts/autor/content', 'lista-autor');
     endwhile;
-endif;?>
-        </div>
-    </div>
-</main>
+endif;
+?>
+</div>
+
 <?php
 /**
  * a mágina termina aqui

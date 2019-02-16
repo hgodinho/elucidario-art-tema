@@ -11,6 +11,9 @@ require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/class-wp-bootstrap-navwalker.php';
 
+include(get_template_directory() . '/ajax/cartoes-obras.php');
+include(get_template_directory() . '/ajax/lista-autores.php');
+
 //const PLUGIN_SLUG = "wiki-ema";
 
 /**
@@ -47,8 +50,15 @@ function wikiema_enqueue_scripts()
     /**
      * @subpackage OwlCarousel
      */
+    $versao = rand(0,999);
     wp_enqueue_script('owlcarousel', get_template_directory_uri() . '/inc/owl/owl.carousel.min.js', $dependencies);
     wp_enqueue_script('owl-slide', get_template_directory_uri() . '/js/owl-slide.js', $dependencies);
+    wp_enqueue_script('wiki-ema-app', get_template_directory_uri() . '/js/wiki-ema.js', null, $versao, true);
+
+    $wp_wiki_ema_vars = array(
+        'ajaxurl' => admin_url('admin-ajax.php')
+    );
+    wp_localize_script( 'wiki-ema-app', 'wiki_ema', $wp_wiki_ema_vars );
 
 }
 
@@ -79,11 +89,11 @@ function wikiema_wp_setup()
     /**
      * Cria taxonomias para menu alfabético.
      */
-    //if (!taxonomy_exists('autor_a_z') && !taxonomy_exists('obra_a_z')) {
+    //if (!taxonomy_exists('autor_az') && !taxonomy_exists('obra_az')) {
         if (class_exists('WP_Glossary_Bootstrap')) {
             /*
-                $tax_name_1 = 'autor_a_z',
-                $tax_name_2 = 'obra_a_z',
+                $tax_name_1 = 'autor_az',
+                $tax_name_2 = 'obra_az',
                 $post_types_1 = array('autores'),
                 $post_types_2 = array('obras'),
                 $slug_rewrite_1 = PLUGIN_SLUG . '/autor-a-z',
@@ -91,8 +101,8 @@ function wikiema_wp_setup()
                 $show_ui = true,
             */
             $glossary = new WP_Glossary_Bootstrap( 
-                'autor_a_z',
-                'obra_a_z',
+                'autor_az',
+                'obra_az',
                 array('autores'),
                 array('obras'),
                 PLUGIN_SLUG . '/autor-a-z',
@@ -149,7 +159,7 @@ function query_arquivo_principal($query)
         $query->set('posts_per_page', '9');
     }
 
-    if ($query->is_tax(array('autor_a_z', 'obra_a_z')) && !is_admin() && $query->is_main_query()) {
+    if ($query->is_tax(array('autor_az', 'obra_az')) && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '-1');
     }
 

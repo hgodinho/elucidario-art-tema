@@ -47,14 +47,14 @@ echo $count; ?> itens.
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap(
         null,
-        'obra_a_z',
+        'obra_az',
         null,
         array('obras'),
         null,
         null,
         null
     );
-    $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_a_z');
+    $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_az');
 }
 ?>
         <div class="row pb-4">

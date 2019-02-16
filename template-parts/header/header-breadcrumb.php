@@ -67,24 +67,24 @@ if (!is_home()) {
             single_term_title();
             echo '</li>';
         }
-    } elseif (is_tax('obra_a_z')) {
+    } elseif (is_tax('obra_az')) {
         //var_dump($wp_query);
         echo '<li class="breadcrumb-item"><a href="';
         echo get_post_type_archive_link('obras');
         echo '">';
         echo 'Obras</a>';
-        if (is_tax('obra_a_z')) {
+        if (is_tax('obra_az')) {
             echo '</li><li class="breadcrumb-item active">';
             single_term_title();
             echo '</li>';
         }
-    } elseif (is_tax('autor_a_z')) {
+    } elseif (is_tax('autor_az')) {
         //var_dump($wp_query);
         echo '<li class="breadcrumb-item"><a href="';
         echo get_post_type_archive_link('autores');
         echo '">';
         echo 'Autores</a>';
-        if (is_tax('autor_a_z')) {
+        if (is_tax('autor_az')) {
             echo '</li><li class="breadcrumb-item active">';
             single_term_title();
             echo '</li>';

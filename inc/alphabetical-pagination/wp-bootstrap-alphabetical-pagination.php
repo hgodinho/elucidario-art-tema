@@ -124,8 +124,8 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
          */
         public function recursive_glossary_post_1()
         {
-            if (!has_term('', 'autor_a_z')) {
-                $taxonomy = 'autor_a_z';
+            if (!has_term('', 'autor_az')) {
+                $taxonomy = 'autor_az';
                 $alphabet = array();
                 $args = array(
                     'post_type' => 'autores',
@@ -151,8 +151,8 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
          */
         public function recursive_glossary_post_2()
         {
-            if (!has_term('', 'obra_a_z')) {
-                $taxonomy = 'obra_a_z';
+            if (!has_term('', 'obra_az')) {
+                $taxonomy = 'obra_az';
                 $alphabet = array();
                 $args = array(
                     'post_type' => 'obras',
@@ -198,9 +198,9 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_1)) ? "current-menu-item" : "menu-item";
                     if (in_array($i, $alphabet)) {
-                        printf('<li class="page-item az-char %s"><a href="%s" class="page-link">%s</a></li>', $current, get_term_link($i, $tax_name_1), strtoupper($i));
+                        printf('<li class="page-item ' . $tax_name_1 . ' %s"><a href="%s" class="page-link">%s</a></li>', $current, get_term_link($i, $tax_name_1), strtoupper($i));
                     } else {
-                        printf('<li class="page-item az-char %s disabled"><span class="page-link">%s</span></li>', $current, strtoupper($i));
+                        printf('<li class="page-item ' . $tax_name_1 . ' %s disabled"><span class="page-link">%s</span></li>', $current, strtoupper($i));
                     }
                 endforeach;
                 ?>
@@ -227,9 +227,9 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_2)) ? "current-menu-item" : "menu-item";
                     if (in_array($i, $alphabet)) {
-                        printf('<li class="page-item az-char %s"><a href="%s" class="page-link">%s</a></li>', $current, get_term_link($i, $tax_name_2), strtoupper($i));
+                        printf('<li class="page-item ' . $tax_name_2 . ' %s"><a href="%s" class="page-link">%s</a></li>', $current, get_term_link($i, $tax_name_2), strtoupper($i));
                     } else {
-                        printf('<li class="page-item az-char %s disabled"><span class="page-link">%s</span></li>', $current, strtoupper($i));
+                        printf('<li class="page-item ' . $tax_name_2 . ' %s disabled"><span class="page-link">%s</span></li>', $current, strtoupper($i));
                     }
                 endforeach;
                 ?>
