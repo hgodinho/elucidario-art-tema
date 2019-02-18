@@ -29,7 +29,7 @@
                 aria-controls="menuWikiEma" aria-expanded="false" aria-label="Alternar navegação">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <span class="mr-5"><a class="navbar-brand" href="/wiki-ema">Wiki-Ema</a><a href="https://github.com/hgodinho/wiki-ema-template/blob/master/README.md" class="badge badge-pill badge-light mt-2" style="font-size:11px">pré-alfa</a></span>
+            <span class="mr-5"><a class="navbar-brand" href="/wiki-ema">Wiki-Ema</a><a href="https://github.com/hgodinho/wiki-ema-template/blob/master/README.md" class="badge badge-pill badge-light mt-2" target="blank" style="font-size:11px">pré-alfa</a></span>
             <?php
 		wp_nav_menu( array(
 			'theme_location'    => 'primario',

@@ -91,8 +91,6 @@ function wikiema_wp_setup()
      */
     if (!taxonomy_exists('autor_az') && !taxonomy_exists('obra_az')) {
         if (class_exists('WP_Glossary_Bootstrap')) {
-            $glossary = new WP_Glossary_Bootstrap(
-
             $glossary = new WP_Glossary_Bootstrap( 
                 'autor_az',
                 'obra_az',
@@ -107,8 +105,8 @@ function wikiema_wp_setup()
             /**
              * chamar actions seguintes somente 1 vez
              */
-            add_action('init', array($glossary, 'recursive_glossary_post_1'));
-            add_action('init', array($glossary, 'recursive_glossary_post_2'));
+            //add_action('init', array($glossary, 'recursive_glossary_post_1'));
+            //add_action('init', array($glossary, 'recursive_glossary_post_2'));
         }
     }
 }
