@@ -8,10 +8,10 @@
  * @author hgodinho <ola@hgodinho.com>
  */
 
- function lista_autores(){
+ function wiki_ema_listar_autores(){
     echo 'listar autores deu certo';
     wp_die();
  }
 
- add_action('wp_ajax_lista_autores','lista_autores');
- add_action('wp_ajax_nopriv_lista_autores','lista_autores');
+ add_action('wp_ajax_wiki_ema_listar_autores','wiki_ema_listar_autores');
+ add_action('wp_ajax_nopriv_wiki_ema_listar_autores','wiki_ema_listar_autores');

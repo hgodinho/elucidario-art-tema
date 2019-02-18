@@ -9,7 +9,7 @@ jQuery(function ($) {
             url: wiki_ema.ajaxurl,
             type: 'GET',
             data: {
-                action: 'lista_autores'
+                action: 'wiki_ema_listar_autores'
             },
             beforeSend: function (){
                 console.log('carregando lista de autores...');
@@ -22,16 +22,19 @@ jQuery(function ($) {
             console.log('ops, listar posts deu errado');
         })
     }
+
     listarAutores();
 
     /**
      * Ação de listar autores
      */
     $('.autor_az').on('click', function(){
+
         listarAutores();
         $('.autor_az').removeClass('active');
         $(this).addClass('active');
     })
+
 
 
     /**
@@ -43,7 +46,7 @@ jQuery(function ($) {
             url: wiki_ema.ajaxurl,
             type: 'GET',
             data: {
-                action: 'cartoes_obras'
+                action: 'wiki_ema_cartoes_obras'
             },
             beforeSend: function (){
                 console.log('carregando cartoes obras...');
