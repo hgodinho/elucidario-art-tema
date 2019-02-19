@@ -1,5 +1,12 @@
 jQuery(function ($) {
 
+    if($(window).width() < 720){
+        $('#alphabet-menu').addClass('btn-group-vertical').removeClass('btn-group');
+    } else{
+        $('#alphabet-menu').addClass('btn-group').removeClass('btn-group-vertical');
+    }
+
+
     /**
      * Listar Autores ajax
      */
@@ -16,14 +23,15 @@ jQuery(function ($) {
             }
         })
         .done(function(resposta){
-            console.log(resposta);
+            //console.log(resposta);
+            $('#lista-autores').html(resposta);
         })
         .fail(function(){
             console.log('ops, listar posts deu errado');
         })
     }
 
-    listarAutores();
+    //listarAutores();
 
     /**
      * Ação de listar autores

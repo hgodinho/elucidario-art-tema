@@ -16,6 +16,7 @@
         <li class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
             <span>
                 <?php the_title();
+
                 $fichatecnica_autor = get_field('ficha_tecnica');
                 if ($fichatecnica_autor['dataperiodo_inicial']) {
                     echo ', <span class="text-muted">(';
@@ -30,7 +31,7 @@
                 }?>
             </span>
 
-            <?php $obras_contagem = count($post->connected);?>
+            <?php $obras_contagem = count($post->connected); ?>
 
             <span class="badge badge-secondary badge-pill">
                 <?php echo $obras_contagem; ?></span>

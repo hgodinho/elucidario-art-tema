@@ -26,7 +26,6 @@ $count = $wp_query->found_posts;
                     <?php single_term_title();?>
                     <span class="small text-muted">
                         <?php
-//var_dump($wp_query->found_posts);
 echo ' → ';
 echo $wp_query->found_posts; ?> itens.
                     </span>
@@ -40,19 +39,27 @@ echo $wp_query->found_posts; ?> itens.
 
 
     <div class="container">
-        <?php
+        <div class="row">
+            <div class="col col-md-12 col-2">
+                <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
-    $glossary_menu = $glossary->glossary_menu_front_end('obra_az', null);
-}
-$wp_query->set('posts_per_page', -1);?>
-        <div class="row pb-4">
-            <?php
+    $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_az');
+}?>
+
+            </div>
+            <?php $wp_query->set('posts_per_page', -1);?>
+            <div class="col col-md-12 col-10">
+                <div class="row">
+                    <?php
 if (have_posts()): while (have_posts()): the_post();
         get_template_part('template-parts/obra/content', 'cartao-obra');
     endwhile;
 endif;?>
+                </div>
+            </div>
         </div>
+    </div>
     </div>
 </main>
 <?php
