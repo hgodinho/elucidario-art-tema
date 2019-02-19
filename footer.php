@@ -2,7 +2,7 @@
 
 </div><!-- /.container -->
 <!-- rodapé wiki -->
-<footer class="blog-footer container-fluid rodape-bg-color mt-5 border-top border-white shadow-lg">
+<footer class="blog-footer container-fluid bg-primary mt-5 border-top border-white shadow-lg">
 	<div class="container bg-transparent text-light">
 		<div class="row py-4">
 			<div class="col-md-12 col-lg-4 py-4">
@@ -35,7 +35,7 @@
 							com
 							terceiros.</small>
 					</div>
-					<button type="submit" class="btn btn-primary">Assinar</button>
+					<button type="submit" class="btn btn-success">Assinar</button>
 				</form>
 			</div>
 		</div>

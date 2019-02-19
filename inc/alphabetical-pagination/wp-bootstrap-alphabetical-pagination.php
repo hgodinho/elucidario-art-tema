@@ -31,10 +31,10 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
          * @param string $tax_name_1
          * @param string $tax_name_2
          * @param array $post_types_1
-
          * @param array $post_types_3
          * @param string $slug_rewrite_1
          * @param string $slug_rewrite_2
+         * @param bool $show_ui
          */
         public function __construct(
             string $tax_name_1 = null,
@@ -44,7 +44,18 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
             string $slug_rewrite_1 = null,
             string $slug_rewrite_2 = null,
             bool $show_ui = null) {
+            /*
+            if (!taxonomy_exists($tax_name_1) && $tax_name_1 != null) {
 
+            string $tax_name_1 = NULL,
+            string $tax_name_2 = NULL,
+            array $post_types_1 = array('post'),
+            array $post_types_2 = array('post'),
+            string $slug_rewrite_1 = NULL,
+            string $slug_rewrite_2 = NULL,
+            bool $show_ui)
+
+            {*/
             if (!taxonomy_exists($tax_name_1) && $tax_name_1 != null) {
                 register_taxonomy(
                     $tax_name_1,
@@ -57,12 +68,11 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                         'hierarchical' => true,
                     )
                 );
-                //return $post_types_1;
+                //return $post_types_1
                 //add_action('save_post', array($this, 'auto_glossary_on_save'));
             }
 
             if (!taxonomy_exists($tax_name_2) && $tax_name_2 != null) {
-
                 register_taxonomy(
                     $tax_name_2,
                     $post_types_2,
@@ -180,12 +190,11 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                     }
                 }
                 ?>
-<div class="d-inline-flex">
-    <div id="alphabet-menu" role="group" class="btn-group btn-group-toggle flex" data-toggle="buttons">
-        <!-- <ul class="pagination d-flex"> -->
-        <?php
+                <div id="alphabet-menu" class="pagination d-flex justify-content-center">
+                    <ul class="pagination d-flex">
+                        <?php
 foreach (range('a', 'z') as $i):
-                    $current = ($i == get_query_var($tax_name_1)) ? "btn btn-secondary current-menu-item active" : "menu-item";
+                    $current = ($i == get_query_var($tax_name_1)) ? "current-menu-item" : "menu-item";
                     if (in_array($i, $alphabet)) {
                         printf('<a href="%s" class="btn btn-secondary ' . $tax_name_1 . ' page-link %s" >%s</a>', $current, get_term_link($i, $tax_name_1), strtoupper($i));
                     } else {
@@ -211,9 +220,9 @@ foreach (range('a', 'z') as $i):
                     }
                 }
                 ?>
-<div id="alphabet-menu" class="pagination d-flex justify-content-center">
-    <ul class="pagination">
-        <?php
+                <div id="alphabet-menu" class="pagination d-flex justify-content-center">
+                    <ul class="pagination">
+                        <?php
 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_2)) ? "current-menu-item" : "menu-item";
                     if (in_array($i, $alphabet)) {
