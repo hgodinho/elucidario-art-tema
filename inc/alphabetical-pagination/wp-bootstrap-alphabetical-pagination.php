@@ -196,15 +196,16 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_1)) ? "current-menu-item" : "menu-item";
                     if (in_array($i, $alphabet)) {
-                        printf('<li class="page-item ' . $tax_name_1 . ' %s"><a href="%s" class="page-link">%s</a></li>', $current, get_term_link($i, $tax_name_1), strtoupper($i));
+                        printf('<a href="%s" class="btn btn-secondary ' . $tax_name_1 . ' page-link %s" >%s</a>', $current, get_term_link($i, $tax_name_1), strtoupper($i));
                     } else {
-                        printf('<li class="page-item ' . $tax_name_1 . ' %s disabled"><span class="page-link">%s</span></li>', $current, strtoupper($i));
+                        printf('<a class="btn btn-secondary ' . $tax_name_1 . ' %s disabled page-link" aria-disabled="true" tabindex="-1">%s</a>', $current, strtoupper($i));
                     }
                 endforeach;
                 ?>
-                    </ul>
-                </div>
-                <?php
+        <!-- </ul> -->
+    </div>
+</div>
+<?php
 }
 
             /**

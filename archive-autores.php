@@ -41,7 +41,7 @@ MB_Relationships_API::each_connected(array(
 
         </div>
 
-        
+
         <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap(
@@ -53,13 +53,32 @@ if (class_exists('WP_Glossary_Bootstrap')) {
         null,
         null
     );
-    $glossary_menu = $glossary->glossary_menu_front_end( 'autor_az', NULL );
+    $glossary_menu = $glossary->glossary_menu_front_end('autor_az', null);
 }
 
-if (have_posts()): while (have_posts()): the_post();
-        get_template_part('template-parts/autor/content', 'lista-autor');
+if (!function_exists('wiki_ema_listar_autores')) {
+
+    if (have_posts()): while (have_posts()): the_post();
+
+            get_template_part('template-parts/autor/content', 'lista-autor');
+
+        endwhile;
+    endif;
+
+} else {
+
+    if (have_posts()): while (have_posts()): the_post();
+            ?>
+        <div class="list-group">
+
+            <?php wiki_ema_listar_autores();?>
+        
+        </div>
+        <?php
     endwhile;
-endif;
+    endif;
+}
+
 ?>
     </div>
     <div class="cointainer mt-4">
