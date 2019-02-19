@@ -11,8 +11,8 @@ require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/class-wp-bootstrap-navwalker.php';
 
-include(get_template_directory() . '/ajax/cartoes-obras.php');
-include(get_template_directory() . '/ajax/lista-autores.php');
+include(get_template_directory() . '/ajax/ajax-cartoes-obras.php');
+include(get_template_directory() . '/ajax/ajax-lista-autores.php');
 
 /**
  * CSS
