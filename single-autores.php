@@ -16,7 +16,6 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
 <?php
 while (have_posts()): the_post();
-    //var_dump($wp_query);
     ?>
 
 	<div class="container">

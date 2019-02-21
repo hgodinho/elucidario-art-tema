@@ -12,15 +12,12 @@
  */
 
 get_header();
+get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
 
 <?php
 while (have_posts()): the_post();
     ?>
-
-<!-- Breadcrumb @since 0.2 -->
-<?php get_template_part('template-parts/header/header', 'breadcrumb');?>
-
 <div class="container blog-post">
     <?php 
 $post_object = get_post_meta($post->ID);

@@ -8,6 +8,7 @@
  * @author hgodinho.com
  */
 $term = get_queried_object();
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
 //echo $termslug;
 ?>
@@ -46,6 +47,7 @@ $querybyterm = new WP_Query(
             )
         ),
         'posts_per_page' => '6',
+        'paged' => $paged,
     )
 );
 

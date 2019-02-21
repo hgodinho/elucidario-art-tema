@@ -1,20 +1,30 @@
-<?php 
+<?php
 /**
- * Index da Wiki-ema
- * 
- * Jumbotrom de obra e Obras do mês
- * 
+ * Home-page da Wiki-Ema
+ *
  * @package WordPress
  * @subpackage Wiki-Ema
- * @since 0.1
+ *
+ * @version 0.1
+ * @since 0.3
+ *
+ * @author hgodinho.com
  */
-
 get_header();
+?>
 
-get_template_part('template-parts/jumbotron', 'home'); ?>
+<section id="primary" class="content-area">
+	
+	<?php get_template_part('template-parts/jumbotron', 'home');?>
 
-<div class="blog-main container">
-	<?php get_template_part('template-parts/obra/content', 'obra-do-mes'); ?>
-</div>
+	<main role="main" class="container-fluid">
+		<div class="blog-main container">
+			<?php get_template_part('template-parts/obra/content', 'obra-do-mes');?>
+		</div>
+	</main>
 
-<?php get_footer();?>
+</section>
+
+<?php
+get_footer();
+?>

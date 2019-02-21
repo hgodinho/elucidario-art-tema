@@ -11,8 +11,8 @@ require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/class-wp-bootstrap-navwalker.php';
 
-include(get_template_directory() . '/ajax/ajax-cartoes-obras.php');
-include(get_template_directory() . '/ajax/ajax-lista-autores.php');
+//include(get_template_directory() . '/ajax/ajax-cartoes-obras.php');
+//include(get_template_directory() . '/ajax/ajax-lista-autores.php');
 
 /**
  * CSS
@@ -50,16 +50,17 @@ function wikiema_enqueue_scripts()
      */
     wp_enqueue_script('owlcarousel', get_template_directory_uri() . '/inc/owl/owl.carousel.min.js', $dependencies);
     wp_enqueue_script('owl-slide', get_template_directory_uri() . '/js/owl-slide.js', $dependencies);
-    
+
     /**
      * Ajax Insert
      */
-    $versao = rand(0,999);
+
+    $versao = rand(0, 999);
     wp_enqueue_script('wiki-ema-app', get_template_directory_uri() . '/js/wiki-ema.js', null, $versao, true);
     $wp_wiki_ema_vars = array(
-        'ajaxurl' => admin_url('admin-ajax.php')
+        'ajaxurl' => admin_url('admin-ajax.php'),
     );
-    wp_localize_script( 'wiki-ema-app', 'wiki_ema', $wp_wiki_ema_vars );
+    wp_localize_script('wiki-ema-app', 'wiki_ema', $wp_wiki_ema_vars);
 
 }
 
@@ -92,7 +93,7 @@ function wikiema_wp_setup()
      */
     if (!taxonomy_exists('autor_az') && !taxonomy_exists('obra_az')) {
         if (class_exists('WP_Glossary_Bootstrap')) {
-            $glossary = new WP_Glossary_Bootstrap( 
+            $glossary = new WP_Glossary_Bootstrap(
                 'autor_az',
                 'obra_az',
                 array('autores'),

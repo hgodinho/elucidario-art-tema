@@ -55,7 +55,6 @@ if (!empty($terms) && !is_wp_error($terms)) {
 foreach ($terms as $term) {
         $imagem1 = get_field('imagem_1', $term);
         ?>
-
             <div class="col-md-4 mb-5 d-flex justify-content-center">
                 <div class="card d-flex w-100">
                     <img class="card-img-top" src="<?php echo $imagem1['url']; ?>" alt="<?php echo $imagem1['alt']; ?>">

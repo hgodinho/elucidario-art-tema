@@ -34,7 +34,7 @@ function bootstrap_pagination(WP_Query $wp_query = null, $echo = true)
         'total' => $wp_query->max_num_pages,
         'type' => 'array',
         'show_all' => false,
-        'end_size' => 1,
+        'end_size' => 2,
         'mid_size' => 1,
         'prev_next' => true,
         'prev_text' => __('&laquo;'),

@@ -42,18 +42,39 @@ echo $count; ?> autores.
     </div>
 </main>
 <div class="container">
-    <?php
+    <div class="row">
+        <div class="col col-md-12 col-2">
+
+            <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
     $glossary_menu = $glossary->glossary_menu_front_end('autor_az', null);
 }
-$wp_query->set('posts_per_page', -1);
-
-if (have_posts()): while (have_posts()): the_post();
-        get_template_part('template-parts/autor/content', 'lista-autor');
-    endwhile;
-endif;
 ?>
+        </div>
+        <?php $wp_query->set('posts_per_page', -1); ?>
+
+        <div class="col col-md-12 col-10">
+            <?php
+if (!function_exists('wiki_ema_listar_autores')) {
+    if (have_posts()): while (have_posts()): the_post();
+            get_template_part('template-parts/autor/content', 'lista-autor');
+        endwhile;
+    endif;
+} else {
+    if (have_posts()): while (have_posts()): the_post();
+            ?>
+            <div class="list-group" id="lista-autores">
+                <?php wiki_ema_listar_autores();?>
+            </div>
+            <?php
+    endwhile;
+    endif;
+}
+?>
+        </div>
+        
+    </div>
 </div>
 
 <?php
