@@ -10,19 +10,8 @@
  * @source https://github.com/wp-bootstrap/wp-bootstrap-navwalker
  *
  */
-
- /**
-  * @todo arrumar essa condicional que checa se o usuário está logado para corrigir a sobreposição da admin-bar no menu
-  */
-  /*
-  if (is_admin_bar_showing()) {
-    echo '<div class="container-flex fixed-top fixed-top-correcao bg-primary border-bottom shadow-lg">';
-} else {
-    echo '<div class="container-flex fixed-top bg-primary border-bottom shadow-lg">';
-}
-*/
 ?>
-<div class="container-flex sticky-top bg-primary border-bottom shadow-lg ">
+<div class="container-flex sticky-top bg-primary border-bottom shadow-lg" id="menu-wiki-ema">
     <nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
         <div class="container">
             <button class="navbar-toggler rounded-circle shadow-lg nav-bar-toggle-color" type="button" data-toggle="collapse" data-target="#menuWikiEma"

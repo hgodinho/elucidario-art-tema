@@ -62,7 +62,6 @@ if (!function_exists('wiki_ema_listar_autores')) {
         endwhile;
     endif;
 } else {
-
     if (have_posts()): while (have_posts()): the_post();
             ?>
             <div class="list-group" id="lista-autores">

@@ -35,6 +35,8 @@
 
             <?php
 $autor = get_the_ID();
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+//echo $paged;
 $args = array(
     'post_type' => 'obras',
     'post_status' => 'any',
@@ -43,7 +45,7 @@ $args = array(
         'to' => $post->ID,
     ),
     'posts_per_page' => 6,
-    'paged' => $paged,
+    //'paged' => 148,
 );
 $connected = new WP_Query($args);
 ?>

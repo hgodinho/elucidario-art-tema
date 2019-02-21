@@ -11,15 +11,14 @@
 if (have_posts()) {
     $args = array(
         'post_type' => 'obras',
-        'tax_query' => array(
+        'posts_per_page' => 1,
+        'meta_query' => array(
             array(
-                'taxonomy' => 'classificacao',
-                'field' => 'slug',
-                'terms' => 'obra-do-mes',
+                'key' => 'obra_domes',
+                'compare' => '=',
+                'value' => '1',
             ),
         ),
-        'order' => 'ASC',
-        'posts_per_page' => 1,
     );
 
     $loop = new WP_Query($args);

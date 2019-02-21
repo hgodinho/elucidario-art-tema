@@ -9,7 +9,7 @@
  * Modifications @author hgodinho
  */
 
-echo '<div class="container margin-top">';
+echo '<div class="container margin-top" id="breadcrumb-wiki-ema">';
 echo '<div class="breadcrumb-wrap">';
 echo '<nav aria-label="breadcrumb">';
 echo '<ol class="breadcrumb">';

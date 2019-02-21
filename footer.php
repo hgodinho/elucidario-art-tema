@@ -1,7 +1,18 @@
+<?php
+/**
+ * Footer template para Wiki-Ema
+ * 
+ * @package WordPress
+ * @subpackage Wiki-Ema
+ * 
+ * @version 0.1
+ * @since 0.1
+ * 
+ * @author hgodinho.com
+ */
+?>
+</div><!-- / .site-content no header -->
 
-
-</div><!-- /.container -->
-<!-- rodapé wiki -->
 <footer class="blog-footer container-fluid bg-primary mt-5 border-top border-white shadow-lg">
 	<div class="container bg-transparent text-light">
 		<div class="row py-4">
@@ -47,7 +58,5 @@
 </footer>
 
 <?php wp_footer(); ?>
-
 </body>
-
 </html>

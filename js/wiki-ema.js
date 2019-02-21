@@ -1,11 +1,21 @@
-jQuery(function ($) {
+jQuery(document).ready(function ($) {
+
 
     if($(window).width() < 720){
-        $('#alphabet-menu').addClass('btn-group-vertical').removeClass('btn-group');
+        $('#alphabet-menu').addClass('btn-group-vertical').removeClass('btn-group').removeClass('d-flex');
     } else{
         $('#alphabet-menu').addClass('btn-group').removeClass('btn-group-vertical');
-    }
+    }   
 
+    /**
+     * Ação de listar autores
+     */
+    $('.autor_az').on('click', function(){
+        //alert('teste');
+        //listarAutores();
+        $('.autor_az').removeClass('active');
+        $(this).addClass('active');
+    })
 
     /**
      * Listar Autores ajax
@@ -33,15 +43,7 @@ jQuery(function ($) {
 
     //listarAutores();
 
-    /**
-     * Ação de listar autores
-     */
-    $('.autor_az').on('click', function(){
 
-        listarAutores();
-        $('.autor_az').removeClass('active');
-        $(this).addClass('active');
-    })
 
 
 
@@ -68,6 +70,6 @@ jQuery(function ($) {
         })
     }
     //cartoesObras();
-  
+    
 
 })

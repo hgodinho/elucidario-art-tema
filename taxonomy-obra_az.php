@@ -46,7 +46,6 @@ if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
     $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_az');
 }?>
-
             </div>
             <?php $wp_query->set('posts_per_page', -1);?>
             <div class="col col-md-12 col-10">
