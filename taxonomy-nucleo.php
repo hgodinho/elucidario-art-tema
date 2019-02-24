@@ -23,32 +23,21 @@ $count = $wp_query->found_posts;
     <div class="container">
         <div class="row">
             <div class="col-12 pb-4 mb-4">
-                <h1>
-                    <?php single_term_title();?>
-                    <span class="small text-muted">
-                        <?php 
-                        echo ' → ';
-                        echo $count; ?> itens.
-                    </span>
-                </h1>
+                <div class="row">
+                    <?php
+get_template_part('template-parts/header/header', 'archive');?>
+                </div>
                 <p>
-                    <?php echo term_description(); ?>
+                    <?php
+echo term_description(); ?>
                 </p>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-12 col-sm-7 pb-4">
-                <h3>
-                    Obras neste Núcleo
-                </h3>
-            </div>
-            <div class="col-12 col-sm-5 pb-4">
-                <!-- formulario de busca -->
-                <div class="col-12">
-                    <?php get_search_form(); ?>
-                </div>
-                <!-- // formulario de busca -->
+            <div class="col-12">
+                <?php
+get_search_form();?>
             </div>
 
         </div>
@@ -56,10 +45,10 @@ $count = $wp_query->found_posts;
         <!-- cartoes de obras -->
         <div class="row pb-4">
             <?php
-            //var_dump($wp_query);
+//var_dump($wp_query);
 //if (have_posts()): while (have_posts()): the_post();
-        get_template_part('template-parts/obra/content', 'cartao-obra');
-  //  endwhile;
+get_template_part('template-parts/obra/content', 'cartao-obra');
+//  endwhile;
 //endif;
 ?>
         </div>

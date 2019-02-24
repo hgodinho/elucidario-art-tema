@@ -12,7 +12,7 @@
 ***
 ## `0.7`
 ### added
-- template-parts/a-z/content-az-header.php
+- template-parts/header/header-archive.php
 - template-parts/autor/ocntet-tabela-autor.php
 
 ### changed

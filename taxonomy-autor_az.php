@@ -26,7 +26,7 @@ $count = $wp_query->found_posts;
         <!-- a magica inicia aqui -->
         <div class="row">
         <?php
-        get_template_part('template-parts/a-z/content', 'az-header');
+        get_template_part('template-parts/header/header', 'archive');
         ?>
         </div>
     </div>

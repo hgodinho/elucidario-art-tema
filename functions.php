@@ -148,7 +148,7 @@ function query_arquivo_principal($query)
         $query->set('posts_per_page', '9');
     }
 
-    if ($query->is_tax(array('classificacao', 'nucleo')) && !is_admin() && $query->is_main_query()) {
+    if ($query->is_tax(array('classificacao', 'nucleo', 'ambiente')) && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
     }
 

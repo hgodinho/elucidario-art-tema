@@ -26,19 +26,14 @@ $count = $wp_query->found_posts;
             <div class="row">
 
                 <div class="col-12 pb-4 border-bottom">
-                    <?php get_search_form();?>
+                    <?php
+get_search_form();?>
+                </div>
+                <div class="col-12 pb-4">
+                    <?php
+get_template_part('template-parts/header/header', 'archive');?>
                 </div>
 
-                <div class="col-12 py-4">
-                    <h1>
-                        Todas as obras
-                        <span class="small text-muted">
-                            <?php
-echo ' → ';
-echo $count; ?> itens.
-                        </span>
-                    </h1>
-                </div>
             </div>
         </div>
 
