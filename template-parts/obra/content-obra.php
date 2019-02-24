@@ -11,11 +11,17 @@
 /**
  * ficha técnica => obra variaveis
  */
-$fichatecnica_obra = get_field('ficha_tecnica');
-$fotografo = get_field('fotografo');
-$descricao = get_field('descricao');
+//$fichatecnica_obra = get_field('ficha_tecnica');
+$tombo_obj = get_field_object('field_5bfd4663b4645');
+$origem_obj = get_field_object('field_5bfd46adb4646');
+$dataperiodo_obj = get_field_object('field_5bfd46cab4647');
+$material_obj = get_field_object('field_5bfd46fcb4648');
+$dimensoes_obj = get_field_object('field_5bfd47ebb4649');
+$fotografo_obj = get_field_object('field_5c0ec52b96602');
+$descricao_obj = get_field_object('field_5bfdeeb084777');
+
 $thumbnail = get_the_post_thumbnail(get_the_ID(), '', array('class' => 'img-thumbnail mx-auto d-block', 'style' => 'width: 100%; height: 100%; object-fit: cover;'));
-$thumbnail_link = get_the_post_thumbnail_url(get_the_ID(),'full');
+$thumbnail_link = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $linkobra = get_permalink();
 
 /**
@@ -34,8 +40,8 @@ $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 		<h3 class="blog-post-title">
 			<?php the_title();?>,
 			<small class="text-muted">
-				<?php echo $fichatecnica_obra['dataperiodo'] . '. '; ?></small>
-
+				<?php echo $dataperiodo_obj['value'] . '. '; ?>
+			</small>
 		</h3>
 	</div>
 </div>
@@ -72,30 +78,50 @@ $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 			<div class="col-12">
 				<dl class="row mt-2">
 
+				<?php
+if ($tombo_obj['value'] != '') {
+    ?>
 					<dt class="col-12 col-sm-5">Tombo:</dt>
 					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $fichatecnica_obra['tombo']; ?>
+						<?php echo $tombo_obj['value']; ?>
 					</dd>
+					<?php }?>
 
+					<?php
+if ($origem_obj['value'] != '') {
+    ?>
 					<dt class="col-12 col-sm-5">Origem:</dt>
 					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $fichatecnica_obra['origem']; ?>
+						<?php echo $origem_obj['value']; ?>
 					</dd>
+					<?php }?>
 
+					<?php
+if ($dataperiodo_obj['value'] != '') {
+    ?>
 					<dt class="col-12 col-sm-5">Data:</dt>
 					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $fichatecnica_obra['dataperiodo']; ?>
+						<?php echo $dataperiodo_obj['value']; ?>
 					</dd>
+					<?php }?>
 
-					<dt class="col-12 col-sm-5">Material:</dt>
+					<?php
+if ($material_obj['value'] != '') {
+    ?>
+					<dt class="col-12 col-sm-5">Material/Técnica:</dt>
 					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $fichatecnica_obra['material']; ?>
+						<?php echo $material_obj['value']; ?>
 					</dd>
+					<?php }?>
 
+					<?php
+if ($dimensoes_obj['value'] != '') {
+    ?>
 					<dt class="col-12 col-sm-5">Medidas:</dt>
 					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $fichatecnica_obra['dimensoes']; ?>
+						<?php echo $dimensoes_obj['value']; ?>
 					</dd>
+					<?php }?>
 
 					<?php
 if ($classificacao) {
@@ -128,10 +154,10 @@ if ($nucleo) {
     echo '</dd>';
 }
 
-if ($fotografo) {
+if ($fotografo_obj['value']) {
     echo '<dt class="col-12 col-sm-5">Fotografia:</dt>';
     echo '<dd class="col-12 col-sm-7 blog-post-meta">';
-    echo $fotografo;
+    echo $fotografo_obj['value'];
     echo '</dd>';
 }
 ?>
@@ -143,21 +169,21 @@ if ($fotografo) {
 
 	<!-- descrição -->
 	<?php
-if ($descricao) {
+if ($descricao_obj['value']) {
     echo '<div class="col-12 mt-4">';
     echo '<h4>Descrição:</h4>';
     echo '<p>';
-    echo $descricao;
+    echo $descricao_obj['value'];
     echo '</p>';
     echo '</div>';
 }
 ?>
 
-<?php
+	<?php
 /**
  * Image Modal
  */
 ?>
-<div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="image" aria-hidden="true">
-    <?php get_template_part('template-parts/modal/modal', 'image'); ?>
-</div>
+	<div class="modal fade" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="image" aria-hidden="true">
+		<?php get_template_part('template-parts/modal/modal', 'image');?>
+	</div>

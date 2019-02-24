@@ -2,9 +2,9 @@ jQuery(document).ready(function ($) {
 
 
     if($(window).width() < 720){
-        $('#alphabet-menu').addClass('btn-group-vertical').removeClass('btn-group').removeClass('d-flex');
+        $('#alphabet-menu').addClass('btn-group-vertical btn-group-sm').removeClass('btn-group').removeClass('d-flex');
     } else{
-        $('#alphabet-menu').addClass('btn-group').removeClass('btn-group-vertical');
+        $('#alphabet-menu').addClass('btn-group').removeClass('btn-group-vertical btn-group-sm');
     }   
 
     /**

@@ -57,10 +57,10 @@ $count = $wp_query->found_posts;
         <div class="row pb-4">
             <?php
             //var_dump($wp_query);
-if (have_posts()): while (have_posts()): the_post();
+//if (have_posts()): while (have_posts()): the_post();
         get_template_part('template-parts/obra/content', 'cartao-obra');
-    endwhile;
-endif;
+  //  endwhile;
+//endif;
 ?>
         </div>
     </div>

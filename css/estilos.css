@@ -1,5 +1,4 @@
 /* css personalizado */
-
 .linhaCinza {
   background-color: gray;
 }
@@ -48,9 +47,11 @@ body {
   //background-color: #22941e !important;
 }
 
-.text-primary, .btn-primary {
+.text-primary,
+.btn-primary {
   color: #2D0C87;
 }
+
 .margin-top {
   margin-top: 2rem;
 }
@@ -63,16 +64,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.owl-nav .owl-prev span{
+.owl-nav .owl-prev span {
   position: absolute;
-  top:30%;
+  top: 30%;
   left: 0;
   color: #00904671;
   font-size: 30vw;
 }
-.owl-nav .owl-next span{
+
+.owl-nav .owl-next span {
   position: absolute;
-  top:30%;
+  top: 30%;
   right: 0;
   color: #00904671;
   font-size: 30vw;
@@ -89,7 +91,7 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#000000', GradientType=0);
 }
 
-.grade-botoes{
+.grade-botoes {
   border-radius: 0;
 }
 
@@ -98,7 +100,7 @@ body {
  *
  * para ser usado em alguns casos específicos para ter um design pixel-perfect
 **/
-.content-box{
+.content-box {
   box-sizing: content-box;
 }
 
@@ -109,6 +111,7 @@ body {
 .fixed-top {
   top: 32px;
 }
+
 @media screen and (max-width: 782px) {
   .fixed-top {
     top: 46px;

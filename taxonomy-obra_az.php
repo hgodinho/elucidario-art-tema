@@ -21,19 +21,9 @@ $count = $wp_query->found_posts;
     <div class="container pb-4 mb-4 border-bottom">
         <!-- a magica inicia aqui -->
         <div class="row">
-            <div class="col-12 pt-4">
-                <h1>
-                    <?php single_term_title();?>
-                    <span class="small text-muted">
-                        <?php
-echo ' → ';
-echo $wp_query->found_posts; ?> itens.
-                    </span>
-                </h1>
-                <p>
-                    <?php echo term_description(); ?>
-                </p>
-            </div>
+        <?php
+        get_template_part('template-parts/a-z/content', 'az-header');
+        ?>
         </div>
     </div>
 
@@ -47,18 +37,23 @@ if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_az');
 }?>
             </div>
-            <?php $wp_query->set('posts_per_page', -1);?>
             <div class="col col-md-12 col-10">
                 <div class="row">
                     <?php
-if (have_posts()): while (have_posts()): the_post();
-        get_template_part('template-parts/obra/content', 'cartao-obra');
-    endwhile;
-endif;?>
+get_template_part('template-parts/obra/content', 'cartao-obra');
+?>
                 </div>
             </div>
         </div>
     </div>
+    <div class="cointainer">
+
+        <?php
+if (function_exists('bootstrap_pagination')) {
+    bootstrap_pagination();
+}
+?>
+
     </div>
 </main>
 <?php

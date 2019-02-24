@@ -25,19 +25,9 @@ $count = $wp_query->found_posts;
     <div class="container pb-4 mb-4 border-bottom">
         <!-- a magica inicia aqui -->
         <div class="row">
-            <div class="col-12 pt-4">
-                <h1>
-                    <?php single_term_title();?>
-                    <span class="small text-muted">
-                        <?php
-echo ' → ';
-echo $count; ?> autores.
-                    </span>
-                </h1>
-                <p>
-                    <?php echo term_description(); ?>
-                </p>
-            </div>
+        <?php
+        get_template_part('template-parts/a-z/content', 'az-header');
+        ?>
         </div>
     </div>
 </main>
@@ -57,10 +47,7 @@ if (class_exists('WP_Glossary_Bootstrap')) {
         <div class="col col-md-12 col-10">
             <?php
 if (!function_exists('wiki_ema_listar_autores')) {
-    if (have_posts()): while (have_posts()): the_post();
-            get_template_part('template-parts/autor/content', 'lista-autor');
-        endwhile;
-    endif;
+    get_template_part('template-parts/autor/content', 'tabela-autor');
 } else {
     if (have_posts()): while (have_posts()): the_post();
             ?>

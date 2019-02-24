@@ -51,9 +51,9 @@ $querybyterm = new WP_Query(
     )
 );
 
-while ($querybyterm->have_posts()): $querybyterm->the_post();
+//while ($querybyterm->have_posts()): $querybyterm->the_post();
 get_template_part('template-parts/obra/content', 'cartao-obra');
-endwhile;
+//endwhile;
 ?>
             <div class="cointainer mt-4">
                 <?php

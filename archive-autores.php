@@ -18,21 +18,21 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
 MB_Relationships_API::each_connected(array(
     'id' => 'obras_to_autores',
-    'to' => $wp_query->posts, // Set to $my_query.
+    'to' => $wp_query->posts,
 ));
 global $post;
 
 ?>
 <section id="primary" class="content-area">
     <main role="main" class="container">
-        <div class="container">
+        
             <div class="row">
-                <div class="col-12 col-sm-7 pb-4">
+                <div class="col-12 pb-4">
                     <h1>
                         <?php post_type_archive_title();?>
                     </h1>
                 </div>
-                <div class="col-12 col-sm-5 pb-4">
+                <div class="col-12 pb-4">
 
                     <!-- formulario de busca -->
                     <div class="col-12">
@@ -63,31 +63,27 @@ if (class_exists('WP_Glossary_Bootstrap')) {
                 <div class="col col-md-12 col-10">
                     <?php
 if (!function_exists('wiki_ema_listar_autores')) {
-
-    if (have_posts()): while (have_posts()): the_post();
-
-            get_template_part('template-parts/autor/content', 'lista-autor');
-
-        endwhile;
-    endif;
-
+    get_template_part('template-parts/autor/content', 'tabela-autor');
+    ?>
+                </div>
+                
+                <?php
 } else {
 
     if (have_posts()): while (have_posts()): the_post();
             ?>
-		                    <div class="list-group" id="lista-autores">
+                <div class="list-group" id="lista-autores">
 
-		                        <?php wiki_ema_listar_autores();?>
+                    <?php wiki_ema_listar_autores();?>
 
-		                    </div>
-		                    <?php
+                </div>
+                <?php
     endwhile;
     endif;
 }
 ?>
-                </div>
+
             </div>
-        </div>
 
         <div class="cointainer mt-4" id="pagination-wraper">
             <?php

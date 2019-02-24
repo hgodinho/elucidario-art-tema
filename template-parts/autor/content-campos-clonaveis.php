@@ -7,7 +7,7 @@
  * @source https://docs.metabox.io/fields/fieldset-text/
  * @subpackage Wiki-Ema
  * 
- * @version 0.1
+ * @version 0.2
  * @since 0.2
  */
 
@@ -18,7 +18,7 @@ $externos = rwmb_meta($autorprefix . 'externo');
 
 
 
-if ($referencias[0]['titulo']) {
+if (!empty($referencias) && $referencias[0]['titulo'] != '') {
     echo '<div class="col-12 mt-4">';
     echo '<h4>Referências</h4>';
     echo '<ol class="">';
@@ -31,7 +31,7 @@ if ($referencias[0]['titulo']) {
     echo '</div>';
 }
 
-if ($externos[0]['titulo']) {
+if (!empty($externos) && $externos[0]['titulo'] != '') {
     echo '<div class="col-12 mt-4">';
     echo '<h4>Ligações Externas</h4>';
     echo '<ol class="">';

@@ -1,19 +1,24 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.6`
+- @version `0.7`
 - @source https://emaklabin.org.br
 
 ***
 ## @todo
-
 - arrumar paginação da lista de obras de autores
-
 - arrumar searchform 
 
-- desenhar a home
 
-- alerta de pre-alfa
+***
+## `0.7`
+### changed
+- content-campos_clonaveis.php
+- content-cartao-obra.php
+- content-obra.php
+- mudança de lista-autores.php para tabela-autores.php no archive-autores e no taxonomy-autor_az.php
+- arruma erro de undefined_index nas páginas de obras e autores single
 
+*** 
 ## `0.6`
 ### added
 - taxonomy-obra_az.php

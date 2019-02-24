@@ -153,7 +153,7 @@ function query_arquivo_principal($query)
     }
 
     if ($query->is_tax(array('autor_az', 'obra_az')) && !is_admin() && $query->is_main_query()) {
-        $query->set('posts_per_page', '-1');
+        $query->set('posts_per_page', '9');
     }
 
     if ($query->is_post_type_archive('autores') && !is_admin() && $query->is_main_query()) {

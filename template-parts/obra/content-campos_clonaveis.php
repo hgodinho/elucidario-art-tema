@@ -7,18 +7,18 @@
  * @source https://docs.metabox.io/fields/fieldset-text/
  * @subpackage Wiki-Ema
  * 
- * @version 0.2
+ * @version 0.3
  * @since 0.1
  */
 
 $obraprefix = 'obra-metabox_';
-
 $referencias = rwmb_meta($obraprefix . 'referencias');
 $externos = rwmb_meta($obraprefix . 'externo');
 $exposicoes = rwmb_meta($obraprefix . 'exposicoes');
 
 
-if ($referencias[0]['titulo']) {
+
+if (!empty($referencias) && $referencias[0]['titulo'] != '') {
     echo '<div class="col-12 mt-4">';
     echo '<h4>Referências</h4>';
     echo '<ol class="">';
@@ -31,7 +31,8 @@ if ($referencias[0]['titulo']) {
     echo '</div>';
 }
 
-if ($externos[0]['titulo']) {
+if (!empty($externos && $externos[0]['titulo'] != '')) {
+    var_dump($externos);
     echo '<div class="col-12 mt-4">';
     echo '<h4>Ligações Externas</h4>';
     echo '<ol class="">';
@@ -45,7 +46,7 @@ if ($externos[0]['titulo']) {
     echo '</div>';
 }
 
-if ($exposicoes[0]['titulo']) {
+if (!empty($exposicoes && $exposicoes[0]['titulo'] != '' )) {
  	echo '<div class="col-12 mt-4">';
 	echo '<h4>Exposições</h4>';
 	echo '<ol class="">';

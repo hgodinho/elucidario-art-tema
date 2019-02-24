@@ -27,7 +27,7 @@ while ($connected->have_posts()): $connected->the_post();
     ?>
 
 
-<div class="col-12 px-0">
+<div class="col-12">
     <h3>
         <?php the_title();?>
     </h3>
