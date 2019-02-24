@@ -11,12 +11,32 @@
 
 ***
 ## `0.7`
+### added
+- template-parts/a-z/content-az-header.php
+- template-parts/autor/ocntet-tabela-autor.php
+
 ### changed
 - content-campos_clonaveis.php
 - content-cartao-obra.php
 - content-obra.php
 - mudança de lista-autores.php para tabela-autores.php no archive-autores e no taxonomy-autor_az.php
 - arruma erro de undefined_index nas páginas de obras e autores single
+- archive-autores.php
+- archive-obras.php
+- function.php
+- js/wiki-ema.js
+- search.php
+- search-form.php
+- taxonomy-autor_az.php
+- taxonomy-nucleo.php
+- taxonomy-obra_az.php
+- template-parts/ambiente/content-obras-no-ambiente.php
+- template-parts/autor/content-autor.php
+- template-parts/autor/content-campos-clonaveis.php
+- template-parts/obra/content-campos-clonaveis.php
+- template-parts/obra/content-cartao-obra.oho
+- template-parts/obra/content-resumo_autor.php
+
 
 *** 
 ## `0.6`
