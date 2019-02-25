@@ -51,9 +51,9 @@ $connected = new WP_Query($args);
 ?>
             
                 <?php
-while ($connected->have_posts()): $connected->the_post();
+//while ($connected->have_posts()): $connected->the_post();
     get_template_part('template-parts/obra/content', 'cartao-obra');
-endwhile;
+//endwhile;
 wp_reset_query();
 ?>
             </div>

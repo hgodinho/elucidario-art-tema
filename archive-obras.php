@@ -49,8 +49,6 @@ if (class_exists('WP_Glossary_Bootstrap')) {
 }?>
                 </div>
 
-                <?php $wp_query->set('posts_per_page', -1);?>
-
                 <div class="col col-md-12 col-10">
 
                     <div class="row">
