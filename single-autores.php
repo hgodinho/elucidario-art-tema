@@ -15,9 +15,8 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
 
 <?php
-while (have_posts()): the_post();
+//while (have_posts()): the_post();
     ?>
-
 	<div class="container">
 	    <!-- a mágica inicia aqui -->
 	    <!-- Autor -->
@@ -27,10 +26,10 @@ while (have_posts()): the_post();
 	    </div>
 	    <!-- // Autor -->
 
-	    <?php get_template_part('template-parts/autor/content', 'obras-do-autor');?>
+		<?php get_template_part('template-parts/autor/content', 'obras-do-autor');?>
 
 	    <!-- a mágica termina aqui -->
 	    <?php
-endwhile;
+//endwhile;
 get_footer();
 ?>

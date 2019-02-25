@@ -8,7 +8,7 @@
  * @author hgodinho.com
  *
  */
-
+wp_reset_query();
 ?>
 
 <div class="row py-4 border-top">
@@ -30,10 +30,7 @@
             <!-- // formulario de busca -->
         </div>
 
-        <!-- cartoes de obras -->
-        <div class="row pb-4">
-
-            <?php
+             <?php
 $autor = get_the_ID();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 //echo $paged;
@@ -51,12 +48,12 @@ $connected = new WP_Query($args);
 ?>
             
                 <?php
-//while ($connected->have_posts()): $connected->the_post();
-    get_template_part('template-parts/obra/content', 'cartao-obra');
-//endwhile;
-wp_reset_query();
+while ($connected->have_posts()): $connected->the_post();
+    get_template_part('template-parts/obra/content', 'cartao-obra-no-loop');
+endwhile;
+
 ?>
-            </div>
+ 
 
             <?php
 if (function_exists('bootstrap_pagination')) {
