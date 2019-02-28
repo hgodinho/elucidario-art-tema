@@ -13,47 +13,61 @@ $descricao = get_field('descricao');
 
 ?>
 
-<div class="col-md-8 mb-4">
-    <div class="col-12 px-0">
-        <h1>
-            <?php the_title();?>
-        </h1>
-    </div>
 
-    <?php
-if ($fichatecnica_autor['dataperiodo_inicial']) {?>
-    <div class="col-12 px-0">
-        <p class="text-muted">(
+<div class="container py-4">
+
+    <div class="row">
+
+        <div class="col-12 pb-4 border-bottom">
             <?php
+get_search_form();?>
+        </div>
+        <div class="col-12 pb-4">
+            <?php
+get_template_part('template-parts/header/header', 'archive');?>
+        </div>
+
+    </div>
+</div>
+
+
+<?php
+if ($fichatecnica_autor['dataperiodo_inicial']) {?>
+<div class="col-12 px-0">
+    <p class="text-muted">(
+        <?php
 echo $fichatecnica_autor['dataperiodo_inicial'];
     if ($fichatecnica_autor['dataperiodo_final']) {
         echo ' — ';
         echo $fichatecnica_autor['dataperiodo_final']; ?>
-            )</p>
-    </div>
-    <?php
+        )</p>
+</div>
+<?php
 } else {?>
-    )</p>
+)</p>
 </div>
 <?php
 }
 }
 ?>
 
-<!-- descricao -->
-<?php if ($descricao) {?>
-<div class="col-12 mt-4">
-    <h4 class="pt-4">Descrição:</h4>
-    <p>
-        <?php echo $descricao ?>
-    </p>
-</div>
-<?php
-}
-?>
-<!-- // descricao -->
+<div class="container">
+    <div class="row">
 
-<?php get_template_part('template-parts/autor/content', 'campos-clonaveis');?>
+        <!-- descricao -->
+        <?php if ($descricao) {?>
+        <div class="col-12 mt-4">
+            <h4 class="pt-4">Descrição:</h4>
+            <p>
+                <?php echo $descricao ?>
+            </p>
+        </div>
+        <?php
+}?>
+        <!-- // descricao -->
 
+        <?php get_template_part('template-parts/autor/content', 'campos-clonaveis');?>
+
+    </div>
 </div>
 <!-- // informação -->

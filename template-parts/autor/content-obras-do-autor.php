@@ -11,7 +11,7 @@
 wp_reset_query();
 ?>
 
-<div class="row py-4 border-top">
+<div class="row py-4">
     <div class="col">
         <div class="row">
             <!-- Título -->
@@ -24,7 +24,7 @@ wp_reset_query();
             <!-- formulario de busca -->
             <div class="col-12 col-sm-5 pb-4">
                 <div class="col-12">
-                    <?php get_search_form();?>
+                    <?php //get_search_form();?>
                 </div>
             </div>
             <!-- // formulario de busca -->

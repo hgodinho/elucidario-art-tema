@@ -21,48 +21,63 @@ MB_Relationships_API::each_connected(array(
 $count = $wp_query->found_posts;
 ?>
 
-<main role="main" class="container">
-    <div class="container pb-4 mb-4 border-bottom">
-        <!-- a magica inicia aqui -->
-        <div class="row">
-        <?php
-        get_template_part('template-parts/header/header', 'archive');
-        ?>
-        </div>
-    </div>
-</main>
-<div class="container">
-    <div class="row">
-        <div class="col col-md-12 col-2">
+<section id="primary" class="content-area">
+    <main role="main" class="container">
+        <div class="container py-4">
+            <div class="row">
 
-            <?php
+                <div class="col-12 pb-4 border-bottom">
+                    <?php
+get_search_form();?>
+                </div>
+                <div class="col-12 pb-4">
+                    <?php
+get_template_part('template-parts/header/header', 'archive');?>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col col-md-12 col-2">
+
+                    <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
     $glossary_menu = $glossary->glossary_menu_front_end('autor_az', null);
 }
 ?>
-        </div>
-        <?php $wp_query->set('posts_per_page', -1); ?>
+                </div>
+                <?php $wp_query->set('posts_per_page', -1);?>
 
-        <div class="col col-md-12 col-10">
-            <?php
+                <div class="col col-md-12 col-10">
+                    <?php
 if (!function_exists('wiki_ema_listar_autores')) {
     get_template_part('template-parts/autor/content', 'tabela-autor');
 } else {
     if (have_posts()): while (have_posts()): the_post();
             ?>
-            <div class="list-group" id="lista-autores">
-                <?php wiki_ema_listar_autores();?>
-            </div>
-            <?php
+                    <div class="list-group" id="lista-autores">
+                        <?php wiki_ema_listar_autores();?>
+                    </div>
+                    <?php
     endwhile;
     endif;
 }
 ?>
+                </div>
+
+            </div>
         </div>
-        
-    </div>
-</div>
+        <div class="cointainer mt-4" id="pagination-wraper">
+            <?php
+if (function_exists('bootstrap_pagination')) {
+    bootstrap_pagination();
+}?>
+        </div>
+    </main>
+</section>
 
 <?php
 /**

@@ -95,6 +95,59 @@ echo 'Página 1';
 }
 
 /**
+ * Header para single autores
+ */
+if (is_singular('autores')) {
+    MB_Relationships_API::each_connected(array(
+        'id' => 'obras_to_autores',
+        'to' => $wp_query->posts,
+    ));
+    global $post;
+    ?>
+<div class="col-12 pt-4">
+    <h1>
+        <?php
+echo the_title(); ?>
+        <span class="small text-muted">
+            <?php
+echo ' → ';
+$obras_contagem = count($post->connected);
+    if ($obras_contagem > 1) {
+        echo $obras_contagem . ' obras na coleção.';
+    } else {
+        echo $obras_contagem . ' obra na coleção.';
+    } ?>
+        </span>
+    </h1>
+
+    <?php
+$paged = get_query_var('paged');
+    if ($paged > 0) {?>
+    <p class="lead">
+        <?php
+echo 'Página ' . $paged;
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+    </p>
+    <?php
+} elseif($paged == 0){
+    return;
+} else {?>
+    <p class="lead">
+        <?php
+echo 'Página 1';
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+    </p>
+    <?php
+}?>
+    <p>
+        <?php echo term_description(); ?>
+    </p>
+</div>
+
+<?php
+}
+
+/**
  * Header para obra_az
  */
 if (is_tax('obra_az')) {?>

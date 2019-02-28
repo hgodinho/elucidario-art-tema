@@ -1,12 +1,16 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.7`
+- @version `0.8`
 - @source https://emaklabin.org.br
 
 ***
 ## @todo
 - arrumar paginação da lista de obras de autores
 - arrumar searchform 
+
+***
+## `0.8`
+Padronização dos arquivos e atualização do bootstrap core para 4.3.1
 
 
 ***

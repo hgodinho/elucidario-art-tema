@@ -2,9 +2,11 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.6
+ * @version 0.7
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
+ * 
+ * Bootstrap @version 4.3.1
  */
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
@@ -21,7 +23,7 @@ require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/clas
  */
 function wikiema_enqueue_styles()
 {
-    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
+    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css','', '4.3.1');
     wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
     wp_register_style('estilos', get_template_directory_uri() . '/css/estilos.css');
     /**
