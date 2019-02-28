@@ -30,10 +30,10 @@ wp_reset_query();
             <!-- // formulario de busca -->
         </div>
 
-             <?php
+        <?php
 $autor = get_the_ID();
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-//echo $paged;
+
+//var_dump($page);
 $args = array(
     'post_type' => 'obras',
     'post_status' => 'any',
@@ -41,25 +41,28 @@ $args = array(
         'id' => 'obras_to_autores',
         'to' => $post->ID,
     ),
-    'posts_per_page' => 6,
-    //'paged' => 148,
+    'posts_per_page' => 12,
+    'paged' => $page,
 );
 $connected = new WP_Query($args);
-?>
-            
-                <?php
-while ($connected->have_posts()): $connected->the_post();
-    get_template_part('template-parts/obra/content', 'cartao-obra-no-loop');
-endwhile;
+
+
 
 ?>
- 
-
+        <div class="row pb-4">
             <?php
+while ($connected->have_posts()): $connected->the_post();
+    get_template_part('template-parts/obra/content', 'cartao-obra');
+endwhile;
+?>
+        </div>
+
+        <?php
+
 if (function_exists('bootstrap_pagination')) {
     bootstrap_pagination($connected);
 }
+wp_reset_query(  );
 ?>
-        </div>
     </div>
 </div>

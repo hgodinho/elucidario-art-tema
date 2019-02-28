@@ -11,9 +11,11 @@
 
 ***
 ## `0.7`
+Some bug fixes.
+
 ### added
 - template-parts/header/header-archive.php
-- template-parts/autor/ocntet-tabela-autor.php
+- template-parts/autor/contet-tabela-autor.php
 
 ### changed
 - content-campos_clonaveis.php

@@ -26,48 +26,46 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             <!-- formulario de busca -->
             <div class="col-12 col-sm-5 pb-4">
                 <div class="col-12">
-                    <?php get_search_form(); ?>
+                    <?php get_search_form();?>
                 </div>
             </div>
             <!-- // formulario de busca -->
         </div>
 
         <!-- cartoes de obras -->
-        <div class="row pb-4">
-
-            <?php
+        <?php
 $querybyterm = new WP_Query(
     array(
         'post_type' => 'obras',
         'tax_query' => array(
-            array (
+            array(
                 'taxonomy' => 'ambiente',
                 'field' => 'slug',
                 'terms' => $term->slug,
-            )
+            ),
         ),
         'posts_per_page' => '6',
         'paged' => $paged,
     )
 );
-
-//while ($querybyterm->have_posts()): $querybyterm->the_post();
-get_template_part('template-parts/obra/content', 'cartao-obra');
-//endwhile;
 ?>
-            <div class="cointainer mt-4">
-                <?php
+        <div class="row pb-4">
+            <?php
+get_template_part('template-parts/obra/content', 'cartao-obra');
+?>
+        </div>
+        <div class="cointainer mt-4">
+            <?php
 if (function_exists('bootstrap_pagination')) {
-bootstrap_pagination($querybyterm);
+    bootstrap_pagination($querybyterm);
 }
 ?>
-            </div>
+        </div>
 
-            <?php
+        <?php
 wp_reset_query();
 ?>
 
-        </div>
 
     </div>
 

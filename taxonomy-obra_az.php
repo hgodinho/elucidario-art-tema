@@ -21,7 +21,7 @@ $count = $wp_query->found_posts;
     <div class="container pb-4 mb-4 border-bottom">
         <!-- a magica inicia aqui -->
         <div class="row">
-        <?php
+            <?php
 get_template_part('template-parts/header/header', 'archive');?>
         </div>
     </div>

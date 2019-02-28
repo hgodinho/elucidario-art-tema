@@ -21,34 +21,39 @@ $descricao = get_field('descricao');
     </div>
 
     <?php
-if ($fichatecnica_autor['dataperiodo_inicial']) {
-    echo '<div class="col-12 px-0">';
-    echo '<p class="text-muted">(';
-    echo $fichatecnica_autor['dataperiodo_inicial'];
+if ($fichatecnica_autor['dataperiodo_inicial']) {?>
+    <div class="col-12 px-0">
+        <p class="text-muted">(
+            <?php
+echo $fichatecnica_autor['dataperiodo_inicial'];
     if ($fichatecnica_autor['dataperiodo_final']) {
         echo ' — ';
-        echo $fichatecnica_autor['dataperiodo_final'];
-        echo ')</p></div>';
-    } else {
-        echo ')</p></div>';
-    }
-}
-?>
-
-    <!-- descricao -->
-    <?php if ($descricao) {?>
-    <div class="col-12 mt-4">
-        <h4 class="pt-4">Descrição:</h4>
-        <p>
-            <?php echo $descricao ?>
-        </p>
+        echo $fichatecnica_autor['dataperiodo_final']; ?>
+            )</p>
     </div>
     <?php
+} else {?>
+    )</p>
+</div>
+<?php
+}
 }
 ?>
-    <!-- // descricao -->
 
-    <?php get_template_part('template-parts/autor/content', 'campos-clonaveis');?>
+<!-- descricao -->
+<?php if ($descricao) {?>
+<div class="col-12 mt-4">
+    <h4 class="pt-4">Descrição:</h4>
+    <p>
+        <?php echo $descricao ?>
+    </p>
+</div>
+<?php
+}
+?>
+<!-- // descricao -->
+
+<?php get_template_part('template-parts/autor/content', 'campos-clonaveis');?>
 
 </div>
 <!-- // informação -->

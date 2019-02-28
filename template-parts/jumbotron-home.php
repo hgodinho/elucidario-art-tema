@@ -6,34 +6,19 @@
  *
  * @since 0.1
  */
-
-$args = array(
-    'post_type' => 'obras',
-    'posts_per_page' => 1,
-    'meta_query' => array(
-        array(
-            'key' => 'obra_domes',
-            'compare' => '=',
-            'value' => '1',
-        ),
-    ),
-);
-$obra_do_mes = new WP_Query($args);
+function wiki_ema_jumbotron_home(WP_Query $obra_do_mes = null){
 if ($obra_do_mes->have_posts()) {
     while ($obra_do_mes->have_posts()): $obra_do_mes->the_post();
         $fichatecnica_obra = get_field('ficha_tecnica');
 		$fotografo = get_field('fotografo');
 	    $thumbnail_obradomes = get_the_post_thumbnail_url(get_the_ID(), 'full');
         ?>
-<div class="jumbotron jumbotron-fluid text-center text-secondary" style="background-image: url('<?php echo $thumbnail_obradomes ?>'); background-repeat: no-repeat; background-position: top center; background-size:cover;">
-
-
+<div class="jumbotron jumbotron-fluid text-center text-white" style="background-image: url('<?php echo $thumbnail_obradomes ?>'); background-repeat: no-repeat; background-position: top center; background-size:cover;">
 	<div class="container">
 		<div class="row">
-			<div class="col-12 order-first">
-				<h1>Descubra a Coleção Ema Klabin!</h1>
+			<div class="col-12 order-first ">
+				<h1 class="text-white">Descubra a Coleção Ema Klabin!</h1>
 			</div>
-			<!-- legenda obra jumbotron -->
 			<div class="col-12 order-last">
 				<div class="row-fluid mt-4 mb-0">
 					<small>
@@ -70,7 +55,7 @@ endwhile;
 			<!-- formulario de busca -->
 			<div class="col-12 order-2">
 				<div class="d-flex justify-content-center my-5">
-					<?php get_search_form(true);?>
+					<?php get_search_form();?>
 				</div>
 				<p class="lead text-center">Mais de 1600 itens na coleção!</p>
 			</div>
@@ -155,3 +140,6 @@ wp_reset_query();
 		</div>
 	</div>
 </div>
+<?php
+}
+?>
