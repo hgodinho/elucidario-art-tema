@@ -16,7 +16,6 @@ function wiki_ema_destaque_home(WP_Query $obra_do_mes = null)
 		<div class="row pb-4">
 			<div class="col mt-4">
 				<h2>Obra do mês
-					<p class="h5 text-muted">destaque selecionado mensalmente.</p>
 				</h2>
 			</div>
 		</div>

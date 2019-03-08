@@ -8,7 +8,7 @@
  */
 ?>
 <?php
-$thumbnail = get_the_post_thumbnail(get_the_ID(), 'cartoes-thumb-obra', array('class' => 'card-img-top img-fluid d-block mb-2'));
+$thumbnail = get_the_post_thumbnail(get_the_ID(), 'cartoes-thumb-obra', array('class' => 'card-img-top img-fluid d-block rounded-0 mb-0'));
 $permalink = get_permalink();
 $dataperiodo = get_field_object('field_5bfd46cab4647');
 $material = get_field_object('field_5bfd46fcb4648');
@@ -17,16 +17,15 @@ $tombo = get_field_object('field_5bfd4663b4645');
 ?>
 <div class="col col-md-10 col-lg-4">
 
-    <div class="card mb-4">
+    <div class="card mb-5 rounded-0 shadow">
 
         <a href="<?php echo $permalink ?>">
-
             <?php echo $thumbnail; ?>
-
         </a>
-        <div class="card-body">
-            <h5 class="card-title">
 
+        <div class="card-body">
+            
+            <h5 class="card-title mb-0">
                 <?php the_title();
                 echo ', ';
                 ?>
@@ -35,36 +34,33 @@ $tombo = get_field_object('field_5bfd4663b4645');
                     <?php echo $dataperiodo['value']; 
                     echo '. ';
                     ?>
-
                 </small>
             </h5>
-            <dl class="row pt-2">
-
-                <?php if ($material['value'] != '') {?>
-                <dt class="col-md-5 col-sm-12">Material/Técnica:</dt>
-                <dd class="col-md-7 col-sm-12">
-                    <?php echo $material['value']; ?>
-                </dd>
-                <?php }?>
-
-                <?php if ($dimensoes['value'] != '') {?>
-                <dt class="col-md-5 col-sm-12">Medidas:</dt>
-                <dd class="col-md-7 col-sm-12">
-                    <?php echo $dimensoes['value']; ?>
-                </dd>
-                <?php }?>
-
-                <dt class="col-md-5 col-sm-12">Tombo:</dt>
-                <dd class="col-md-7 col-sm-12">
-                    <?php echo $tombo['value']; ?>
-                </dd>
-
-            </dl>
-        </div>
-        <div class="card-footer">
-
-            <a href="<?php echo $permalink ?>" class="card-link">Ver obra →</a>
 
         </div>
+        <table class="table table-striped container-fluid mb-0">
+            <tbody>
+                <tr>
+                    <th scope="row">Material / Técnica:</th>
+                    <td>
+                        <?php echo $material['value']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Medidas:</th>
+                    <td>
+                        <?php echo $dimensoes['value']; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Tombo:</th>
+                    <td>
+                        <?php echo $tombo['value']; ?>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="<?php echo $permalink ?>" class="btn btn-secondary rounded-0">Ver obra →</a>
+
     </div>
 </div>

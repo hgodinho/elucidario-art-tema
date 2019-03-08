@@ -12,30 +12,30 @@
  */
 if (is_post_type_archive('obras')) {?>
 <div class="col-12 pt-4">
-    <h1>
-        <?php
-echo post_type_archive_title('', false); ?>
-        <span class="small text-muted">
-            <?php
-echo ' → ';
-    if ($wp_query->found_posts > 1) {
-        echo $wp_query->found_posts . ' itens.';
-    } else {
-        echo $wp_query->found_posts . ' item.';
-    } ?>
-        </span>
+    <h1 class="display-3 text-primary">
+        Obras do acervo
     </h1>
+    <p class="lead text-muted">
+        <?php
+    if ($wp_query->found_posts > 1) {
+        echo $wp_query->found_posts . ' itens';
+    } else {
+        echo $wp_query->found_posts . ' item';
+    } 
+    echo ' → ';
+    ?>
+
     <?php
 $paged = get_query_var('paged');
     if ($paged > 0) {?>
-    <p class="lead">
+
         <?php
 echo 'Página ' . $paged;
         echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
 } else {?>
-    <p class="lead">
+
         <?php
 echo 'Página 1';
         echo ' de ' . $wp_query->max_num_pages . '.'; ?>

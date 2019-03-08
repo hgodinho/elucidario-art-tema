@@ -10,9 +10,9 @@
  */
 
 echo '<div class="container margin-top" id="breadcrumb-wiki-ema">';
-echo '<div class="breadcrumb-wrap">';
+echo '<div class="breadcrumb-wrap px-3">';
 echo '<nav aria-label="breadcrumb">';
-echo '<ol class="breadcrumb">';
+echo '<ol class="breadcrumb rounded-0 mb-0">';
 
 if (!is_home()) {
     echo '<li class="breadcrumb-item"><a href="';

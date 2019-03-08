@@ -44,13 +44,14 @@ body {
 
 .bg-primary {
   background: linear-gradient(rgb(26, 48, 142), rgb(1, 200, 164)) !important;
-  //background-color: #22941e !important;
+  /*background-color: #22941e !important;*/
 }
 
-.text-primary,
-.btn-primary {
-  color: #2D0C87;
+/**
+.primary {
+  color: #1a2f8e!important;
 }
+*/
 
 .margin-top {
   margin-top: 2rem;
