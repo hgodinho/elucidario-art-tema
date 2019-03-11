@@ -1,4 +1,7 @@
 /* css personalizado */
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+
 .linhaCinza {
   background-color: gray;
 }
@@ -10,11 +13,25 @@ h4,
 h5,
 h6,
 dt {
-  font-family: Georgia;
+  font-family: "Lucida Bright", Georgia;
 }
 
-body {
-  font-family: Helvetica;
+
+
+body{
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.titulo-cartao {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.cartao-obra-row {
+  font-style: italic;
+  font-weight: 100;
+  white-space: pre;
 }
 
 .navbar-brand {
@@ -25,7 +42,7 @@ body {
   font-size: 2rem;
   line-height: inherit;
   white-space: nowrap;
-  font-family: Georgia;
+  font-family: "Lucida Bright", Georgia;
 }
 
 .navbar-toggler {

@@ -25,8 +25,8 @@ $tombo = get_field_object('field_5bfd4663b4645');
 
         <div class="card-body">
             
-            <h5 class="card-title mb-0">
-                <?php the_title();
+            <h5 class="card-title mb-0 titulo-cartao">
+                <?php echo mb_strtoupper(the_title('','', false),'UTF-8');
                 echo ', ';
                 ?>
                 <small class="text-muted">
@@ -41,19 +41,19 @@ $tombo = get_field_object('field_5bfd4663b4645');
         <table class="table table-striped container-fluid mb-0">
             <tbody>
                 <tr>
-                    <th scope="row">Material / Técnica:</th>
+                    <th scope="row" class="cartao-obra-row">Material ou Técnica</th>
                     <td>
                         <?php echo $material['value']; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">Medidas:</th>
+                    <th scope="row" class="cartao-obra-row">Medidas</th>
                     <td>
                         <?php echo $dimensoes['value']; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row">Tombo:</th>
+                    <th scope="row" class="cartao-obra-row">Tombo</th>
                     <td>
                         <?php echo $tombo['value']; ?>
                     </td>
