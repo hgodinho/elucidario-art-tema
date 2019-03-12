@@ -22,11 +22,11 @@
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
+<section id="primary" class="content-area">
+    <main role="main" class="container">
+        <div class="container">
 
-<main role="main" class="container">
-    <div class="container">
-
-        <?php
+            <?php
 /**
  * Query principal
  */
@@ -46,19 +46,19 @@ $classificacoes = get_terms(
 if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
 
     ?>
-        <div class="row">
-            <div class="col-12">
-                <?php the_title('<h1>', '</h1>');?>
+            <div class="row">
+                <div class="col-12">
+                    <?php the_title('<h1>', '</h1>');?>
+                </div>
             </div>
-        </div>
-        <div class="row py-4">
-            <?php
+            <div class="row py-4">
+                <?php
 foreach ($classificacoes as $classificacao) {
         $link = get_term_link($classificacao);
         ?>
-            <div class="col-md-4">
-                <div class="card mb-3">
-                    <?php
+                <div class="col-md-4">
+                    <div class="card mb-3">
+                        <?php
 /**
          * Imagem do cartão
          *
@@ -83,23 +83,24 @@ foreach ($classificacoes as $classificacao) {
          */
         ?>
 
-                    <div class="card-body">
-                        <h2 class="card-title">
-                            <?php echo $classificacao->name; ?>
-                        </h2>
-                        <p class="card-text"><span class="text-muted">→
-                                <?php echo $classificacao->count; ?> itens</span></p>
-                        <a class="btn btn-primary" href="<?php echo $link ?>" role="button">Veja mais</a>
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                <?php echo $classificacao->name; ?>
+                            </h2>
+                            <p class="card-text"><span class="text-muted">→
+                                    <?php echo $classificacao->count; ?> itens</span></p>
+                            <a class="btn btn-primary" href="<?php echo $link ?>" role="button">Veja mais</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <?php
+                <?php
 }
 }
 ?>
 
-        </div>
-</main>
+            </div>
+    </main>
+</section>
 
 <?php
 /**

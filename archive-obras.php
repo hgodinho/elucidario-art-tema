@@ -35,37 +35,32 @@ get_search_form();?>
         </div>
 
         <div class="container">
+
             <div class="row">
                 <div class="col col-md-12 col-2 mb-5">
                     <?php
+                    /**
+                     * Menu para ordem alfabética
+                     */
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
     $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_az');
 }?>
                 </div>
-
                 <div class="col col-md-12 col-10">
-
                     <div class="row">
-
                         <?php
 get_template_part('template-parts/obra/content', 'cartao-obra');
 ?>
-
                     </div>
-
                 </div>
-
             </div>
-        </div>
-
-        <div class="cointainer mt-4" id="pagination-wraper">
-            <?php
+            <div class="cointainer mt-4" id="pagination-wraper">
+                <?php
 if (function_exists('bootstrap_pagination')) {
     bootstrap_pagination();
-}
-?>
-
+}?>
+            </div>
         </div>
     </main>
 </section>

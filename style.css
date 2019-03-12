@@ -8,15 +8,6 @@ Version: 01
 Text Domain: wiki-ema-template
 */
 
-@font-face{
-    font-family:"Avenir";
-    src:url('/fontes/AvenirLTStd-Heavy.otf');
-}
- @font-face{
-    font-family:"AvenirLight";
-    src:url('/fontes/AvenirLTStd-Light.otf');
-}
-
 .searchbox-position {
     margin-top: 15px;
     margin-right: 90px;

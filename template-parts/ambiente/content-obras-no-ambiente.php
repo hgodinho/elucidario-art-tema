@@ -9,27 +9,13 @@
  */
 $term = get_queried_object();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-//echo $termslug;
 ?>
-
 <div class="row py-4">
     <div class="col">
         <div class="row">
-            <!-- Título -->
-            <div class="col-12 col-sm-7 pb-4">
-                <h3>Obras neste ambiente:
-                </h3>
+            <div class="col-12">
+                <h3>Obras neste ambiente:</h3>
             </div>
-            <!-- // Título -->
-
-            <!-- formulario de busca -->
-            <div class="col-12 col-sm-5 pb-4">
-                <div class="col-12">
-                    <?php get_search_form();?>
-                </div>
-            </div>
-            <!-- // formulario de busca -->
         </div>
 
         <!-- cartoes de obras -->

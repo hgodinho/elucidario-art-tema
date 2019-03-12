@@ -7,20 +7,22 @@
  * @author hgodinho.com
  */
 
-function wiki_ema_search_form(string $post_types = null, string $placeholder = null)
+function wiki_ema_search_form(string $types = null, string $placeholder = null)
 {?>
+
 <form id="search" class="shadow-sm" method="get">
     <div class="input-group input-group-lg">
         <input type="text" value="<?php the_search_query();?>" name="s" id="s" class="form-control rounded-0" placeholder="<?php echo $placeholder; ?>"
             aria-label="Buscar" aria-describedby="button-addon2">
         <input type="hidden" value="1" name="sentence" />
-        <input type="hidden" value="<?php echo $post_types; ?>" name="post_type" />
+        <input type="hidden" value="<?php echo $types; ?>" name="post_type" />
 
         <div class="input-group-append">
             <button class="btn btn-primary rounded-0" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
         </div>
     </div>
 </form>
+
 <?php
 }
 

@@ -22,11 +22,11 @@
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
+<section id="primary" class="content-area">
+    <main role="main" class="container">
+        <div class="container">
 
-<main role="main" class="container">
-    <div class="container">
-
-        <?php
+            <?php
 /**
  * Query principal
  */
@@ -45,13 +45,13 @@ $nucleos = get_terms(
  */
 if (!empty($nucleos) && !is_wp_error($nucleos)) {
     ?>
-        <div class="row">
-            <div class="col-12">
-                <?php the_title('<h1>', '</h1>');?>
+            <div class="row">
+                <div class="col-12">
+                    <?php the_title('<h1>', '</h1>');?>
+                </div>
             </div>
-        </div>
-        <div class="row py-4">
-            <?php
+            <div class="row py-4">
+                <?php
 foreach ($nucleos as $nucleo) {
         $link = get_term_link($nucleo);
         ?>
@@ -80,7 +80,8 @@ foreach ($nucleos as $nucleo) {
                                         )
                                     )
                                     */
-                                    ?> itens</span></p>
+                                    ?>
+                                    itens</span></p>
                             <a class="btn btn-primary" href="<?php echo $link ?>" role="button">Veja mais</a>
                         </div>
                     </div>
@@ -90,8 +91,9 @@ foreach ($nucleos as $nucleo) {
 }
 ?>
 
-        </div>
-</main>
+            </div>
+    </main>
+</section>
 
 <?php
 /**

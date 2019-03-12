@@ -18,25 +18,24 @@ $count = $wp_query->found_posts;
 ?>
 <section id="primary" class="content-area">
     <main role="main" class="container">
+
         <div class="container py-4">
             <div class="row">
-
-                <div class="col-12 pb-4 border-bottom">
-                    <?php
-get_search_form();?>
-                </div>
-                <div class="col-12 pb-4">
+                <div class="col-12 pb-4 pl-0">
                     <?php
 get_template_part('template-parts/header/header', 'archive');?>
                 </div>
 
+                <div class="col-12">
+                    <?php
+get_search_form();?>
+                </div>
             </div>
         </div>
 
-
         <div class="container">
             <div class="row">
-                <div class="col col-md-12 col-2">
+                <div class="col col-md-12 col-2 mb-5">
                     <?php
 if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary = new WP_Glossary_Bootstrap;
@@ -51,15 +50,12 @@ get_template_part('template-parts/obra/content', 'cartao-obra');
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="cointainer">
-
-            <?php
+            <div class="cointainer">
+                <?php
 if (function_exists('bootstrap_pagination')) {
     bootstrap_pagination();
-}
-?>
-
+}?>
+            </div>
         </div>
     </main>
 </section>

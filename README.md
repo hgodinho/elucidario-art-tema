@@ -1,19 +1,43 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.9`
+- @version `0.10`
 - @source https://emaklabin.org.br
 
 ***
 ## @todo
 - arrumar paginação da lista de obras de autores
 - arrumar searchform 
+***
+
+## `0.10`
+### principal
+- Mudança no bootstrap para poder alterar as variáveis bootstrap usando Sass
+> @source <https://hackerthemes.com/kit/>
+
+### changed
+- estilos.css
+- functions.php
+- alphabetical pagination
+- searchform.php
+- single-wiki_ema-ambientes
+- single-wiki_ema-classificacoes
+- single-wiki_ema-nucleos
+- style.css
+- taxonomy-ambientes.php
+- taxonomy-autor_az.php
+- taxonomy-obra_az.php
+- taxonomy-classificao.php
+- taxonomy-nucleo.php
+- content-obras-no-ambiente.php
+- hearder-archive.php
+
 
 ***
+## `0.9`
+
 ## `0.8`
 Padronização dos arquivos e atualização do bootstrap core para 4.3.1
 
-
-***
 ## `0.7`
 Some bug fixes.
 
