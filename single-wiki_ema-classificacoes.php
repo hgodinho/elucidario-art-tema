@@ -21,12 +21,6 @@
  */
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
-?>
-<section id="primary" class="content-area">
-    <main role="main" class="container">
-        <div class="container">
-
-            <?php
 /**
  * Query principal
  */
@@ -39,18 +33,30 @@ $classificacoes = get_terms(
         'parent' => 0,
     )
 );
+?>
+<section id="primary" class="content-area">
+    <main role="main" class="container">
 
-/**
- * Loop
- */
+
+        <?php
 if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
-
     ?>
+        <div class="container py-4">
             <div class="row">
-                <div class="col-12">
-                    <?php the_title('<h1>', '</h1>');?>
+                <div class="col-12 pb-4">
+                    <?php
+get_template_part('template-parts/header/header', 'archive');?>
                 </div>
+                <!--
+                <div class="col-12">
+                    <?php
+get_search_form();?>
+                </div>
+                -->
             </div>
+        </div>
+        
+        <div class="container">
             <div class="row py-4">
                 <?php
 foreach ($classificacoes as $classificacao) {

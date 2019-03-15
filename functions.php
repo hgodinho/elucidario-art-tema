@@ -58,7 +58,7 @@ function wikiema_enqueue_scripts()
      */
 
     $versao = rand(0, 999);
-    wp_enqueue_script('wiki-ema-app', get_template_directory_uri() . '/js/wiki-ema.js', null, $versao, true);
+    wp_enqueue_script('wiki-ema-app', get_template_directory_uri() . '/js/wiki-ema.js', null, $versao, false);
     $wp_wiki_ema_vars = array(
         'ajaxurl' => admin_url('admin-ajax.php'),
     );

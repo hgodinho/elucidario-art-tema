@@ -6,6 +6,7 @@
 Configuração de fontes
 */
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
 h1,
 h2,
 h3,
@@ -15,7 +16,8 @@ h6,
 dt {
   font-family: "Lucida Bright", Georgia;
 }
-body{
+
+body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
@@ -75,6 +77,10 @@ Ajuste na tabela de informações do cartão de obras
   margin-top: 5rem;
 }
 
+.border-top-fix {
+  border-top: 2px !important;
+}
+
 .owl-nav .owl-prev span {
   position: absolute;
   top: 30%;
@@ -120,4 +126,8 @@ Ajuste na tabela de informações do cartão de obras
   .fixed-top {
     top: 46px;
   }
+}
+
+.legenda-carousel {
+  background-color: rgba(0, 0, 0, 0.5);
 }

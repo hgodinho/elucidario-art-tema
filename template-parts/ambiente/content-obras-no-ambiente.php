@@ -12,11 +12,6 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 ?>
 <div class="row py-4">
     <div class="col">
-        <div class="row">
-            <div class="col-12">
-                <h3>Obras neste ambiente:</h3>
-            </div>
-        </div>
 
         <!-- cartoes de obras -->
         <?php
@@ -30,7 +25,7 @@ $querybyterm = new WP_Query(
                 'terms' => $term->slug,
             ),
         ),
-        'posts_per_page' => '6',
+        'posts_per_page' => '9',
         'paged' => $paged,
     )
 );
@@ -51,7 +46,6 @@ if (function_exists('bootstrap_pagination')) {
         <?php
 wp_reset_query();
 ?>
-
 
     </div>
 

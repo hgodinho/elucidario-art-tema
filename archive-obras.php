@@ -35,7 +35,6 @@ get_search_form();?>
         </div>
 
         <div class="container">
-
             <div class="row">
                 <div class="col col-md-12 col-2 mb-5">
                     <?php

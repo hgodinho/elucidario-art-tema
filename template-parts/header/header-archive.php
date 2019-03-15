@@ -104,40 +104,36 @@ if (is_singular('autores')) {
     global $post;
     ?>
 <div class="col-12 pt-4">
-    <h1>
-        <?php
-echo the_title(); ?>
-        <span class="small text-muted">
-            <?php
-echo ' → ';
-$obras_contagem = count($post->connected);
-    if ($obras_contagem > 1) {
-        echo $obras_contagem . ' obras na coleção.';
-    } else {
-        echo $obras_contagem . ' obra na coleção.';
-    } ?>
-        </span>
+    <h1 class="display-3 text-primary">
+        <?php the_title();?>
     </h1>
+    <p class="lead text-muted">
+        <?php
+        if ($wp_query->found_posts > 1) {
+            echo $wp_query->found_posts . ' itens';
+        } else {
+            echo $wp_query->found_posts . ' item';
+        } 
+        echo ' → ';
+        ?>
+
+        <?php
+    $paged = get_query_var('paged');
+        if ($paged > 0) {?>
+
+        <?php
+    echo 'Página ' . $paged;
+            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+    </p>
+    <?php
+    } else {?>
 
     <?php
-$paged = get_query_var('paged');
-    if ($paged > 0) {?>
-    <p class="lead">
-        <?php
-echo 'Página ' . $paged;
-        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+    echo 'Página 1';
+            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-} elseif($paged == 0){
-    return;
-} else {?>
-    <p class="lead">
-        <?php
-echo 'Página 1';
-        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
-    </p>
-    <?php
-}?>
+    }?>
     <p>
         <?php echo term_description(); ?>
     </p>
@@ -287,7 +283,7 @@ echo single_term_title('', false); ?>
 }
 
 /**
- * Header para ambiente
+ * Header para single ambiente
  */
 if (is_tax(array('ambiente'))) {?>
 <div class="row">
@@ -333,4 +329,22 @@ echo single_term_title('', false); ?>
     </div>
 </div>
 <?php
-}?>
+}
+
+/**
+ * Header para single ambiente
+ */
+if (is_single(array('ambientes', 'classificacoes', 'nucleos'))) {?>
+<div class="row">
+    <div class="col-12 pt-4">
+        <h1 class="display-3 text-primary">
+            <?php the_title(); ?>
+        </h1>
+
+        <p>
+            <?php echo get_post_field('post_content', $post->ID); ?>
+        </p>
+    </div>
+</div>
+<?php
+    }?>

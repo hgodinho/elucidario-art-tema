@@ -1,11 +1,20 @@
+
 jQuery(document).ready(function ($) {
 
+    var alphabetical_pagination_fix = function() {
+        var ww = document.body.clientWidth;
+        if( ww < 720){
+            $('#alphabet-menu').addClass('btn-group-vertical btn-group-sm');
+        } else{
+            $('#alphabet-menu').addClass('btn-group').addClass('d-flex');
+        }  
+    }
+    
+    $(window).resize(function(){
+        alphabetical_pagination_fix();
+    })
 
-    if($(window).width() < 720){
-        $('#alphabet-menu').addClass('btn-group-vertical btn-group-sm').removeClass('btn-group').removeClass('d-flex');
-    } else{
-        $('#alphabet-menu').addClass('btn-group').removeClass('btn-group-vertical btn-group-sm');
-    }   
+    alphabetical_pagination_fix();
 
     /**
      * Ação de listar autores
@@ -42,10 +51,6 @@ jQuery(document).ready(function ($) {
     }
 
     //listarAutores();
-
-
-
-
 
     /**
      * Cartoes Obras ajax

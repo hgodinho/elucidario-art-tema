@@ -30,7 +30,6 @@ $tombo = get_field_object('field_5bfd4663b4645');
                 echo ', ';
                 ?>
                 <small class="text-muted">
-
                     <?php echo $dataperiodo['value']; 
                     echo '. ';
                     ?>
