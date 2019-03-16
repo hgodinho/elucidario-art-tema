@@ -12,7 +12,9 @@
  */
 ?>
 </div><!-- / .site-content no header -->
-
+<div class="container-fluid fixed-bottom d-flex flex-row-reverse p-5">
+	<a class="topbutton btn btn-outline-secondary btn-lg shadow-lg rounded-0" href="#" role="button" alt="Voltar ao topo"><i class="fas fa-angle-up"></i></a>
+</div>
 <footer class="blog-footer container-fluid bg-primary mt-5 border-top border-white shadow-lg">
 	<div class="container bg-transparent text-light">
 		<div class="row py-4">
@@ -59,4 +61,5 @@
 
 <?php wp_footer(); ?>
 </body>
+
 </html>

@@ -10,7 +10,7 @@
  * @package WordPress
  * @subpackage Wiki-Ema
  *
- * @version 0.1
+ * @version 0.2
  * @since 0.3
  *
  * @author hgodinho.com
@@ -24,7 +24,7 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 /**
  * Query principal
  */
-$terms = get_terms(
+$ambientes = get_terms(
     array(
         'taxonomy' => 'ambiente',
         'hide_empty' => true,
@@ -38,9 +38,8 @@ $terms = get_terms(
     <main role="main" class="container">
 
         <?php
-    if (!empty($terms) && !is_wp_error($terms)) {
+    if (!empty($ambientes) && !is_wp_error($ambientes)) {
     ?>
-
         <div class="container py-4">
             <div class="row">
                 <div class="col-12 pb-4">
@@ -59,28 +58,40 @@ get_search_form();?>
         <div class="container">
             <div class="row py-4">
                 <?php
-foreach ($terms as $term) {
-        $imagem1 = get_field('imagem_1', $term);
-        $trecho = get_field('trecho_descricao', $term)
+foreach ($ambientes as $ambiente) {
+        $imagem1 = get_field('imagem_1', $ambiente);
+        $trecho = get_field('trecho_descricao', $ambiente);
+        $link = get_term_link($ambiente);
         ?>
                 <div class="col-md-4 mb-5 d-flex justify-content-center">
 
                     <div class="card d-flex w-100 shadow">
-                        <a href="<?php echo get_term_link($term) ?>">
+                        <a href="<?php echo $link; ?>">
                             <img class="card-img-top" src="<?php echo $imagem1['url']; ?>" alt="<?php echo $imagem1['alt']; ?>">
                         </a>
 
                         <div class="card-body">
                             <h5 class="card-title mb-0 titulo-cartao mb-3">
-                                <?php echo mb_strtoupper($term->name,'UTF-8'); ?>
+                                <?php echo mb_strtoupper($ambiente->name,'UTF-8'); ?>
                             </h5>
-
+                            <p class="card-text"><span class="text-muted">→
+                                    <?php 
+                                    if($ambiente->count > 1){
+                                    echo $ambiente->count; ?>
+                                    itens</span>
+                                <?php 
+                                } else{
+                                        echo $ambiente->count; ?>
+                                item</span>
+                                <?php
+                                }?>
+                            </p>
                             <p class="card-text">
                                 <?php echo $trecho; ?>
                             </p>
                         </div>
 
-                        <a href="<?php echo get_term_link($term); ?>" class="btn btn-secondary">Saiba Mais</a>
+                        <a href="<?php echo $link; ?>" class="btn btn-secondary">Saiba Mais</a>
                     </div>
 
                 </div>

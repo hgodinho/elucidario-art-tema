@@ -10,7 +10,7 @@
  * @package WordPress
  * @subpackage Wiki-Ema
  *
- * @version 0.1
+ * @version 0.2
  * @since 0.5
  *
  * @author hgodinho.com
@@ -61,44 +61,61 @@ get_search_form();?>
                 <?php
 foreach ($nucleos as $nucleo) {
         $link = get_term_link($nucleo);
-        ?>
-                <div class="col-md-4">
-                    <div class="card mb-3">
 
+$args = array(
+    'posts_per_page' => '1',
+    'post_type' => 'obras',
+    'tax_query' => array(
+        array(
+            'taxonomy' => 'nucleo',
+            'field' => 'name',
+            'terms' => $nucleo->name
+        )
+    )
+);
+$imagequery = get_posts($args);
+$image = get_the_post_thumbnail( $imagequery[0]->ID, 'cartoes-thumb-obra' );
+$imageurl = get_the_post_thumbnail_url( $imagequery[0]->ID, 'cartoes-thumb-obra' );
+$imageid = get_post_thumbnail_id( $imagequery[0]->ID );
+$alt = get_post_meta($imageid, '_wp_attachment_image_alt', true);
+//var_dump($imagequery);
+        ?>
+                <div class="col-md-4 mb-5 d-flex justify-content-center">
+
+                    <div class="card d-flex w-100 shadow">
+                        <a href="<?php echo $link; ?>">
+                            <img class="card-img-top" src="<?php echo $imageurl; ?>" alt="<?php echo $alt; ?>">
+                        </a>
 
                         <div class="card-body">
-                            <h2 class="card-title">
-                                <?php echo $nucleo->name; ?>
-                            </h2>
+                            <h5 class="card-title mb-0 titulo-cartao mb-3">
+                                <?php echo mb_strtoupper($nucleo->name,'UTF-8'); ?>
+                            </h5>
                             <p class="card-text"><span class="text-muted">→
                                     <?php 
-                                    echo $nucleo->count;
-
-                                    /**
-                                     * @todo arrumar contagem de itens 
-                                     */
-                                    /*
-                                    $term_query = new WP_Query(
-                                        array(
-                                            'tax_query' => array(
-                                                'taxonomy' => 'nucleo',
-                                                'terms' => get_queried_object()->term_id,
-                                            ),
-                                        )
-                                    )
-                                    */
-                                    ?>
-                                    itens</span></p>
-                            <a class="btn btn-primary" href="<?php echo $link ?>" role="button">Veja mais</a>
+                                    if($nucleo->count > 1){
+                                    echo $nucleo->count; ?>
+                                    itens</span>
+                                <?php 
+                                } else{
+                                        echo $nucleo->count; ?>
+                                item</span>
+                                <?php
+                                }?>
+                            </p>
                         </div>
+
+                        <a href="<?php echo $link; ?>" class="btn btn-secondary">Saiba Mais</a>
                     </div>
+
                 </div>
+
                 <?php
 }
 }
 ?>
-
             </div>
+        </div>
     </main>
 </section>
 

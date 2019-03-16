@@ -101,14 +101,34 @@ if (is_singular('autores')) {
         'id' => 'obras_to_autores',
         'to' => $wp_query->posts,
     ));
+    $fichatecnica_autor = get_field('ficha_tecnica');
     global $post;
     ?>
 <div class="col-12 pt-4">
     <h1 class="display-3 text-primary">
         <?php the_title();?>
     </h1>
-    <p class="lead text-muted">
-        <?php
+    <?php
+if ($fichatecnica_autor['dataperiodo_inicial']) {?>
+    <div class="col-12 px-0">
+        <p class="text-muted">(
+            <?php
+echo $fichatecnica_autor['dataperiodo_inicial'];
+    if ($fichatecnica_autor['dataperiodo_final']) {
+        echo ' — ';
+        echo $fichatecnica_autor['dataperiodo_final']; ?>
+            )</p>
+    </div>
+    <?php
+} else {?>
+    )</p>
+</div>
+<?php
+}
+}
+?>
+<p class="lead text-muted">
+    <?php
         if ($wp_query->found_posts > 1) {
             echo $wp_query->found_posts . ' itens';
         } else {
@@ -117,28 +137,25 @@ if (is_singular('autores')) {
         echo ' → ';
         ?>
 
-        <?php
+    <?php
     $paged = get_query_var('paged');
         if ($paged > 0) {?>
-
-        <?php
+    <?php
     echo 'Página ' . $paged;
             echo ' de ' . $wp_query->max_num_pages . '.'; ?>
-    </p>
-    <?php
+</p>
+<?php
     } else {?>
-
-    <?php
+<?php
     echo 'Página 1';
             echo ' de ' . $wp_query->max_num_pages . '.'; ?>
-    </p>
-    <?php
+</p>
+<?php
     }?>
-    <p>
-        <?php echo term_description(); ?>
-    </p>
+<p>
+    <?php echo term_description(); ?>
+</p>
 </div>
-
 <?php
 }
 

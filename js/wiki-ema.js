@@ -1,16 +1,17 @@
-
 jQuery(document).ready(function ($) {
-
-    var alphabetical_pagination_fix = function() {
+    /**
+     * Alphabetical Pagination Script
+     */
+    var alphabetical_pagination_fix = function () {
         var ww = document.body.clientWidth;
-        if( ww < 720){
+        if (ww < 720) {
             $('#alphabet-menu').addClass('btn-group-vertical btn-group-sm');
-        } else{
+        } else {
             $('#alphabet-menu').addClass('btn-group').addClass('d-flex');
-        }  
+        }
     }
-    
-    $(window).resize(function(){
+
+    $(window).resize(function () {
         alphabetical_pagination_fix();
     })
 
@@ -19,7 +20,7 @@ jQuery(document).ready(function ($) {
     /**
      * Ação de listar autores
      */
-    $('.autor_az').on('click', function(){
+    $('.autor_az').on('click', function () {
         //alert('teste');
         //listarAutores();
         $('.autor_az').removeClass('active');
@@ -32,22 +33,22 @@ jQuery(document).ready(function ($) {
     var listarAutores = function () {
 
         $.ajax({
-            url: wiki_ema.ajaxurl,
-            type: 'GET',
-            data: {
-                action: 'wiki_ema_listar_autores'
-            },
-            beforeSend: function (){
-                console.log('carregando lista de autores...');
-            }
-        })
-        .done(function(resposta){
-            //console.log(resposta);
-            $('#lista-autores').html(resposta);
-        })
-        .fail(function(){
-            console.log('ops, listar posts deu errado');
-        })
+                url: wiki_ema.ajaxurl,
+                type: 'GET',
+                data: {
+                    action: 'wiki_ema_listar_autores'
+                },
+                beforeSend: function () {
+                    console.log('carregando lista de autores...');
+                }
+            })
+            .done(function (resposta) {
+                //console.log(resposta);
+                $('#lista-autores').html(resposta);
+            })
+            .fail(function () {
+                console.log('ops, listar posts deu errado');
+            })
     }
 
     //listarAutores();
@@ -58,23 +59,45 @@ jQuery(document).ready(function ($) {
     var cartoesObras = function () {
 
         $.ajax({
-            url: wiki_ema.ajaxurl,
-            type: 'GET',
-            data: {
-                action: 'wiki_ema_cartoes_obras'
-            },
-            beforeSend: function (){
-                console.log('carregando cartoes obras...');
-            }
-        })
-        .done(function(resposta){
-            console.log(resposta);
-        })
-        .fail(function(){
-            console.log('ops, cartoes de obras deu errado');
-        })
+                url: wiki_ema.ajaxurl,
+                type: 'GET',
+                data: {
+                    action: 'wiki_ema_cartoes_obras'
+                },
+                beforeSend: function () {
+                    console.log('carregando cartoes obras...');
+                }
+            })
+            .done(function (resposta) {
+                console.log(resposta);
+            })
+            .fail(function () {
+                console.log('ops, cartoes de obras deu errado');
+            })
     }
     //cartoesObras();
-    
+
+    /**
+     * Função do botão back-to-top
+     */
+    var topbutton = function () {
+        var offset = 500;
+        var speed = 250;
+        var duration = 1000;
+        $(window).scroll(function () {
+            if($(this).scrollTop() < offset) {
+                $('.topbutton').fadeOut(duration);
+            } else {
+                $('.topbutton').fadeIn(duration);
+            }
+        });
+        $('.topbutton').on('click', function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, speed);
+            return false;
+        });
+    }
+    topbutton();
 
 })

@@ -131,3 +131,7 @@ Ajuste na tabela de informações do cartão de obras
 .legenda-carousel {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+.topbutton{
+  display: none;
+}
