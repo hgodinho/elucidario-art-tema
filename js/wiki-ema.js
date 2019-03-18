@@ -4,14 +4,22 @@ jQuery(document).ready(function ($) {
      */
     var alphabetical_pagination_fix = function () {
         var ww = document.body.clientWidth;
-        if (ww < 720) {
-            $('#alphabet-menu').addClass('btn-group-vertical btn-group-sm');
+        var bootstrap_sm = 576;
+        var bootstrap_md = 768;
+        var bootstrap_lg = 992;
+        if (ww < bootstrap_lg) {
+            $('#alphabet-menu').addClass('btn-group-vertical').addClass('btn-group-sm');
+            $('.btn-az-single').addClass('rounded-0');
+            $('#alphabet-menu').show();
         } else {
+            $('#alphabet-menu').removeClass('btn-group-vertical').removeClass('btn-group-sm');
             $('#alphabet-menu').addClass('btn-group').addClass('d-flex');
+            $('#alphabet-menu').show();
         }
     }
 
     $(window).resize(function () {
+        $('#alphabet-menu').hide();
         alphabetical_pagination_fix();
     })
 

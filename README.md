@@ -1,6 +1,6 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.12`
+- @version `0.13`
 - @source https://emaklabin.org.br
 
 ***
@@ -9,6 +9,13 @@
 - arrumar searchform 
 ***
 
+## `0.13`
+### principal
+- versão bootstrap 4.3.1
+- habilitação de fontes responsíveis
+- multiplas correções, ver git log
+
+***
 ## `0.12`
 ### principal
 - multiplas correções, ver git log

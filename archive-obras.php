@@ -36,7 +36,7 @@ get_search_form();?>
 
         <div class="container">
             <div class="row">
-                <div class="col col-md-12 col-2 mb-5">
+                <div class="col col-lg-12 col-2 mb-5">
                     <?php
                     /**
                      * Menu para ordem alfabética
@@ -46,7 +46,7 @@ if (class_exists('WP_Glossary_Bootstrap')) {
     $glossary_menu = $glossary->glossary_menu_front_end(null, 'obra_az');
 }?>
                 </div>
-                <div class="col col-md-12 col-10">
+                <div class="col col-lg-12 col-10">
                     <div class="row">
                         <?php
 get_template_part('template-parts/obra/content', 'cartao-obra');
