@@ -2,7 +2,7 @@
 /**
  * Header dos templates baseados em arquivos
  *
- * @version 0.3
+ * @version 0.4
  * @since 0.7
  * @author hgodinho.com
  */
@@ -129,10 +129,10 @@ echo $fichatecnica_autor['dataperiodo_inicial'];
 ?>
 <p class="lead text-muted">
     <?php
-        if ($wp_query->found_posts > 1) {
-            echo $wp_query->found_posts . ' itens';
+        if ( count($post->connected) > 1) {
+            echo count( $post->connected ) . ' itens';
         } else {
-            echo $wp_query->found_posts . ' item';
+            echo count( $post->connected ) . ' item';
         } 
         echo ' → ';
         ?>

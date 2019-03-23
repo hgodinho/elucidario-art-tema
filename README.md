@@ -1,6 +1,6 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.13`
+- @version `0.14`
 - @source https://emaklabin.org.br
 
 ***

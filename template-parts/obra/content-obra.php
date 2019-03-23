@@ -2,7 +2,7 @@
 /**
  * sub template para conteúdo da obra - single
  *
- * @version 0.2
+ * @version 0.3
  * @since 0.1
  *
  * @author hgodinho.com
@@ -30,27 +30,23 @@ $linkobra = get_permalink();
 $ambiente = get_the_terms(get_the_ID(), 'ambiente');
 $nucleo = get_the_terms(get_the_ID(), 'nucleo');
 $classificacao = get_the_terms(get_the_ID(), 'classificacao');
-
 ?>
 
 
 <!-- titulo obra -->
-<div class="row pb-2">
-	<div class="col">
-		<h3 class="blog-post-title">
-			<?php the_title();?>,
-			<small class="text-muted">
-				<?php echo $dataperiodo_obj['value'] . '. '; ?>
-			</small>
-		</h3>
-	</div>
+<div class="col py-4 pl-0">
+	<h1 class="blog-post-title text-primary">
+		<?php the_title();?>,
+		<small class="text-muted">
+			<?php echo $dataperiodo_obj['value'] . '. '; ?>
+		</small>
+	</h1>
 </div>
 <!-- // titulo obra -->
 
 <!-- infos obra -->
 <div class="row pb-3 mb-2">
-
-	<div class="col-12 col-lg-7">
+	<div class="col-12 col-lg-7 mb-4">
 		<!-- imagem obra -->
 		<div style="max-height:480px; height: 480px;">
 			<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal">
@@ -66,8 +62,7 @@ $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 
 	<!-- detalhes -->
 	<div class="col-12 col-lg-5">
-
-		<div class="row my-4">
+		<div class="row mb-4">
 			<!-- autor -->
 			<?php get_template_part('template-parts/obra/content', 'resumo_autor');?>
 			<!-- // autor -->
@@ -76,92 +71,90 @@ $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 		<!-- informações tabela -->
 		<div class="row">
 			<div class="col-12">
-				<dl class="row mt-2">
-
-				<?php
-if ($tombo_obj['value'] != '') {
-    ?>
-					<dt class="col-12 col-sm-5">Tombo:</dt>
-					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $tombo_obj['value']; ?>
-					</dd>
-					<?php }?>
-
-					<?php
-if ($origem_obj['value'] != '') {
-    ?>
-					<dt class="col-12 col-sm-5">Origem:</dt>
-					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $origem_obj['value']; ?>
-					</dd>
-					<?php }?>
-
-					<?php
-if ($dataperiodo_obj['value'] != '') {
-    ?>
-					<dt class="col-12 col-sm-5">Data:</dt>
-					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $dataperiodo_obj['value']; ?>
-					</dd>
-					<?php }?>
-
-					<?php
-if ($material_obj['value'] != '') {
-    ?>
-					<dt class="col-12 col-sm-5">Material/Técnica:</dt>
-					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $material_obj['value']; ?>
-					</dd>
-					<?php }?>
-
-					<?php
-if ($dimensoes_obj['value'] != '') {
-    ?>
-					<dt class="col-12 col-sm-5">Medidas:</dt>
-					<dd class="col-12 col-sm-7 blog-post-meta">
-						<?php echo $dimensoes_obj['value']; ?>
-					</dd>
-					<?php }?>
-
-					<?php
-if ($classificacao) {
-    echo '<dt class="col-12 col-sm-5">Classificação:</dt>';
-    echo '<dd class="col-12 col-sm-7 blog-post-meta">';
-    foreach ($classificacao as $classi_single) {
-        $classi_link = get_term_link($classi_single);
-        echo '<a href="' . esc_url($classi_link) . '">' . $classi_single->name . '.</a> ';
-    }
-    echo '</dd>';
+				<table class="table table-striped container-fluid mb-0">
+					<tbody>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Tombo</th>
+							<td>
+								<?php echo $tombo_obj['value']; ?>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Origem</th>
+							<td>
+								<?php echo $origem_obj['value']; ?>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Data</th>
+							<td>
+								<?php echo $dataperiodo_obj['value']; ?>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Material ou técnica</th>
+							<td>
+								<?php echo $material_obj['value']; ?>
+							</td>
+						</tr>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Medidas</th>
+							<td>
+								<?php echo $dimensoes_obj['value']; ?>
+							</td>
+						</tr>
+						<?php
+if ($classificacao) {?>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Classificação</th>
+							<td>
+								<?php
+foreach ($classificacao as $classi_single) {
+    $classi_link = get_term_link($classi_single);
+    echo '<a href="' . esc_url($classi_link) . '">' . $classi_single->name . '.</a> ';
+}?>
+							</td>
+						</tr>
+						<?php
 }
-
-if ($ambiente) {
-    echo '<dt class="col-12 col-sm-5">Ambiente:</dt>';
-    echo '<dd class="col-12 col-sm-7 blog-post-meta">';
-    foreach ($ambiente as $ambiente_single) {
-        $ambiente_link = get_term_link($ambiente_single);
-        echo '<a href="' . esc_url($ambiente_link) . '">' . $ambiente_single->name . '.</a> ';
-    }
-    echo '</dd>';
+if ($ambiente) {?>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Ambiente</th>
+							<td>
+								<?php
+foreach ($ambiente as $ambiente_single) {
+    $ambiente_link = get_term_link($ambiente_single);
+    echo '<a href="' . esc_url($ambiente_link) . '">' . $ambiente_single->name . '.</a> ';
+}?>
+							</td>
+						</tr>
+						<?php
 }
-
-if ($nucleo) {
-    echo '<dt class="col-12 col-sm-5">Núcleo:</dt>';
-    echo '<dd class="col-12 col-sm-7 blog-post-meta">';
-    foreach ($nucleo as $nucleo_single) {
-        $nucleo_link = get_term_link($nucleo_single);
-        echo '<a href="' . esc_url($nucleo_link) . '">' . $nucleo_single->name . '.</a> ';
-    }
-    echo '</dd>';
+if ($nucleo) {?>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Núcleo</th>
+							<td>
+								<?php
+foreach ($nucleo as $nucleo_single) {
+    $nucleo_link = get_term_link($nucleo_single);
+    echo '<a href="' . esc_url($nucleo_link) . '">' . $nucleo_single->name . '.</a> ';
+}?>
+							</td>
+						</tr>
+						<?php
 }
+if ($fotografo_obj['value']) {?>
+						<tr>
+							<th scope="row" class="cartao-obra-row">Fotografia</th>
+							<td>
+								<?php echo $fotografo_obj['value']; ?>
+							</td>
+						</tr>
+						<?php
+}?>
 
-if ($fotografo_obj['value']) {
-    echo '<dt class="col-12 col-sm-5">Fotografia:</dt>';
-    echo '<dd class="col-12 col-sm-7 blog-post-meta">';
-    echo $fotografo_obj['value'];
-    echo '</dd>';
-}
-?>
-				</dl>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<!-- // informações tabela -->

@@ -2,7 +2,7 @@
 /**
  * Template de cartões de obras
  *
- * @version 0.2
+ * @version 0.3
  * @since 0.7
  * @author hgodinho.com
  */
@@ -16,15 +16,12 @@ $dimensoes = get_field_object('field_5bfd47ebb4649');
 $tombo = get_field_object('field_5bfd4663b4645');
 ?>
 <div class="col col-md-10 col-lg-4">
-
     <div class="card mb-5 rounded-0 shadow">
-
         <a href="<?php echo $permalink ?>">
             <?php echo $thumbnail; ?>
         </a>
 
         <div class="card-body">
-            
             <h5 class="card-title mb-0 titulo-cartao">
                 <?php echo mb_strtoupper(the_title('','', false),'UTF-8');
                 echo ', ';
@@ -35,12 +32,12 @@ $tombo = get_field_object('field_5bfd4663b4645');
                     ?>
                 </small>
             </h5>
-
         </div>
+
         <table class="table table-striped container-fluid mb-0">
             <tbody>
                 <tr>
-                    <th scope="row" class="cartao-obra-row">Material ou Técnica</th>
+                    <th scope="row" class="cartao-obra-row">Material<br>ou Técnica</th>
                     <td>
                         <?php echo $material['value']; ?>
                     </td>
@@ -59,7 +56,8 @@ $tombo = get_field_object('field_5bfd4663b4645');
                 </tr>
             </tbody>
         </table>
-        <a href="<?php echo $permalink ?>" class="btn btn-secondary rounded-0">Ver obra →</a>
 
+        <a href="<?php echo $permalink ?>" class="btn btn-secondary rounded-0">Ver obra →</a>
     </div>
 </div>
+<?php wp_reset_query(  );?>

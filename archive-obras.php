@@ -49,6 +49,9 @@ if (class_exists('WP_Glossary_Bootstrap')) {
                 <div class="col col-lg-12 col-10">
                     <div class="row">
                         <?php
+                        /**
+                         * Template de cartões de obras
+                         */
 get_template_part('template-parts/obra/content', 'cartao-obra');
 ?>
                     </div>
