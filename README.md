@@ -1,6 +1,6 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.14`
+- @version `0.15`
 - @source https://emaklabin.org.br
 
 ***
@@ -8,6 +8,15 @@
 - arrumar paginação da lista de obras de autores
 - arrumar searchform 
 ***
+
+## `0.15`
+- templates de busca
+- correções
+
+
+***
+## `0.14`
+
 
 ## `0.13`
 ### principal

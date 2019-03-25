@@ -7,7 +7,7 @@ jQuery(function($){
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         center: true,
-        stagePadding: 20,
+        stagePadding: 15,
         responsive: {
             0: {
                 items: 1,
@@ -17,7 +17,7 @@ jQuery(function($){
                 items: 2
             },
             1000: {
-                items: 3
+                items: 4
             },
         }
     })

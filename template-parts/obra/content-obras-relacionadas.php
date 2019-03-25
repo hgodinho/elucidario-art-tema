@@ -27,7 +27,7 @@ $relacionado_query = new WP_Query(array(
             'field' => 'slug',
             'terms' => $term_slug
         )),
-    'posts_per_page' => 5,
+    'posts_per_page' => 9,
     'orderby' => 'rand',
     'post__not_in' => array($post->ID),
 ));
@@ -36,10 +36,12 @@ $relacionado_query = new WP_Query(array(
 <?php
 if ($relacionado_query->have_posts()) {?>
 
-<div class="container m-3">
+<div class="container-fluid">
     <div class="row pt-3">
-        <h3 class="pb-3">Obras Relacionadas:</h3>
-        <div class="owl-carousel owl-theme py-2">
+        <div class="container mb-5">
+            <h3 class="ml-3">Obras Relacionadas:</h3>
+        </div>
+        <div class="owl-carousel owl-theme">
 
             <?php
     while ($relacionado_query->have_posts()): $relacionado_query->the_post();

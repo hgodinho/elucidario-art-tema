@@ -44,6 +44,6 @@ if (is_post_type_archive(array('autores')) or is_tax('autor_az')) {
  * Formulário de busca para arquivo de obras
  */
 if (is_post_type_archive(array('obras')) or is_tax('obra_az')) {
-    wiki_ema_search_form('obras,autores', 'buscar obra');
+    wiki_ema_search_form('', 'buscar obra');
 }
 ?>

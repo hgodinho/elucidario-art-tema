@@ -23,7 +23,6 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 		<header class="container pb-4 mb-4">
 			<div class="row">
 				<div class="col-12 pb-4 pt-4">
-
 					<h1>
 						<?php
 echo $wp_query->found_posts;
@@ -41,8 +40,29 @@ echo $wp_query->found_posts;
 						<?php echo get_search_query(); ?>
 					</h1>
 				</div>
+
 			</div>
 		</header>
+
+		<div id="debug" class="container">
+			<?php 
+			/*
+			$resultados = $wp_query;
+			$tipos = array('obras', 'autores');
+			foreach( $tipos as $tipo ){
+				while(have_posts()){
+					the_post();
+					if($tipo == get_post_type()){
+						get_template_part( 'template-parts/search/content', $tipo );
+					}
+				}
+				rewind_posts();
+			}
+			*/
+			?>
+		</div>
+
+
 		<div class="container">
 			<table class="table table-hover table-responsive-md">
 				<thead>
@@ -53,17 +73,18 @@ echo $wp_query->found_posts;
 				</thead>
 				<tbody>
 					<?php
+					
 while (have_posts()): the_post();
         ?>
-						<tr>
-							<td>
-								<a href="<?php the_permalink();?>" class="text-decoration-none">
-									<?php the_title();?>
-								</a>
-							</td>
-							<?php $fichatecnica_autor = get_field('ficha_tecnica');?>
-							<td>
-								<?php
+					<tr>
+						<td>
+							<a href="<?php the_permalink();?>" class="text-decoration-none">
+								<?php the_title();?>
+							</a>
+						</td>
+						<?php $fichatecnica_autor = get_field('ficha_tecnica');?>
+						<td>
+							<?php
     if ($post->post_type == 'obras') {
             echo 'obra';
         }
@@ -71,9 +92,9 @@ while (have_posts()): the_post();
             echo 'autor';
         }
         ?>
-							</td>
-						</tr>
-						<?php
+						</td>
+					</tr>
+					<?php
 endwhile;
 
     ?>
@@ -87,7 +108,7 @@ endwhile;
         bootstrap_pagination();
     }
 } else {
-    get_template_part('template-parts/nada', 'encontrado');
+    get_template_part('template-parts/search/nada', 'encontrado');
 }
 ?>
 		</div>

@@ -26,14 +26,16 @@ while (have_posts()): the_post();?>
 			<?php get_template_part('template-parts/obra/content', 'obra');?>
 
 			<?php get_template_part('template-parts/obra/content', 'campos_clonaveis');?>
-
-			<?php get_template_part('template-parts/obra/content', 'obras-relacionadas');?>
 		</div>
 		<?php
 endwhile;?>
 
 	</main>
 </section>
+
+<div class="container-fluid">
+	<?php get_template_part('template-parts/obra/content', 'obras-relacionadas');?>
+</div>
 
 <?php
 get_footer();?>

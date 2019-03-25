@@ -92,7 +92,7 @@ $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 							</td>
 						</tr>
 						<tr>
-							<th scope="row" class="cartao-obra-row">Material ou técnica</th>
+							<th scope="row" class="cartao-obra-row">Material<br>ou técnica</th>
 							<td>
 								<?php echo $material_obj['value']; ?>
 							</td>
