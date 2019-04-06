@@ -7,7 +7,7 @@
  * @author hgodinho.com
  */
 
-function wiki_ema_search_form(string $types = null, string $placeholder = null)
+function wiki_ema_search_form(string $types = '', string $placeholder = '')
 {?>
 
 <form id="search" class="shadow-sm" method="get">
@@ -29,8 +29,8 @@ function wiki_ema_search_form(string $types = null, string $placeholder = null)
 /**
  * Formulário de busca para Home page Wiki-Ema
  */
-if (is_singular()) {
-    wiki_ema_search_form('obras,autores', 'buscar obra');
+if (is_page('wiki-ema')) {
+    wiki_ema_search_form('', 'buscar obra');
 }
 
 /**
