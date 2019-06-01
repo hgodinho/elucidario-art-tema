@@ -27,7 +27,7 @@ get_search_form();?>
 </div>
 
 <div class="container">
-    <div class="row">
+    <div class="row pb-3 mb-2">
 
         <!-- descricao -->
         <?php if ($descricao) {?>
