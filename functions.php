@@ -21,9 +21,10 @@ require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/clas
  *
  * @return void
  */
+$bootstrap_version = '4.3.1';
 function wikiema_enqueue_styles()
 {
-    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/custom-bootstrap.min.css','', '4.3.1');
+    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/custom-bootstrap.min.css','', $bootstrap_version);
     wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
     wp_register_style('estilos', get_template_directory_uri() . '/css/estilos.css');
     /**
@@ -44,7 +45,7 @@ function wikiema_enqueue_styles()
 function wikiema_enqueue_scripts()
 {
     $dependencies = array('jquery');
-    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', $dependencies, '3.3.6', true);
+    wp_enqueue_script('bootstrap', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', $dependencies, $bootstrap_version, true);
     wp_enqueue_script('popper', get_template_directory_uri() . '/js/popper.min.js', $dependencies);
 
     /**
