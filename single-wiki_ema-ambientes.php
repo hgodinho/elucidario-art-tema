@@ -10,7 +10,7 @@
  * @package WordPress
  * @subpackage Wiki-Ema
  *
- * @version 0.2
+ * @version 0.3
  * @since 0.3
  *
  * @author hgodinho.com
@@ -38,20 +38,23 @@ $ambientes = get_terms(
     <main role="main" class="container">
 
         <?php
-    if (!empty($ambientes) && !is_wp_error($ambientes)) {
+if (!empty($ambientes) && !is_wp_error($ambientes)) {
     ?>
         <div class="container py-4">
             <div class="row">
-                <div class="col-12 pb-4">
-                    <?php
-get_template_part('template-parts/header/header', 'archive');?>
-                </div>
-                <!--
                 <div class="col-12">
                     <?php
 get_search_form();?>
                 </div>
-                -->
+                <div class="col-12">
+                    <?php
+get_search_form();?>
+                </div>
+
+                <div class="col-12 pb-4">
+                    <?php
+get_template_part('template-parts/header/header', 'archive');?>
+                </div>
             </div>
         </div>
 
@@ -67,24 +70,25 @@ foreach ($ambientes as $ambiente) {
 
                     <div class="card d-flex w-100 shadow">
                         <a href="<?php echo $link; ?>">
-                            <img class="card-img-top" src="<?php echo $imagem1['url']; ?>" alt="<?php echo $imagem1['alt']; ?>">
+                            <img class="card-img-top" src="<?php echo $imagem1['url']; ?>"
+                                alt="<?php echo $imagem1['alt']; ?>">
                         </a>
 
                         <div class="card-body">
                             <h5 class="card-title mb-0 titulo-cartao mb-3">
-                                <?php echo mb_strtoupper($ambiente->name,'UTF-8'); ?>
+                                <?php echo mb_strtoupper($ambiente->name, 'UTF-8'); ?>
                             </h5>
                             <p class="card-text"><span class="text-muted">→
-                                    <?php 
-                                    if($ambiente->count > 1){
-                                    echo $ambiente->count; ?>
+                                    <?php
+if ($ambiente->count > 1) {
+            echo $ambiente->count;?>
                                     itens</span>
-                                <?php 
-                                } else{
-                                        echo $ambiente->count; ?>
+                                <?php
+} else {
+            echo $ambiente->count;?>
                                 item</span>
                                 <?php
-                                }?>
+}?>
                             </p>
                             <p class="card-text">
                                 <?php echo $trecho; ?>

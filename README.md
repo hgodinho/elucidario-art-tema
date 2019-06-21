@@ -1,6 +1,6 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.15`
+- @version `0.16`
 - @source https://emaklabin.org.br
 
 ***
@@ -9,14 +9,24 @@
 - arrumar searchform 
 ***
 
+## `0.16`
+### Concluídas
+- https://github.com/hgodinho/wiki-ema-template/projects/1#card-22255478
+- https://github.com/hgodinho/wiki-ema-template/projects/1#card-22255456
+- https://github.com/hgodinho/wiki-ema-template/projects/1#card-22256425
+
+### Em progresso
+- https://github.com/hgodinho/wiki-ema-template/projects/1#card-23081224
+- https://github.com/hgodinho/wiki-ema-template/projects/1#card-22254886
+- https://github.com/hgodinho/wiki-ema-template/projects/1#card-22254879
+
+
+***
 ## `0.15`
 - templates de busca
 - correções
 
-
-***
 ## `0.14`
-
 
 ## `0.13`
 ### principal

@@ -10,7 +10,7 @@
  * @package WordPress
  * @subpackage Wiki-Ema
  *
- * @version 0.2
+ * @version 0.3
  * @since 0.3
  *
  * @author hgodinho.com
@@ -38,20 +38,18 @@ $classificacoes = get_terms(
     <main role="main" class="container">
 
         <?php
-    if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
+if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
     ?>
         <div class="container py-4">
             <div class="row">
-                <div class="col-12 pb-4">
-                    <?php
-get_template_part('template-parts/header/header', 'archive');?>
-                </div>
-                <!--
                 <div class="col-12">
                     <?php
 get_search_form();?>
                 </div>
-                -->
+                <div class="col-12 pb-4">
+                    <?php
+get_template_part('template-parts/header/header', 'archive');?>
+                </div>
             </div>
         </div>
 
@@ -61,22 +59,22 @@ get_search_form();?>
 foreach ($classificacoes as $classificacao) {
         $link = get_term_link($classificacao);
 
-$args = array(
-    'posts_per_page' => '1',
-    'post_type' => 'obras',
-    'tax_query' => array(
-        array(
-            'taxonomy' => 'classificacao',
-            'field' => 'name',
-            'terms' => $classificacao->name
-        )
-    )
-);
-$imagequery = get_posts($args);
-$image = get_the_post_thumbnail( $imagequery[0]->ID, 'cartoes-thumb-obra' );
-$imageurl = get_the_post_thumbnail_url( $imagequery[0]->ID, 'cartoes-thumb-obra' );
-$imageid = get_post_thumbnail_id( $imagequery[0]->ID );
-$alt = get_post_meta($imageid, '_wp_attachment_image_alt', true);
+        $args = array(
+            'posts_per_page' => '1',
+            'post_type' => 'obras',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'classificacao',
+                    'field' => 'name',
+                    'terms' => $classificacao->name,
+                ),
+            ),
+        );
+        $imagequery = get_posts($args);
+        $image = get_the_post_thumbnail($imagequery[0]->ID, 'cartoes-thumb-obra');
+        $imageurl = get_the_post_thumbnail_url($imagequery[0]->ID, 'cartoes-thumb-obra');
+        $imageid = get_post_thumbnail_id($imagequery[0]->ID);
+        $alt = get_post_meta($imageid, '_wp_attachment_image_alt', true);
 //var_dump($imagequery);
         ?>
                 <div class="col-md-4 mb-5 d-flex justify-content-center">
@@ -88,19 +86,19 @@ $alt = get_post_meta($imageid, '_wp_attachment_image_alt', true);
 
                         <div class="card-body">
                             <h5 class="card-title mb-0 titulo-cartao mb-3">
-                                <?php echo mb_strtoupper($classificacao->name,'UTF-8'); ?>
+                                <?php echo mb_strtoupper($classificacao->name, 'UTF-8'); ?>
                             </h5>
                             <p class="card-text"><span class="text-muted">→
-                                    <?php 
-                                    if($classificacao->count > 1){
-                                    echo $classificacao->count; ?>
+                                    <?php
+if ($classificacao->count > 1) {
+            echo $classificacao->count;?>
                                     itens</span>
-                                <?php 
-                                } else{
-                                        echo $classificacao->count; ?>
+                                <?php
+} else {
+            echo $classificacao->count;?>
                                 item</span>
                                 <?php
-                                }?>
+}?>
                             </p>
                         </div>
 

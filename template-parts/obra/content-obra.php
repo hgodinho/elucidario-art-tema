@@ -2,7 +2,7 @@
 /**
  * sub template para conteúdo da obra - single
  *
- * @version 0.3
+ * @version 0.4
  * @since 0.1
  *
  * @author hgodinho.com
@@ -32,6 +32,11 @@ $nucleo = get_the_terms(get_the_ID(), 'nucleo');
 $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 ?>
 
+
+<div class="col-12 px-0 py-4">
+	<?php
+get_search_form();?>
+</div>
 
 <!-- titulo obra -->
 <div class="col py-4 pl-0">

@@ -6,7 +6,7 @@
  * @package WordPress
  * @subpackage Wiki-ema
  *
- * @version
+ * @version 0.2
  * @since 0.4
  *
  */
@@ -16,12 +16,18 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 ?>
 
 <section id="primary" class="content-area">
-	<main id="main" class="site-main">
+	<main id="main" class="container">
 
 		<?php if (have_posts()) {?>
 
-		<header class="container pb-4 mb-4">
+		<div class="container py-4">
 			<div class="row">
+
+				<div class="col-12">
+					<?php
+get_search_form();?>
+				</div>
+
 				<div class="col-12 pb-4 pt-4">
 					<h1>
 						<?php
@@ -36,32 +42,31 @@ echo $wp_query->found_posts;
 							<?php _e('resultados de busca para:', TEXT_DOMAIN);?>
 						</span>
 						<?php }?>
-
 						<?php echo get_search_query(); ?>
 					</h1>
+
+					<p class="lead text-muted">
+						<?php
+$paged = get_query_var('paged');
+    if ($paged > 0) {?>
+
+						<?php
+echo 'Página ' . $paged;
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+					</p>
+					<?php
+} else {?>
+
+					<?php
+echo 'Página 1';
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+					</p>
+					<?php
+}?>
+
 				</div>
-
 			</div>
-		</header>
-
-		<div id="debug" class="container">
-			<?php 
-			/*
-			$resultados = $wp_query;
-			$tipos = array('obras', 'autores');
-			foreach( $tipos as $tipo ){
-				while(have_posts()){
-					the_post();
-					if($tipo == get_post_type()){
-						get_template_part( 'template-parts/search/content', $tipo );
-					}
-				}
-				rewind_posts();
-			}
-			*/
-			?>
 		</div>
-
 
 		<div class="container">
 			<table class="table table-hover table-responsive-md">
@@ -73,8 +78,8 @@ echo $wp_query->found_posts;
 				</thead>
 				<tbody>
 					<?php
-					
-while (have_posts()): the_post();
+
+    while (have_posts()): the_post();
         ?>
 					<tr>
 						<td>
@@ -100,9 +105,8 @@ endwhile;
     ?>
 				</tbody>
 			</table>
-		</div>
 
-		<?php
+			<?php
 
     if (function_exists('bootstrap_pagination')) {
         bootstrap_pagination();
@@ -111,6 +115,9 @@ endwhile;
     get_template_part('template-parts/search/nada', 'encontrado');
 }
 ?>
+		</div>
+
+
 		</div>
 	</main>
 </section>

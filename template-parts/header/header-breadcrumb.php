@@ -2,7 +2,7 @@
 /**
  * Breadcrumbs
  *
- * @since 0.2
+ * @since 0.3
  * Original @author anwerashif
  * @source https://gist.github.com/anwerashif/ec4ac740047e2681e616fe2f1c63cbcf#file-functions-php
  *
@@ -97,37 +97,41 @@ if (!is_home()) {
         echo "</li><li class='breadcrumb-item active'>";
         the_title();
         echo '</li>';
-    } elseif (is_archive()){
+    } elseif (is_archive()) {
         echo "</li><li class='breadcrumb-item active'>";
         post_type_archive_title();
         echo "</li>";
+    } elseif (is_search()) {
+        $search_query = get_search_query();
+        echo "</li><li class='breadcrumb-item active'>";
+        echo "Resultados de busca para: " . $search_query;
+        echo '</li>';
     }
-
-
-} elseif (is_tag()) {
-    single_tag_title();
-} elseif (is_day()) {
-    echo "<li class='breadcrumb-item'>Archive for ";
-    the_time('F jS, Y');
-    echo '</li>';
-} elseif (is_month()) {
-    echo "<li class='breadcrumb-item'>Archive for ";
-    the_time('F, Y');
-    echo '</li>';
-} elseif (is_year()) {
-    echo "<li class='breadcrumb-item'>Archive for ";
-    the_time('Y');
-    echo '</li>';
-} elseif (is_author()) {
-    echo "<li class='breadcrumb-item'>Author Archive";
-    echo '</li>';
-} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-    echo "<li>Blog Archives";
-    echo '</li>';
-} elseif (is_search()) {
-    echo "<li class='breadcrumb-item'>Search Results";
-    echo '</li>';
 }
+
+/*
+} elseif (is_tag()) {
+single_tag_title();
+} elseif (is_day()) {
+echo "<li class='breadcrumb-item'>Archive for ";
+the_time('F jS, Y');
+echo '</li>';
+} elseif (is_month()) {
+echo "<li class='breadcrumb-item'>Archive for ";
+the_time('F, Y');
+echo '</li>';
+} elseif (is_year()) {
+echo "<li class='breadcrumb-item'>Archive for ";
+the_time('Y');
+echo '</li>';
+} elseif (is_author()) {
+echo "<li class='breadcrumb-item'>Author Archive";
+echo '</li>';
+} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
+echo "<li>Blog Archives";
+echo '</li>';
+}
+ */
 
 echo '</ol>';
 echo '</nav>';

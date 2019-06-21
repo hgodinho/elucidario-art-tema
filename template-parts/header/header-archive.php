@@ -2,7 +2,7 @@
 /**
  * Header dos templates baseados em arquivos
  *
- * @version 0.4
+ * @version 0.5
  * @since 0.7
  * @author hgodinho.com
  */
@@ -148,7 +148,7 @@ echo $fichatecnica_autor['dataperiodo_inicial'];
     } else {?>
 <?php
     echo 'Página 1';
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+            echo ' de 1.'; ?>
 </p>
 <?php
     }?>
