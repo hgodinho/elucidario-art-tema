@@ -19,11 +19,10 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
 		<div class="row">
 			<?php get_template_part('template-parts/autor/content', 'autor');?>
-			<?php 
-			//get_template_part('template-parts/autor/content', 'obra-em-destaque');
-			?>
+			<?php
+//get_template_part('template-parts/autor/content', 'obra-em-destaque');
+?>
 		</div>
-
 		<?php get_template_part('template-parts/autor/content', 'obras-do-autor');?>
 
 	</main>

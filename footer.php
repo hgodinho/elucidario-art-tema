@@ -1,22 +1,24 @@
 <?php
 /**
  * Footer template para Wiki-Ema
- * 
+ *
  * @package WordPress
  * @subpackage Wiki-Ema
- * 
+ *
  * @version 0.1
  * @since 0.1
- * 
+ *
  * @author hgodinho.com
  */
 ?>
 </div><!-- / .site-content no header -->
 
-<div class="container-fluid fixed-bottom d-flex flex-row-reverse p-5">
-	<a class="topbutton btn btn-outline-secondary btn-lg shadow-lg rounded-0 hidden" href="#" role="button" alt="Voltar ao topo"><i
-		 class="fas fa-angle-up"></i></a>
+
+<div class="p-5 fixed-bottom">
+	<a class="topbutton btn btn-outline-secondary btn-lg shadow-lg rounded-0 float-right hidden" href="#" role="button"
+		alt="Voltar ao topo"><i class="fas fa-angle-up"></i></a>
 </div>
+
 
 <footer class="blog-footer container-fluid bg-primary mt-5 border-top border-white shadow-lg">
 	<div class="container bg-transparent text-light">
@@ -46,7 +48,8 @@
 					</div>
 					<div class="form-group">
 						<label for="EmailNewsletter" class="sr-only">Endereço de e-mail</label>
-						<input type="email" class="form-control" id="EmailNewsletter" aria-describedby="emailHelp" placeholder="Email">
+						<input type="email" class="form-control" id="EmailNewsletter" aria-describedby="emailHelp"
+							placeholder="Email">
 						<small id="emailHelp" class="form-text text-light">*Nunca compartilharemos seus dados
 							com
 							terceiros.</small>
@@ -57,12 +60,13 @@
 		</div>
 		<div class="row border-top py-4">
 			<small class="col-auto mr-auto">Fundação Ema Klabin. Todos os direitos reservados.</small>
-			<small class="col-auto">por <a href="https://hgodinho.com/?utm_source=wiki-ema&utm_medium=click" class="text-white">hgodinho.com</a></small>
+			<small class="col-auto">por <a href="https://hgodinho.com/?utm_source=wiki-ema&utm_medium=click"
+					class="text-white">hgodinho.com</a></small>
 		</div>
 	</div>
 </footer>
 
-<?php wp_footer(); ?>
+<?php wp_footer();?>
 </body>
 
 </html>

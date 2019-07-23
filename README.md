@@ -1,13 +1,14 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.16`
+- @version `0.17`
 - @source https://emaklabin.org.br
 
-***
-## @todo
-- arrumar paginação da lista de obras de autores
-- arrumar searchform 
-***
+
+## `0.17`
+### concluídas
+- múltiplas correções de bugs
+- adição de novo template para a página Ema Klabin
+
 
 ## `0.16`
 ### Concluídas

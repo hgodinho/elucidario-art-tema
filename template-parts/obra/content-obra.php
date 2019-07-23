@@ -1,6 +1,6 @@
 <?php
 /**
- * sub template para conteúdo da obra - single
+ * Sub template para conteúdo da obra - single
  *
  * @version 0.4
  * @since 0.1
@@ -20,7 +20,7 @@ $dimensoes_obj = get_field_object('field_5bfd47ebb4649');
 $fotografo_obj = get_field_object('field_5c0ec52b96602');
 $descricao_obj = get_field_object('field_5bfdeeb084777');
 
-$thumbnail = get_the_post_thumbnail(get_the_ID(), '', array('class' => 'img-thumbnail mx-auto d-block', 'style' => 'width: 100%; height: 100%; object-fit: cover;'));
+$thumbnail = get_the_post_thumbnail(get_the_ID(), '', array('class' => 'image mx-auto d-block'));
 $thumbnail_link = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $linkobra = get_permalink();
 
@@ -32,11 +32,12 @@ $nucleo = get_the_terms(get_the_ID(), 'nucleo');
 $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 ?>
 
-
+<?php if (!is_page("wiki-ema")) {?>
 <div class="col-12 px-0 py-4">
 	<?php
 get_search_form();?>
 </div>
+<?php }?>
 
 <!-- titulo obra -->
 <div class="col py-4 pl-0">
@@ -53,10 +54,13 @@ get_search_form();?>
 <div class="row pb-3 mb-2">
 	<div class="col-12 col-lg-7 mb-4">
 		<!-- imagem obra -->
-		<div style="max-height:480px; height: 480px;">
-			<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal">
-				<?php echo $thumbnail; ?>
-			</a>
+		<div class="img-container">
+			<?php echo $thumbnail; ?>
+			<div class="img-overlay">
+				<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal" class="img-icon">
+					<i class="fas fa-search"></i>
+				</a>
+			</div>
 		</div>
 		<!-- // imagem obra -->
 
@@ -78,36 +82,52 @@ get_search_form();?>
 			<div class="col-12">
 				<table class="table table-striped container-fluid mb-0">
 					<tbody>
+
+						<?php if($tombo_obj['value']):?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Tombo</th>
 							<td>
 								<?php echo $tombo_obj['value']; ?>
 							</td>
 						</tr>
+						<?php endif; ?>
+
+						<?php if($origem_obj['value']):?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Origem</th>
 							<td>
 								<?php echo $origem_obj['value']; ?>
 							</td>
 						</tr>
+						<?php endif; ?>
+
+						<?php if($dataperiodo_obj['value']):?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Data</th>
 							<td>
 								<?php echo $dataperiodo_obj['value']; ?>
 							</td>
 						</tr>
+						<?php endif; ?>
+
+						<?php if($material_obj['value']):?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Material<br>ou técnica</th>
 							<td>
 								<?php echo $material_obj['value']; ?>
 							</td>
 						</tr>
+						<?php endif; ?>
+
+						<?php if($dimensoes_obj['value']):?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Medidas</th>
 							<td>
 								<?php echo $dimensoes_obj['value']; ?>
 							</td>
 						</tr>
+						<?php endif; ?>
+
 						<?php
 if ($classificacao) {?>
 						<tr>
@@ -164,7 +184,6 @@ if ($fotografo_obj['value']) {?>
 		</div>
 		<!-- // informações tabela -->
 	</div>
-
 	<!-- descrição -->
 	<?php
 if ($descricao_obj['value']) {

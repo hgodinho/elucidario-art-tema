@@ -17,11 +17,11 @@ if (is_post_type_archive('obras')) {?>
     </h1>
     <p class="lead text-muted">
         <?php
-    if ($wp_query->found_posts > 1) {
-        echo $wp_query->found_posts . ' itens';
-    } else {
-        echo $wp_query->found_posts . ' item';
-    } 
+if ($wp_query->found_posts > 1) {
+    echo $wp_query->found_posts . ' itens';
+} else {
+    echo $wp_query->found_posts . ' item';
+}
     echo ' → ';
     ?>
 
@@ -60,31 +60,31 @@ if (is_post_type_archive('autores')) {?>
     </h1>
     <p class="lead text-muted">
         <?php
-        if ($wp_query->found_posts > 1) {
-            echo $wp_query->found_posts . ' autores';
-        } else {
-            echo $wp_query->found_posts . ' autor';
-        } 
-        echo ' → ';
-        ?>
+if ($wp_query->found_posts > 1) {
+    echo $wp_query->found_posts . ' autores';
+} else {
+    echo $wp_query->found_posts . ' autor';
+}
+    echo ' → ';
+    ?>
 
         <?php
-    $paged = get_query_var('paged');
-        if ($paged > 0) {?>
+$paged = get_query_var('paged');
+    if ($paged > 0) {?>
 
         <?php
-    echo 'Página ' . $paged;
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página ' . $paged;
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    } else {?>
+} else {?>
 
     <?php
-    echo 'Página 1';
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página 1';
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    }?>
+}?>
     <p>
         <?php echo term_description(); ?>
     </p>
@@ -114,9 +114,9 @@ if ($fichatecnica_autor['dataperiodo_inicial']) {?>
         <p class="text-muted">(
             <?php
 echo $fichatecnica_autor['dataperiodo_inicial'];
-    if ($fichatecnica_autor['dataperiodo_final']) {
-        echo ' — ';
-        echo $fichatecnica_autor['dataperiodo_final']; ?>
+        if ($fichatecnica_autor['dataperiodo_final']) {
+            echo ' — ';
+            echo $fichatecnica_autor['dataperiodo_final']; ?>
             )</p>
     </div>
     <?php
@@ -125,33 +125,38 @@ echo $fichatecnica_autor['dataperiodo_inicial'];
 </div>
 <?php
 }
-}
-?>
+    }
+    ?>
 <p class="lead text-muted">
     <?php
-        if ( count($post->connected) > 1) {
-            echo count( $post->connected ) . ' itens';
-        } else {
-            echo count( $post->connected ) . ' item';
-        } 
-        echo ' → ';
-        ?>
+$quantidade = count($post->connected);
+    if ($quantidade > 1) {
+        echo $quantidade . ' itens';
+    } else {
+        echo $quantidade . ' item';
+    }
+    echo ' → ';
+    ?>
 
     <?php
-    $paged = get_query_var('paged');
-        if ($paged > 0) {?>
+$paged = get_query_var('page');
+    if ($paged >= 0) {?>
     <?php
-    echo 'Página ' . $paged;
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+if ($paged == 0) {
+        echo 'Página ' . 1;
+    } else {
+        echo 'Página ' . $paged;
+    }
+        echo ' de ' . ceil($quantidade / 12) . '.';?>
 </p>
 <?php
-    } else {?>
+} else {?>
 <?php
-    echo 'Página 1';
-            echo ' de 1.'; ?>
+echo 'Página 1';
+        echo ' de 1.'; ?>
 </p>
 <?php
-    }?>
+}?>
 <p>
     <?php echo term_description(); ?>
 </p>
@@ -176,31 +181,31 @@ echo strtoupper(single_term_title('', false)); ?>
 
     <p class="lead text-muted">
         <?php
-        if ($wp_query->found_posts > 1) {
-            echo $wp_query->found_posts . ' itens';
-        } else {
-            echo $wp_query->found_posts . ' item';
-        } 
-        echo ' → ';
-        ?>
+if ($wp_query->found_posts > 1) {
+    echo $wp_query->found_posts . ' itens';
+} else {
+    echo $wp_query->found_posts . ' item';
+}
+    echo ' → ';
+    ?>
 
         <?php
-    $paged = get_query_var('paged');
-        if ($paged > 0) {?>
+$paged = get_query_var('paged');
+    if ($paged > 0) {?>
 
         <?php
-    echo 'Página ' . $paged;
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página ' . $paged;
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    } else {?>
+} else {?>
 
     <?php
-    echo 'Página 1';
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página 1';
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    }?>
+}?>
 
 </div>
 <?php
@@ -223,31 +228,31 @@ echo strtoupper(single_term_title('', false)); ?>
 
     <p class="lead text-muted">
         <?php
-        if ($wp_query->found_posts > 1) {
-            echo $wp_query->found_posts . ' autores';
-        } else {
-            echo $wp_query->found_posts . ' autor';
-        } 
-        echo ' → ';
-        ?>
+if ($wp_query->found_posts > 1) {
+    echo $wp_query->found_posts . ' autores';
+} else {
+    echo $wp_query->found_posts . ' autor';
+}
+    echo ' → ';
+    ?>
 
         <?php
-    $paged = get_query_var('paged');
-        if ($paged > 0) {?>
+$paged = get_query_var('paged');
+    if ($paged > 0) {?>
 
         <?php
-    echo 'Página ' . $paged;
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página ' . $paged;
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    } else {?>
+} else {?>
 
     <?php
-    echo 'Página 1';
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página 1';
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    }?>
+}?>
 
 </div>
 <?php
@@ -269,31 +274,31 @@ echo single_term_title('', false); ?>
 
     <p class="lead text-muted">
         <?php
-        if ($wp_query->found_posts > 1) {
-            echo $wp_query->found_posts . ' itens';
-        } else {
-            echo $wp_query->found_posts . ' item';
-        } 
-        echo ' → ';
-        ?>
+if ($wp_query->found_posts > 1) {
+    echo $wp_query->found_posts . ' itens';
+} else {
+    echo $wp_query->found_posts . ' item';
+}
+    echo ' → ';
+    ?>
 
         <?php
-    $paged = get_query_var('paged');
-        if ($paged > 0) {?>
+$paged = get_query_var('paged');
+    if ($paged > 0) {?>
 
         <?php
-    echo 'Página ' . $paged;
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página ' . $paged;
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    } else {?>
+} else {?>
 
     <?php
-    echo 'Página 1';
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página 1';
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
     </p>
     <?php
-    }?>
+}?>
 
 </div>
 <?php
@@ -315,30 +320,30 @@ echo single_term_title('', false); ?>
         </p>
         <p class="lead text-muted">
             <?php
-        if ($wp_query->found_posts > 1) {
-            echo $wp_query->found_posts . ' itens';
-        } else {
-            echo $wp_query->found_posts . ' item';
-        } 
-        echo ' → ';
-        ?>
+if ($wp_query->found_posts > 1) {
+    echo $wp_query->found_posts . ' itens';
+} else {
+    echo $wp_query->found_posts . ' item';
+}
+    echo ' → ';
+    ?>
             <?php
-    $paged = get_query_var('paged');
-        if ($paged > 0) {?>
+$paged = get_query_var('paged');
+    if ($paged > 0) {?>
 
             <?php
-    echo 'Página ' . $paged;
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página ' . $paged;
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
         </p>
         <?php
-    } else {?>
+} else {?>
         <?php
-    echo 'Página 1';
-            echo ' de ' . $wp_query->max_num_pages . '.'; ?>
+echo 'Página 1';
+        echo ' de ' . $wp_query->max_num_pages . '.'; ?>
         </p>
 
         <?php
-    }?>
+}?>
     </div>
 
     <div class="col-12 col-lg-5 pt-4">
@@ -351,17 +356,19 @@ echo single_term_title('', false); ?>
 /**
  * Header para single ambiente
  */
-if (is_single(array('ambientes', 'classificacoes', 'nucleos'))) {?>
+if (is_single(array('ambientes', 'classificacoes', 'nucleos', 'ema-klabin'))) {
+    $content = apply_filters('the_content', get_the_content());
+    ?>
 <div class="row">
     <div class="col-12 pt-4">
         <h1 class="display-3 text-primary">
-            <?php the_title(); ?>
+            <?php the_title();?>
         </h1>
 
         <p>
-            <?php echo get_post_field('post_content', $post->ID); ?>
+        <?php the_content( 'Continue reading ' . get_the_title() ); ?>
         </p>
     </div>
 </div>
 <?php
-    }?>
+}?>

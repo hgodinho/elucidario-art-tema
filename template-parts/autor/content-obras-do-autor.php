@@ -8,7 +8,8 @@
  * @author hgodinho.com
  *
  */
-wp_reset_query();
+//wp_reset_query();
+global $post;
 ?>
 <div class="container">
     <div class="row py-4">
@@ -23,6 +24,7 @@ wp_reset_query();
             <?php
 $autor = get_the_ID();
 
+$paged = (get_query_var('page')) ? get_query_var('page') : 1;
 $args = array(
     'post_type' => 'obras',
     'post_status' => 'any',
@@ -31,24 +33,40 @@ $args = array(
         'to' => $post->ID,
     ),
     'posts_per_page' => 12,
-    'paged' => $page,
+    'paged' => $paged,
 );
 $connected = new WP_Query($args);
 ?>
             <div class="row pb-4">
                 <?php
-while ($connected->have_posts()): $connected->the_post();
-    get_template_part('template-parts/obra/content', 'cartao-obra');
-endwhile;
+if ($connected->have_posts()):
+    while ($connected->have_posts()): $connected->the_post();
+        get_template_part('template-parts/obra/content', 'cartao-obra');
+    endwhile;
+endif;
 ?>
             </div>
 
             <?php
 
+/*
+$temp_query = $wp_query;
+$wp_query = null;
+$wp_query = $connected;
+
+wp_reset_postdata();
+*/
 if (function_exists('bootstrap_pagination')) {
-    bootstrap_pagination($connected);
+bootstrap_pagination($connected, 'page');
 }
-wp_reset_query(  );
+/*
+
+$wp_query = null;
+$wp_query = $temp_query;
+ */
+
+//wp_reset_postdata();
+//wp_reset_query(  );
 ?>
         </div>
     </div>

@@ -28,7 +28,7 @@ $relacionado_query = new WP_Query(array(
             'terms' => $term_slug
         )),
     'posts_per_page' => 9,
-    'orderby' => 'rand',
+    'orderby' => 'relevance',
     'post__not_in' => array($post->ID),
 ));
 ?>

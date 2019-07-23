@@ -9,11 +9,12 @@
 <div class="btn-group w-100 content-box" role="group" aria-label="botões de funções">
 
     <div class="btn-group w-25 content-box" role="group">
-        <button id="sharebuttons" type="button" class="btn btn-outline-primary dropdown-toggle w-100 grade-botoes content-box"
-            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-share-alt"></i></button>
+        <button id="sharebuttons" type="button"
+            class="btn btn-outline-primary dropdown-toggle w-100 grade-botoes content-box" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"><i class="fas fa-share-alt"></i></button>
         <div class="dropdown-menu text-center content-box" aria-labelledby="sharebuttons">
             <!-- facebook -->
-            <a class="dropdown-item" href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-facebook-f"></i></a>
+            <a class="fb-share dropdown-item" OnClick="fbSharer()"><i class="fab fa-facebook-f"></i></a>
 
             <!-- twitter -->
             <a class="dropdown-item" href="#"><i class="fab fa-twitter"></i></a>
@@ -29,10 +30,12 @@
         </div>
     </div>
 
-    <button type="button" class="btn btn-outline-primary w-25 content-box" data-toggle="modal" data-target="#download-modal"><i
-            class="fas fa-download"></i></button>
-    <button type="button" class="btn btn-outline-primary w-25 content-box" onclick="printFunction()"><i class="fas fa-print"></i></button>
-    <button type="button" class="btn btn-outline-primary w-25 grade-botoes content-box" data-toggle="modal" data-target="#informacoes-modal"><i class="fas fa-copy"></i></button>
+    <button type="button" class="btn btn-outline-primary w-25 content-box" data-toggle="modal"
+        data-target="#download-modal"><i class="fas fa-download"></i></button>
+    <button type="button" class="btn btn-outline-primary w-25 content-box" onclick="printFunction()"><i
+            class="fas fa-print"></i></button>
+    <button type="button" class="btn btn-outline-primary w-25 grade-botoes content-box" data-toggle="modal"
+        data-target="#informacoes-modal"><i class="fas fa-copy"></i></button>
 </div>
 
 <?php
@@ -49,9 +52,30 @@
  * Modal copiar informações
  */
 ?>
-<div class="modal fade" id="informacoes-modal" tabindex="-1" role="dialog" aria-labelledby="copiar informações" aria-hidden="true">
+<div class="modal fade" id="informacoes-modal" tabindex="-1" role="dialog" aria-labelledby="copiar informações"
+    aria-hidden="true">
     <?php get_template_part('template-parts/modal/modal', 'copiar-informacoes'); ?>
 </div>
+
+
+<?php
+/**
+ * Facebook Sharer
+ */
+?>
+<script>
+    $(document).ready(function() {
+    var fbSharer = $('.fb-share').click(function () {
+            FB.ui({
+                method: 'share',
+                name: '<?php the_title(); ?> | Wiki-Ema | Fundação Ema Klabin',
+                link: '<?php the_permalink(); ?>',
+                picture: '<?php the_post_thumbnail_url()?>'
+            });
+        });
+    });
+</script>
+
 
 <?php
 /**
@@ -59,8 +83,7 @@
  */
 ?>
 <script>
-function printFunction() {
-  window.print();
-}
+    function printFunction() {
+        window.print();
+    }
 </script>
-

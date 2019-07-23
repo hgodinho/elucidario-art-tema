@@ -17,10 +17,7 @@ $tombo = get_field_object('field_5bfd4663b4645');
 ?>
 <div class="col col-md-10 col-lg-4">
     <div class="card mb-5 rounded-0 shadow">
-        <a href="<?php echo $permalink ?>">
-            <?php echo $thumbnail; ?>
-        </a>
-
+        <?php echo $thumbnail; ?>
         <div class="card-body">
             <h5 class="card-title mb-0 titulo-cartao">
                 <?php echo mb_strtoupper(the_title('','', false),'UTF-8');
@@ -57,7 +54,7 @@ $tombo = get_field_object('field_5bfd4663b4645');
             </tbody>
         </table>
 
-        <a href="<?php echo $permalink ?>" class="btn btn-secondary rounded-0">Ver obra →</a>
+        <a href="<?php echo $permalink ?>" class="btn btn-secondary rounded-0 stretched-link">Ver obra →</a>
     </div>
 </div>
 <?php wp_reset_query(  );?>

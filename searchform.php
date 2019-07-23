@@ -57,7 +57,7 @@ if (is_singular(array('obras'))) {
 /**
  * Formulário de busca para Arquivo de Taxonomias (Ambientes, Núcleos e Classificações)
  */
-if (is_single(array('Ambientes', 'Núcleos', 'Classificações'))) {
+if (is_single(array('Ambientes', 'Núcleos', 'Classificações', 'Ema Klabin'))) {
     wiki_ema_search_form('obras, autores', 'buscar obra');
 }
 

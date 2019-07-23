@@ -46,11 +46,6 @@ if (!empty($ambientes) && !is_wp_error($ambientes)) {
                     <?php
 get_search_form();?>
                 </div>
-                <div class="col-12">
-                    <?php
-get_search_form();?>
-                </div>
-
                 <div class="col-12 pb-4">
                     <?php
 get_template_part('template-parts/header/header', 'archive');?>

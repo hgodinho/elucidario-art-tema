@@ -31,7 +31,7 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
          * @param string $tax_name_1
          * @param string $tax_name_2
          * @param array $post_types_1
-         * @param array $post_types_3
+         * @param array $post_types_2
          * @param string $slug_rewrite_1
          * @param string $slug_rewrite_2
          * @param bool $show_ui
@@ -175,7 +175,7 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                     }
                 }
                 ?>
-<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0" role="group" aria-label="glossario">
+<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0 sticky-top" role="group" aria-label="glossario">
     <?php
 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_1)) ? "current-menu-item active" : "menu-item";
@@ -191,7 +191,7 @@ foreach (range('a', 'z') as $i):
 }
 
             /**
-             * If the $tax_name_1 parameter is passed then create the alphabetical menu based on bootstrap button group
+             * If the $tax_name_2 parameter is passed then create the alphabetical menu based on bootstrap button group
              */
             if ($tax_name_2 != null) {
                 $terms = get_terms($tax_name_2);
@@ -202,7 +202,7 @@ foreach (range('a', 'z') as $i):
                     }
                 }
                 ?>
-<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0" role="group" aria-label="glossario">
+<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0 sticky-top" role="group" aria-label="glossario">
     <?php
 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_2)) ? "current-menu-item active" : "menu-item";

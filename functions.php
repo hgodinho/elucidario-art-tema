@@ -2,10 +2,10 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.16
+ * @version 0.17
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
- * 
+ *
  * Bootstrap @version 4.3.1
  */
 
@@ -21,12 +21,12 @@ require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/clas
  *
  * @return void
  */
-global $bootstrap_version; 
+global $bootstrap_version;
 
 function wikiema_enqueue_styles()
 {
     $bootstrap_version = '4.3.1';
-    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/custom-bootstrap.min.css','', $bootstrap_version);
+    wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/custom-bootstrap.min.css', '', $bootstrap_version);
     wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
     wp_register_style('estilos', get_template_directory_uri() . '/css/estilos.css');
     /**
@@ -182,6 +182,15 @@ function get_taxonomy_archive_link(string $taxonomy = null)
 }
 
 /**
+ * Custom Query_vars
+ */
+function custom_query_vars_filter($vars)
+{
+    $vars[] .= 'pagina';
+    return $vars;
+}
+
+/**
  * add_action
  */
 add_action('wp_enqueue_scripts', 'wikiema_enqueue_styles');
@@ -193,4 +202,5 @@ add_action('pre_get_posts', 'query_arquivo_principal');
  * add_filter
  */
 add_filter('image_size_names_choose', 'tamanho_imagem_personalizado');
+//add_filter('query_vars', 'custom_query_vars_filter');
 //add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);

@@ -10,6 +10,7 @@
  *
  * @author hgodinho.com
  */
+//var_dump($wp_query->query_vars);
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes();?>>
@@ -22,6 +23,28 @@
 </head>
 
 <body <?php body_class();?>>
+<!-- FACEBOOK SDK -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2430454887176446',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.3'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
 
 	<?php get_template_part('template-parts/header/header','menu'); ?>
 
