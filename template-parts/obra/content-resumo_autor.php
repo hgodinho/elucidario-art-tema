@@ -1,9 +1,9 @@
 <?php
 /**
  * Template Resumo do autor
- * 
+ *
  * Utilizado em diversos templates ao longo do tema.
- * 
+ *
  * @package WordPress
  * @subpackage Wiki-Ema
  * @since 0.1
@@ -27,39 +27,38 @@ while ($connected->have_posts()): $connected->the_post();
     ?>
 
 
-<div class="col-12">
-    <h3>
-        <?php the_title();?>
-    </h3>
-    <?php 
-        if(get_the_title() != 'Autor Desconhecido'){
-            if( $fichatecnica_autor['dataperiodo_inicial'] ){
-                echo '<p class="text-muted h5">(';
-                echo $fichatecnica_autor['dataperiodo_inicial']; 
-                if( $fichatecnica_autor['dataperiodo_final'] ){
-                    echo ' — ';
-                    echo $fichatecnica_autor['dataperiodo_final'];
-                    echo ')</p>';
-                    } else{
-                        echo ')</p>';
-                    }
-                }
-            ?>
-    <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
-            autor →</a></span>
-    <?php
-        }
-        else{
-            ?>
-    <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
-            autor →</a></span>
-    <?php
+	<div class="col-12">
+	    <h3>
+	        <?php the_title();?>
+	    </h3>
+	    <?php
+    if (get_the_title() != 'Autor Desconhecido') {
+        if ($fichatecnica_autor['dataperiodo_inicial']) {
+            echo '<p class="text-muted h5">(';
+            echo $fichatecnica_autor['dataperiodo_inicial'];
+            if ($fichatecnica_autor['dataperiodo_final']) {
+                echo ' — ';
+                echo $fichatecnica_autor['dataperiodo_final'];
+                echo ')</p>';
+            } else {
+                echo ')</p>';
+            }
         }
         ?>
+	    <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
+	            autor →</a></span>
+	    <?php
+    } else {
+        ?>
+	    <span class="d-inline-flex d-lg-inline-flex"><a href="<?php the_permalink();?>">Mais deste
+	            autor →</a></span>
+	    <?php
+    }
+    ?>
 
-</div>
+	</div>
 
-<?php
+	<?php
 endwhile;
 wp_reset_postdata();
 ?>

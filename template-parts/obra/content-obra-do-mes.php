@@ -23,7 +23,7 @@ function wiki_ema_destaque_home(WP_Query $obra_do_mes = null)
 				<?php
     get_template_part('template-parts/obra/content', 'obra');
         endwhile;
-    }
+	}
     ?>
 </div>
 <?php

@@ -56,10 +56,7 @@ if ($relacionado_query->have_posts()) {?>
 
 
             <div class="card mb-5 rounded-0 shadow" style="width: 18rem;">
-
-                <a href="<?php echo $permalink ?>">
                     <?php echo $thumbnail; ?>
-                </a>
 
                 <div class="card-body">
 
@@ -97,7 +94,7 @@ if ($relacionado_query->have_posts()) {?>
                         </tr>
                     </tbody>
                 </table>
-                <a href="<?php echo $permalink ?>" class="btn btn-secondary rounded-0">Ver obra →</a>
+                <a href="<?php echo $permalink ?>" class="btn btn-secondary rounded-0 stretched-link">Ver obra →</a>
 
             </div>
             <?php

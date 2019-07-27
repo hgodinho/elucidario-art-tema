@@ -109,14 +109,17 @@ if (is_singular('autores')) {
         <?php the_title();?>
     </h1>
     <?php
-if ($fichatecnica_autor['dataperiodo_inicial']) {?>
+    $fichatecnica_autor_inicio = get_field_object('field_5bfdfe04be13f');
+    $fichatecnica_autor_final = get_field_object('field_5bfdfe43be140');
+    if ($fichatecnica_autor_inicio['value']) {?>
     <div class="col-12 px-0">
-        <p class="text-muted">(
+        <p class="text-muted">
+            (
             <?php
-echo $fichatecnica_autor['dataperiodo_inicial'];
-        if ($fichatecnica_autor['dataperiodo_final']) {
+echo $fichatecnica_autor_inicio['value'];
+        if ($fichatecnica_autor_final['value']) {
             echo ' — ';
-            echo $fichatecnica_autor['dataperiodo_final']; ?>
+            echo $fichatecnica_autor_final['value']; ?>
             )</p>
     </div>
     <?php
@@ -366,7 +369,7 @@ if (is_single(array('ambientes', 'classificacoes', 'nucleos', 'ema-klabin'))) {
         </h1>
 
         <p>
-        <?php the_content( 'Continue reading ' . get_the_title() ); ?>
+            <?php the_content('Continue reading ' . get_the_title());?>
         </p>
     </div>
 </div>

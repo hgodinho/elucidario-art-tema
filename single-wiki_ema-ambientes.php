@@ -62,12 +62,9 @@ foreach ($ambientes as $ambiente) {
         $link = get_term_link($ambiente);
         ?>
                 <div class="col-md-4 mb-5 d-flex justify-content-center">
-
                     <div class="card d-flex w-100 shadow">
-                        <a href="<?php echo $link; ?>">
-                            <img class="card-img-top" src="<?php echo $imagem1['url']; ?>"
-                                alt="<?php echo $imagem1['alt']; ?>">
-                        </a>
+                        <img class="card-img-top" src="<?php echo $imagem1['url']; ?>"
+                            alt="<?php echo $imagem1['alt']; ?>">
 
                         <div class="card-body">
                             <h5 class="card-title mb-0 titulo-cartao mb-3">
@@ -90,7 +87,7 @@ if ($ambiente->count > 1) {
                             </p>
                         </div>
 
-                        <a href="<?php echo $link; ?>" class="btn btn-secondary">Saiba Mais</a>
+                        <a href="<?php echo $link; ?>" class="btn btn-secondary stretched-link">Saiba Mais</a>
                     </div>
 
                 </div>

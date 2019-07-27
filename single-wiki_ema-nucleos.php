@@ -80,9 +80,7 @@ foreach ($nucleos as $nucleo) {
                 <div class="col-md-4 mb-5 d-flex justify-content-center">
 
                     <div class="card d-flex w-100 shadow">
-                        <a href="<?php echo $link; ?>">
-                            <img class="card-img-top" src="<?php echo $imageurl; ?>" alt="<?php echo $alt; ?>">
-                        </a>
+                        <img class="card-img-top" src="<?php echo $imageurl; ?>" alt="<?php echo $alt; ?>">
 
                         <div class="card-body">
                             <h5 class="card-title mb-0 titulo-cartao mb-3">
@@ -102,7 +100,7 @@ if ($nucleo->count > 1) {
                             </p>
                         </div>
 
-                        <a href="<?php echo $link; ?>" class="btn btn-secondary">Saiba Mais</a>
+                        <a href="<?php echo $link; ?>" class="btn btn-secondary stretched-link">Saiba Mais</a>
                     </div>
 
                 </div>

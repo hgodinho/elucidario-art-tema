@@ -175,7 +175,7 @@ if (!class_exists('WP_Glossary_Bootstrap')) {
                     }
                 }
                 ?>
-<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0 sticky-top" role="group" aria-label="glossario">
+<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0" role="group" aria-label="glossario">
     <?php
 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_1)) ? "current-menu-item active" : "menu-item";
@@ -202,7 +202,7 @@ foreach (range('a', 'z') as $i):
                     }
                 }
                 ?>
-<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0 sticky-top" role="group" aria-label="glossario">
+<div id="alphabet-menu" class="justify-content-center shadow hidden rounded-0 " role="group" aria-label="glossario">
     <?php
 foreach (range('a', 'z') as $i):
                     $current = ($i == get_query_var($tax_name_2)) ? "current-menu-item active" : "menu-item";

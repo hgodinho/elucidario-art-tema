@@ -2,7 +2,7 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.17
+ * @version 0.18
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
@@ -106,7 +106,7 @@ function wikiema_wp_setup()
                 array('obras'),
                 PLUGIN_SLUG . '/autor-a-z',
                 PLUGIN_SLUG . '/obra-a-z',
-                true
+                false
             );
             //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
 

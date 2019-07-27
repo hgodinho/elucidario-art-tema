@@ -13,39 +13,25 @@ if (have_posts()) {
 <table class="table table-hover table-responsive-md">
     <thead>
         <tr>
-            <th scope="col">Nome</th>
-            <th scope="col">Data inicial</th>
-            <th scope="col">Data final</th>
-            <th scope="col">Na coleção</th>
+            <th scope="col-3">Nome</th>
+            <th scope="col-3">Acervo</th>
+            <th scope="col-3">Data inicial</th>
+            <th scope="col-3">Data final</th>
         </tr>
     </thead>
     <tbody>
         <?php
 while (have_posts()): the_post();
         ?>
-		        <tr>
-		            <td>
-		                <a href="<?php the_permalink();?>" class="text-decoration-none">
-		                    <?php the_title();?>
-		                </a>
-		            </td>
-		            <?php $fichatecnica_autor = get_field('ficha_tecnica');?>
-		            <td>
-		                <?php
-    if ($fichatecnica_autor['dataperiodo_inicial']) {
-            echo $fichatecnica_autor['dataperiodo_inicial'];
-        }
-        ?>
-		            </td>
-		            <td>
-		                <?php
-    if ($fichatecnica_autor['dataperiodo_final']) {
-            echo $fichatecnica_autor['dataperiodo_final'];
-        }?>
-		            </td>
-		            <td>
-		                <?php $obras_contagem = count($post->connected);?>
-		                <?php
+        <tr>
+            <td>
+                <a href="<?php the_permalink();?>" class="text-decoration-none">
+                    <?php the_title();?>
+                </a>
+            </td>
+            <td>
+                <?php $obras_contagem = count($post->connected);?>
+                <?php
     echo $obras_contagem;
         if ($obras_contagem == '1') {
             echo ' <small>obra</small>';
@@ -53,9 +39,26 @@ while (have_posts()): the_post();
             echo ' <small>obras</small>';
         }
         ?>
-		            </td>
-		        </tr>
-		        <?php
+            </td>
+            <?php $fichatecnica_autor_inicio = get_field_object('field_5bfdfe04be13f');?>
+            <?php $fichatecnica_autor_final = get_field_object('field_5bfdfe43be140');?>
+            <td>
+                <?php
+                //var_dump($fichatecnica_autor_inicio);
+                //var_dump($fichatecnica_autor_final);
+    if ($fichatecnica_autor_inicio['value']) {
+            echo $fichatecnica_autor_inicio['value'];
+        }
+        ?>
+            </td>
+            <td>
+                <?php
+    if ($fichatecnica_autor_final['value']) {
+            echo $fichatecnica_autor_final['value'];
+        }?>
+            </td>
+        </tr>
+        <?php
 endwhile;
 
     ?>

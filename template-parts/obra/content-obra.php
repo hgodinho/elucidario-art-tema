@@ -54,14 +54,14 @@ get_search_form();?>
 <div class="row pb-3 mb-2">
 	<div class="col-12 col-lg-7 mb-4">
 		<!-- imagem obra -->
-		<div class="img-container">
-			<?php echo $thumbnail; ?>
-			<div class="img-overlay">
-				<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal" class="img-icon">
-					<i class="fas fa-search"></i>
-				</a>
+		<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal" class="">
+			<div class="img-container">
+				<?php echo $thumbnail; ?>
+				<div class="img-overlay h-100 w-100">
+					<i class="fas fa-search img-icon"></i>
+				</div>
 			</div>
-		</div>
+		</a>
 		<!-- // imagem obra -->
 
 		<!-- grade de botoes de ações rápidas -->
@@ -83,50 +83,50 @@ get_search_form();?>
 				<table class="table table-striped container-fluid mb-0">
 					<tbody>
 
-						<?php if($tombo_obj['value']):?>
+						<?php if ($tombo_obj['value']): ?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Tombo</th>
 							<td>
 								<?php echo $tombo_obj['value']; ?>
 							</td>
 						</tr>
-						<?php endif; ?>
+						<?php endif;?>
 
-						<?php if($origem_obj['value']):?>
+						<?php if ($origem_obj['value']): ?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Origem</th>
 							<td>
 								<?php echo $origem_obj['value']; ?>
 							</td>
 						</tr>
-						<?php endif; ?>
+						<?php endif;?>
 
-						<?php if($dataperiodo_obj['value']):?>
+						<?php if ($dataperiodo_obj['value']):?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Data</th>
 							<td>
 								<?php echo $dataperiodo_obj['value']; ?>
 							</td>
 						</tr>
-						<?php endif; ?>
+						<?php endif;?>
 
-						<?php if($material_obj['value']):?>
+						<?php if ($material_obj['value']): ?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Material<br>ou técnica</th>
 							<td>
 								<?php echo $material_obj['value']; ?>
 							</td>
 						</tr>
-						<?php endif; ?>
+						<?php endif;?>
 
-						<?php if($dimensoes_obj['value']):?>
+						<?php if ($dimensoes_obj['value']): ?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Medidas</th>
 							<td>
 								<?php echo $dimensoes_obj['value']; ?>
 							</td>
 						</tr>
-						<?php endif; ?>
+						<?php endif;?>
 
 						<?php
 if ($classificacao) {?>
@@ -187,14 +187,18 @@ if ($fotografo_obj['value']) {?>
 	<!-- descrição -->
 	<?php
 if ($descricao_obj['value']) {
-    echo '<div class="col-12 mt-4">';
-    echo '<h4>Descrição:</h4>';
-    echo '<p>';
-    echo $descricao_obj['value'];
-    echo '</p>';
-    echo '</div>';
+    ?>
+	<div class="col-12 mt-4">
+		<h4>Descrição:</h4>
+		<p>
+			<?php echo $descricao_obj['value']; ?>
+		</p>
+	</div>
+	<?php
 }
+
 ?>
+
 
 	<?php
 /**

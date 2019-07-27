@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
         var bootstrap_md = 768;
         var bootstrap_lg = 992;
         if (ww < bootstrap_lg) {
-            $('#alphabet-menu').addClass('btn-group-vertical').addClass('btn-group-sm').attr('style', 'top:80px; z-index:1');
+            $('#alphabet-menu').addClass('btn-group-vertical').addClass('btn-group-sm').addClass('sticky-top').attr('style', 'top:80px; z-index:1');
             $('.btn-az-single').addClass('rounded-0');
             $('#alphabet-menu').show();
         } else {
