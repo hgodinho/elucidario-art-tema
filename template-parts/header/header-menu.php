@@ -14,7 +14,7 @@
 <div class="container-flex sticky-top bg-primary border-bottom shadow-lg" id="menu-wiki-ema">
 	<nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
 		<div class="container">
-			<span class="mr-5"><a class="navbar-brand" href="/wiki-ema">Wiki-Ema</a><a href="https://github.com/hgodinho/wiki-ema-template/blob/master/README.md"
+			<span class="mr-5"><a class="navbar-brand" href="<?php echo get_site_url();?>/wiki-ema">Wiki-Ema</a><a href="https://github.com/hgodinho/wiki-ema-template/blob/master/README.md"
 				 class="badge badge-pill badge-light mt-2" target="blank" style="font-size:11px">pré-alfa</a></span>
 			<?php
 		wp_nav_menu( array(
