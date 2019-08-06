@@ -1,7 +1,10 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.18`
+- @version `0.19`
 - @source https://emaklabin.org.br
+
+## `0.19`
+- remoção do `PLUGIN_SLUG` do tema. Isso foi uma mudança estratégica ao perceber que a instalação da Wiki utilizando o plugin Multiple Themes geraria um monte de problemas de dificil solução, e que também, poluiria o banco de dados do Site com todas as informações do acervo que seriam acrescentadas na importação. Essa mudança estratégica é importante, pois faz com que a instalação da Wiki seja independente do site, uma nova instalação wordpress no servidor bluehost.  
 
 ## `0.18`
 - multiplas correções de bugs

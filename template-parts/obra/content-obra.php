@@ -32,7 +32,7 @@ $nucleo = get_the_terms(get_the_ID(), 'nucleo');
 $classificacao = get_the_terms(get_the_ID(), 'classificacao');
 ?>
 
-<?php if (!is_page("wiki-ema")) {?>
+<?php if (!is_front_page()) {?>
 <div class="col-12 px-0 py-4">
 	<?php
 get_search_form();?>

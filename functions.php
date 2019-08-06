@@ -104,8 +104,8 @@ function wikiema_wp_setup()
                 'obra_az',
                 array('autores'),
                 array('obras'),
-                PLUGIN_SLUG . '/autor-a-z',
-                PLUGIN_SLUG . '/obra-a-z',
+                '/autor-a-z',
+                '/obra-a-z',
                 false
             );
             //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
