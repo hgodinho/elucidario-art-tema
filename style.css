@@ -1,14 +1,13 @@
-/*
-Theme Name: Wiki-Ema
-Theme URI: http://blablabla.whiskas.sachet
-Author: hgodinho
-Author URI: https://hgodinho.com
-Description: Template da Wiki-Ema
-GitHub Plugin URI: https://github.com/hgodinho/wiki-ema-template
-Version: 0.20
-Text Domain: wiki-ema-template
+/**
+ * Theme Name: Wiki-Ema
+ * Theme URI: http://blablabla.whiskas.sachet
+ * Description: Template da Wiki-Ema
+ * Version: 0.21
+ * Author: hgodinho
+ * Author URI: https://hgodinho.com
+ * Text Domain: wiki-ema-template
+ * GitHub Plugin URI: https://github.com/hgodinho/wiki-ema-template
 */
-
 
 .searchbox-position {
     margin-top: 15px;
