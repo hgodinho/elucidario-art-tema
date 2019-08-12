@@ -16,7 +16,7 @@ echo '<ol class="breadcrumb rounded-0 mb-0">';
 
 if (!is_home()) {
     echo '<li class="breadcrumb-item"><a href="';
-    echo get_option('home') . '/wiki-ema';
+    echo get_site_url();
     echo '">';
     echo 'Wiki-Ema';
     echo "</a></li>";

@@ -2,7 +2,7 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.18
+ * @version 0.20
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
@@ -154,12 +154,16 @@ function query_arquivo_principal($query)
         $query->set('posts_per_page', '9');
     }
 
+    if ($query->is_tax(array('obra_az')) && !is_admin() && $query->is_main_query()) {
+        $query->set('posts_per_page', '9');
+    }
+
     if ($query->is_tax(array('classificacao', 'nucleo', 'ambiente')) && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
     }
 
-    if ($query->is_tax(array('autor_az', 'obra_az')) && !is_admin() && $query->is_main_query()) {
-        $query->set('posts_per_page', '9');
+    if ($query->is_tax(array('autor_az')) && !is_admin() && $query->is_main_query()) {
+        $query->set('posts_per_page', '20');
     }
 
     if ($query->is_post_type_archive('autores') && !is_admin() && $query->is_main_query()) {

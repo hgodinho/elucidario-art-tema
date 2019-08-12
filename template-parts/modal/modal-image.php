@@ -8,7 +8,7 @@
  * @since 0.4
  *
  */
-global $wp_query;
+//global $wp_query;
 $tombo_obj = get_field_object('field_5bfd4663b4645');
 $origem_obj = get_field_object('field_5bfd46adb4646');
 $dataperiodo_obj = get_field_object('field_5bfd46cab4647');

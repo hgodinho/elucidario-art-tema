@@ -1,12 +1,12 @@
 <?php
 /**
  * Modal de Qr-Code
- * 
+ *
  * @author hgodinho.com
- * 
+ *
  * @version 0.1
  * @since 0.2
- * 
+ *
  */
 ?>
 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -23,12 +23,11 @@
             <?php
 $linkobra = get_permalink();
 global $qrcodetag;
-        ?>
+?>
             <div class="row">
                 <div class="col-6">
-                    <img src="<?php 
-  echo $qrcodetag->getQrCodeUrl($linkobra,180,'UTF-8','L',4,0); 
-?>">
+                    <img src="http://api.qrserver.com/v1/create-qr-code/?size=180x180&data=<?php the_permalink(); ?>"
+                        alt="QR:  <?php the_title(); ?>" />
                 </div>
                 <div class="col-6">
                     <p>

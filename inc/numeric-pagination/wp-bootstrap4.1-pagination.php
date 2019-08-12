@@ -66,7 +66,8 @@ function bootstrap_pagination(WP_Query $wp_query = null, $paged = 'paged', $echo
     if (is_array($pages)) {
         //$paged = ( get_query_var( 'paged' ) == 0 ) ? 1 : get_query_var( 'paged' );
 
-        $pagination = '<div class="pagination mb-5" style="z-index:2000; position:relative"><ul class="pagination">';
+        //$pagination = '<div class="pagination mb-5" style="z-index:2000; position:relative"><ul class="pagination">';
+        $pagination = '<div class="pagination mb-5"><ul class="pagination">';
 
         foreach ($pages as $page) {
             $pagination .= '<li class="page-item ' . (strpos($page, 'current') !== false ? 'active' : '') . '"> ' . str_replace('page-numbers', 'page-link', $page) . '</li>';

@@ -36,7 +36,6 @@ $obra_do_mes = new WP_Query($args);
 	}
 
 	?>
-<a href="<?php echo get_post_type_archive_link('autores'); ?>">Autores</a>
 	<main role="main" class="container-fluid">
 		<div class="blog-main container">
 			<?php 

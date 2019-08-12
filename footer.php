@@ -14,8 +14,8 @@
 </div><!-- / .site-content no header -->
 
 
-<div class="p-5 fixed-bottom">
-	<a class="topbutton btn btn-outline-secondary btn-lg shadow-lg rounded-0 float-right hidden" href="#" role="button"
+<div class="back-to-top">
+	<a class="topbutton btn btn-outline-secondary btn-lg shadow-lg rounded-0 float-right hidden back-to-top-bg" href="#" role="button"
 		alt="Voltar ao topo"><i class="fas fa-angle-up"></i></a>
 </div>
 

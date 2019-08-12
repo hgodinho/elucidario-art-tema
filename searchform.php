@@ -2,7 +2,6 @@
 /**
  * Formulários simples de busca da wiki-ema
  *
- * @version 0.3
  * @since 0.6
  * @author hgodinho.com
  */
@@ -10,7 +9,7 @@
 function wiki_ema_search_form(string $types = '', string $placeholder = '')
 {?>
 
-<form id="search" class="shadow-sm" action="/" method="get">
+<form id="search" class="shadow-sm" action="<?php echo get_site_url(); ?>" method="get">
     <div class="input-group input-group-lg">
         <input type="text" value="<?php the_search_query();?>" name="s" id="s" class="form-control rounded-0" placeholder="<?php echo $placeholder; ?>"
             aria-label="Buscar" aria-describedby="button-addon2">

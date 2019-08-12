@@ -16,31 +16,33 @@ function wiki_ema_jumbotron_home(WP_Query $obra_do_mes = null)
             ?>
 
 <div class="container-fluid d-flex text-center text-white "
-    style="background-image: url('<?php echo $thumbnail_obradomes ?>'); background-repeat: no-repeat; background-position: top center; background-size:cover; height: 600px;">
+    style="background-image: url('<?php echo $thumbnail_obradomes ?>'); background-repeat: no-repeat; background-position: center center; background-size:cover; height: 600px;">
 
     <div class="jumbotron-overlay h-100 w-100"></div>
 
     <div class="container-fluid d-flex">
-        <div class="row justify-content-center">
-            <div class="row align-items-center mt-5">
-                <div class="col-xl-12">
-                    <div class="row justify-content-center align-self-center mt-5">
-                        <h1 class="text-white display-4"><span class="text-shadow">Descubra a Coleção Ema Klabin!</span>
-                        </h1>
-                        <!-- formulario de busca -->
-                        <div class="col-12">
-                            <div class="d-flex justify-content-center mt-5">
-                                <?php get_search_form();?>
+        <div class="col-12">
+            <div class="row justify-content-center">
+                <div class="row align-items-center mt-5">
+                    <div class="col-xl-12">
+                        <div class="row justify-content-center align-self-center mt-5">
+                            <h1 class="text-white display-4"><span
+                                    class="text-shadow"><?php echo get_bloginfo('description'); ?></span>
+                            </h1>
+                            <!-- formulario de busca -->
+                            <div class="col-12">
+                                <div class="d-flex justify-content-center mt-5">
+                                    <?php get_search_form();?>
+                                </div>
                             </div>
+                            <!-- // formulario de busca -->
                         </div>
-                        <!-- // formulario de busca -->
                     </div>
                 </div>
             </div>
-
-            <div class="row align-items-end">
+            <div class="row align-items-end h-50">
                 <div class="col-xl-12">
-                    <div class="row-fluid mb-0">
+                    <div class="row-fluid mb-4">
                         <small class="legenda-jumbotron">
                             <?php the_title();
             echo ' (';
@@ -69,12 +71,13 @@ function wiki_ema_jumbotron_home(WP_Query $obra_do_mes = null)
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- legenda obra jumbotron -->
     <?php
 endwhile;
-        wp_reset_query();
+        //wp_reset_query();
     }
     ?>
 </div>
