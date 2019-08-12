@@ -1,10 +1,13 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.20`
+- @version `0.22`
 - @source https://emaklabin.org.br
 
+## `0.22`
+- correção no cabeçalho do tema
+
 ## `0.21`
-- atualização do cabeçalho wordpress no `style.css`
+- atualização do cabeçalho do tema no `style.css`
 
 ## `0.20`
 
