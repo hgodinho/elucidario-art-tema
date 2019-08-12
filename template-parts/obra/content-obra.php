@@ -8,6 +8,7 @@
  * @author hgodinho.com
  */
 
+//var_dump($wp_query);
 /**
  * ficha técnica => obra variaveis
  */
@@ -54,7 +55,10 @@ get_search_form();?>
 <div class="row pb-3 mb-2">
 	<div class="col-12 col-lg-7 mb-4">
 		<!-- imagem obra -->
-		<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal" class="">
+		<?php
+if (is_front_page()) {
+    ?>
+		<a href="<?php echo $linkobra ?>">
 			<div class="img-container">
 				<?php echo $thumbnail; ?>
 				<div class="img-overlay h-100 w-100">
@@ -62,10 +66,26 @@ get_search_form();?>
 				</div>
 			</div>
 		</a>
+		<?php
+} else {
+    ?>
+		<a href="<?php echo $thumbnail_link ?>" data-toggle="modal" data-target="#image-modal">
+			<div class="img-container">
+				<?php echo $thumbnail; ?>
+				<div class="img-overlay h-100 w-100">
+					<i class="fas fa-search img-icon"></i>
+				</div>
+			</div>
+		</a>
+		<?php
+}?>
 		<!-- // imagem obra -->
 
 		<!-- grade de botoes de ações rápidas -->
-		<?php get_template_part('template-parts/obra/content', 'botoes-funcao');?>
+		<?php if (!is_front_page()) {
+    get_template_part('template-parts/obra/content', 'botoes-funcao');
+}
+?>
 		<!-- //grade de botoes de ações rápidas -->
 	</div>
 
@@ -101,7 +121,7 @@ get_search_form();?>
 						</tr>
 						<?php endif;?>
 
-						<?php if ($dataperiodo_obj['value']):?>
+						<?php if ($dataperiodo_obj['value']): ?>
 						<tr>
 							<th scope="row" class="cartao-obra-row">Data</th>
 							<td>

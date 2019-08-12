@@ -61,7 +61,7 @@ Ajuste na tabela de informações do cartão de obras
   z-index: 10000;
 }
 .back-to-top-bg{
-  background-color: rgba(1, 200, 164, 0.3);
+  background-color: rgba(26, 48, 142, 0.5);
 }
 .navbar-toggler {
   background: linear-gradient(rgb(1, 200, 164),rgb(26, 48, 142)) !important;

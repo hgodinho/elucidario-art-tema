@@ -357,20 +357,15 @@ echo 'Página 1';
 }
 
 /**
- * Header para single ambiente
+ * Header para single ambientes, classificacoes, nucleos e ema-klabin
  */
 if (is_single(array('ambientes', 'classificacoes', 'nucleos', 'ema-klabin'))) {
-    $content = apply_filters('the_content', get_the_content());
     ?>
 <div class="row">
     <div class="col-12 pt-4">
         <h1 class="display-3 text-primary">
             <?php the_title();?>
         </h1>
-
-        <p>
-            <?php the_content('Continue reading ' . get_the_title());?>
-        </p>
     </div>
 </div>
 <?php

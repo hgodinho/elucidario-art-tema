@@ -5,8 +5,7 @@
  * @author hgodinho.com
  *
  * @version 0.1
- * @since 0.2
- *
+ * @since   0.2
  */
 ?>
 <div class="modal-dialog modal-dialog-centered" role="document">
@@ -25,13 +24,19 @@ $linkobra = get_permalink();
 global $qrcodetag;
 ?>
             <div class="row">
-                <div class="col-6">
-                    <img src="http://api.qrserver.com/v1/create-qr-code/?size=180x180&data=<?php the_permalink(); ?>"
-                        alt="QR:  <?php the_title(); ?>" />
-                </div>
-                <div class="col-6">
+                <div class="col-7">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&qzone=4&format=svg&data=<?php the_permalink();?>"
+                        alt="QR:  <?php the_title();?>" />
                     <p>
-                        Escaneie o <strong>Qr-code</strong> com seu celular para acessar essa página de obra.
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=170x170&qzone=4&format=svg&data=<?php the_permalink();?>"
+                            download="<?php the_title();?>">
+                            clique para baixar o Qr-Code.
+                        </a>
+                    </p>
+                </div>
+                <div class="col-5">
+                    <p>
+                        Utilize o <strong>Qr-code</strong> para acessar rapidamente esta página.
                     </p>
                 </div>
             </div>

@@ -40,13 +40,22 @@ get_template_part('template-parts/header/header', 'archive');?>
             <div class="row pb-4">
                 <?php
 if (have_posts()): while (have_posts()): the_post();
-        ?>
+        /* CONTINUAR DAQUI, ONDE PAREI
+        $the_post_content = preg_split('/\r\n|\r|\n/', get_the_content());
+        $first_paragraph = trim(reset($the_post_content));
+        $first_paragraph_array = array($first_paragraph, '');
+        $result_array = array_diff($the_post_content, $first_paragraph_array);
+        foreach($result_array as $result){
+            echo '<p>' . $result . '</p>';
+        }    
+        */
+?>
                 <div class="col-md-5">
                     <?php $img_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'large'); ?>
                     <img src="<?php echo $img_url[0];?>" class="img-fluid mb-4"/>
                 </div>
                 <div class="col-md-7 text-justify">
-                    <?php the_content('teste'); ?>
+                    <?php the_content(); ?>
                 </div>
 
                 <?php

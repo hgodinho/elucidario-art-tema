@@ -1,7 +1,16 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.22`
+- @version `0.23`
 - @source https://emaklabin.org.br
+
+## `0.23`
+- mudança na cor do botão back-to-top
+- função de copiar informações no modal-copiar-informacoes.php (ref: https://jsfiddle.net/jfriend00/v9g1x0o6/)
+- mudança no tempo do owl-slider
+- inicio do template single-wiki_ema-ema-klabin.php @TODO
+- mudança no header-archive.php
+- ajuste no layout do modal-qr-code.php
+- condicional para remover a grade de botoes da obra caso seja visualizada na Home (obra do mês).
 
 ## `0.22`
 - correção no cabeçalho do tema

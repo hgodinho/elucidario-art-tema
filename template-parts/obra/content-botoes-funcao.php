@@ -6,7 +6,7 @@
  * @since 0.2
  */
 $casa_museu = ' - Casa-museu Ema Klabin';
-
+include get_template_directory().'/template-parts/modal/modal-copiar-informacoes.php';
 ?>
 <div class="btn-group w-100 content-box btn-size-fix" role="group" aria-label="botões de funções">
 
@@ -53,8 +53,8 @@ $whatsapp_link = 'https://wa.me/?text=';
 $whatsapp_link .= get_the_title() . ', ' . $nome_artista . $casa_museu;
 $whatsapp_link .= ' ' . get_the_permalink();
 ?>
-            <a class="dropdown-item" href="<?php echo $whatsapp_link; ?>"
-                data-action="share/whatsapp/share" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a class="dropdown-item" href="<?php echo $whatsapp_link; ?>" data-action="share/whatsapp/share"
+                target="_blank"><i class="fab fa-whatsapp"></i></a>
 
             <!-- linkedin -->
             <?php
@@ -72,7 +72,8 @@ $linkedin_link .= '&title=' . get_the_title() . ', ' . $nome_artista . $casa_mus
             $email_link .= '&amp;body=Confira essa obra da Casa-museu Ema Klabin: ';
             $email_link .= get_the_permalink();
             ?>
-            <a class="dropdown-item" href="<?php echo $email_link; ?>" target="_blank"><i class="far fa-envelope"></i></a>
+            <a class="dropdown-item" href="<?php echo $email_link; ?>" target="_blank"><i
+                    class="far fa-envelope"></i></a>
 
 
         </div>
@@ -83,7 +84,6 @@ $linkedin_link .= '&title=' . get_the_title() . ', ' . $nome_artista . $casa_mus
         data-target="#qr-code-modal"><i class="fas fa-qrcode"></i></button>
     <button type="button" class="btn btn-outline-primary w-25 content-box" onclick="printFunction()"><i
             class="fas fa-print"></i></button>
-
 </div>
 
 <?php
@@ -102,7 +102,11 @@ $linkedin_link .= '&title=' . get_the_title() . ', ' . $nome_artista . $casa_mus
 ?>
 <div class="modal fade" id="informacoes-modal" tabindex="-1" role="dialog" aria-labelledby="copiar informações"
     aria-hidden="true">
-    <?php get_template_part('template-parts/modal/modal', 'copiar-informacoes');?>
+    <?php 
+    if(function_exists('copiar_informacoes')){
+        copiar_informacoes($nome_artista);
+    }
+    ?>
 </div>
 
 
