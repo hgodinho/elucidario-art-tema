@@ -1,10 +1,13 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.24`
+- @version `0.25`
 - @source https://emaklabin.org.br
 
+## `0.25`
+- webhook no github adicionado para quando houver novo commit atualizar automaticamente pelo GitHub Updater
+
 ## `0.24`
-- template para página Ema Klabin
+- template para página Ema Klabin 
 
 ## `0.23`
 - mudança na cor do botão back-to-top
