@@ -1,7 +1,10 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.23`
+- @version `0.24`
 - @source https://emaklabin.org.br
+
+## `0.24`
+- template para página Ema Klabin
 
 ## `0.23`
 - mudança na cor do botão back-to-top

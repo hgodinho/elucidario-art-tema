@@ -36,35 +36,38 @@ get_template_part('template-parts/header/header', 'archive');?>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row pb-4">
-                <?php
+        <?php
 if (have_posts()): while (have_posts()): the_post();
-        /* CONTINUAR DAQUI, ONDE PAREI
-        $the_post_content = preg_split('/\r\n|\r|\n/', get_the_content());
-        $first_paragraph = trim(reset($the_post_content));
-        $first_paragraph_array = array($first_paragraph, '');
-        $result_array = array_diff($the_post_content, $first_paragraph_array);
-        foreach($result_array as $result){
-            echo '<p>' . $result . '</p>';
-        }    
-        */
+$the_post_content = preg_split('/\r\n|\r|\n/', get_the_content());
+$first_paragraph = trim(reset($the_post_content));
+$first_paragraph_array = array($first_paragraph, '');
+$result_array = array_diff($the_post_content, $first_paragraph_array); 
 ?>
-                <div class="col-md-5">
-                    <?php $img_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'large'); ?>
-                    <img src="<?php echo $img_url[0];?>" class="img-fluid mb-4"/>
+        <?php $img_url = wp_get_attachment_image_src(get_post_thumbnail_id(),'large'); ?>
+        <div class="container"
+            style="background-image: url('<?php echo $img_url[0];?>'); background-repeat: no-repeat; background-position: center center; background-size:cover; height: 500px;">
+            <div class="d-flex flex-wrap align-content-end" style="height:500px">
+                <div class="col-md-6">
+                    <p class="text-white">
+                        <?php echo $first_paragraph;?>
+                    </p>
                 </div>
-                <div class="col-md-7 text-justify">
-                    <?php the_content(); ?>
-                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-secondary text-white p-4 text-justify">
+            <?php
+            foreach($result_array as $result){
+                echo '<p class="pt-1">' . $result . '</p>';
+                }   
+            ?>
+        </div>
+        </div>
 
-                <?php
+        <?php
     endwhile;
 else:echo '<div class="col"><p>Desculpe, nada para exibir</p></div>';
 endif;
 ?>
-            </div>
-        </div>
     </main>
 </section>
 

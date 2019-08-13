@@ -2,7 +2,7 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.23
+ * @version 0.24
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
