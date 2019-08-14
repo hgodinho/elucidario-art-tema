@@ -11,8 +11,9 @@
  * @author hgodinho.com
  */
 get_header();
-include get_template_directory().'/template-parts/jumbotron-home.php';
-include get_template_directory().'/template-parts/obra/content-obra-do-mes.php';
+include get_template_directory() . '/template-parts/jumbotron-home.php';
+include get_template_directory() . '/template-parts/obra/content-obra-do-mes.php';
+include get_template_directory() . '/template-parts/obra/content-obras-relacionadas.php';
 
 $args = array(
     'post_type' => 'obras',
@@ -29,20 +30,21 @@ $obra_do_mes = new WP_Query($args);
 ?>
 
 <section id="primary" class="content-area">
-	
-	<?php 
-	if(function_exists('wiki_ema_jumbotron_home')){
-		wiki_ema_jumbotron_home($obra_do_mes);
-	}
 
-	?>
+	<?php
+if (function_exists('wiki_ema_jumbotron_home')) {
+    wiki_ema_jumbotron_home($obra_do_mes);
+}
+
+?>
+
 	<main role="main" class="container-fluid">
-		<div class="blog-main container">
-			<?php 
-			if(function_exists('wiki_ema_destaque_home')){
-				wiki_ema_destaque_home($obra_do_mes);
-			}
-			?>
+		<div class="blog-main mt-4">
+			<?php
+if (function_exists('obra_relacionada')) {
+    obra_relacionada($obra_do_mes);
+}
+?>
 		</div>
 	</main>
 

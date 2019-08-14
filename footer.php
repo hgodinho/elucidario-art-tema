@@ -15,7 +15,7 @@
 
 
 <div class="back-to-top">
-	<a class="topbutton btn btn-outline-primary btn-lg shadow-lg rounded-0 float-right hidden back-to-top-bg text-white"
+	<a class="topbutton btn btn-outline-primary bg-secondary btn-lg shadow-lg rounded-0 float-right hidden  text-white"
 		href="#" role="button" alt="Voltar ao topo"><i class="fas fa-angle-up"></i></a>
 </div>
 

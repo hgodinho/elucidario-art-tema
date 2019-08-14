@@ -1,3 +1,13 @@
+/**
+ * Theme Name: Wiki-Ema template
+ * Theme URI: https://emaklabin.org.br/wiki-ema
+ * Description: Template da Wiki-Ema
+ * Version: 0.28
+ * Author: hgodinho
+ * Author URI: https://hgodinho.com
+ * Text Domain: wiki-ema-template
+*/
+
 .linhaCinza {
   background-color: gray;
 }
@@ -49,28 +59,32 @@ Ajuste na tabela de informações do cartão de obras
   white-space: nowrap;
   font-family: "Lucida Bright", Georgia;
 }
-.navbar-span{
+
+.navbar-span {
   margin-right: 1rem;
 }
 
 /**
 * Back to top button
 */
-.back-to-top{
+.back-to-top {
   height: auto;
   right: 45px;
-  bottom: 65px;
+  bottom: 45px;
   position: fixed;
   z-index: 10000;
 }
-.back-to-top-bg{
-  background-color: rgba(26, 48, 142, 0.5);
+
+.back-to-top-bg {
+  background-color: rgb(26, 48, 142);
 }
+
 .navbar-toggler {
-  background: linear-gradient(rgb(1, 200, 164),rgb(26, 48, 142)) !important;
+  background: linear-gradient(rgb(1, 200, 164), rgb(26, 48, 142)) !important;
   padding: 0.75rem 0.75rem;
   /*margin-right: 0.5rem;*/
 }
+
 .navbar-light .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='4' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -110,10 +124,10 @@ Ajuste na tabela de informações do cartão de obras
 }
 
 /**
- * JUMBOTRON HOME
+ * JUMBOTROM HOME
  *
  */
-.jumbotron-overlay {
+.jumbotrom-overlay {
   position: absolute;
   left: 0;
   right: 0;
@@ -125,9 +139,13 @@ Ajuste na tabela de informações do cartão de obras
   text-shadow: 2px 2px 2px #333333;
 }
 
-.legenda-jumbotron {
+.legenda-jumbotrom {
   color: white;
   text-shadow: 1px 1px 1px #333333;
+}
+
+.jumbotrom-fix {
+  margin-bottom: 0;
 }
 
 /**
@@ -197,7 +215,13 @@ Ajuste na tabela de informações do cartão de obras
   text-align: center;
 }
 
-.btn-size-fix .btn{
-  font-size: 1.2rem!important;
+.btn-size-fix .btn {
+  font-size: 1.2rem !important;
 }
 
+.border-fix{
+  border-right: 2px solid!important;
+  border-left: 2px solid!important;
+  border-bottom: 2px solid!important;
+  border-color: rgb(1, 200, 164)!important;
+}

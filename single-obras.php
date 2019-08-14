@@ -10,9 +10,10 @@
  * @version 0.3
  * @since 0.1
  */
-
+include get_template_directory().'/template-parts/obra/content-obras-relacionadas.php';
 get_header();
 get_template_part('template-parts/header/header', 'breadcrumb');
+
 ?>
 <section id="primary" class="content-area">
 	<main role="main" class="container">
@@ -34,7 +35,11 @@ endwhile;?>
 </section>
 
 <div class="container-fluid">
-	<?php get_template_part('template-parts/obra/content', 'obras-relacionadas');?>
+	<?php
+if (function_exists('obra_relacionada')) {
+    obra_relacionada();
+}
+?>
 </div>
 
 <?php

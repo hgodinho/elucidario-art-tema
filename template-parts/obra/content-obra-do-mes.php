@@ -10,6 +10,10 @@
 
 function wiki_ema_destaque_home(WP_Query $obra_do_mes = null)
 {
+	global $wp_query;
+	if($obra_do_mes == null){
+		$obra_do_mes = $wp_query;
+	}
     if ($obra_do_mes->have_posts()) {
         while ($obra_do_mes->have_posts()): $obra_do_mes->the_post();
             ?>

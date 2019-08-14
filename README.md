@@ -1,7 +1,15 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.27`
+- @version `0.28`
 - @source https://emaklabin.org.br
+
+## `0.28`
+- melhoria na página ema klabin
+- melhoria no jumbotrom da home
+- melhoria nas obras relacionadas, que agora é uma função com parametro opcional de query
+- mudança no index.php
+- o script para copiar informações pertence somente ao modal de copiar informações. assim a função na precisa carregar em todas as páginas, gerando erro no console por não achar as id(s) especificadas na função.
+- mudança no visual do back top buttom
 
 ## `0.27`
 - fix no layout dos cartoes das obras relacionadas que não mostrava o autor

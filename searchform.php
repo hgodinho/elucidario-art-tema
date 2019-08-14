@@ -16,7 +16,7 @@ function wiki_ema_search_form(string $types = '', string $placeholder = '')
         <input type="hidden" value="1" name="sentence" />
         <input type="hidden" value="<?php echo $types; ?>" name="post_type" />
         <div class="input-group-append">
-            <button class="btn btn-primary rounded-0" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+            <button class="btn btn-secondary rounded-0" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
         </div>
     </div>
 </form>
