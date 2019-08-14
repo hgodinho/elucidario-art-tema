@@ -14,6 +14,7 @@ $dataperiodo = get_field_object('field_5bfd46cab4647');
 $material = get_field_object('field_5bfd46fcb4648');
 $dimensoes = get_field_object('field_5bfd47ebb4649');
 $tombo = get_field_object('field_5bfd4663b4645');
+$meta = get_post_meta( get_the_ID());
 ?>
 <div class="col col-md-10 col-lg-4">
     <div class="card mb-5 rounded-0 shadow">
@@ -33,6 +34,12 @@ $tombo = get_field_object('field_5bfd4663b4645');
 
         <table class="table table-striped container-fluid mb-0">
             <tbody>
+                <tr>
+                    <th scope="row" class="cartao-obra-row">Autor</th>
+                    <td>
+                        <?php echo $meta['ficha_autor'][0]; ?>
+                    </td>
+                </tr>
                 <tr>
                     <th scope="row" class="cartao-obra-row">Material<br>ou Técnica</th>
                     <td>

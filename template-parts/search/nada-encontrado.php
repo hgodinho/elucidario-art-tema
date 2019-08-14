@@ -11,7 +11,7 @@ get_search_form();?>
         <div class="col-12 pb-4 pt-4">
             <h1>
                 <span class="small text-muted">
-                    <?php _e('Não foi possivel encontrar nada com o termo:', TEXT_DOMAIN);?>
+                    <?php _e('Não encontramos nada com o termo:', TEXT_DOMAIN);?>
                 </span>
                 <?php echo get_search_query(); ?>
             </h1>

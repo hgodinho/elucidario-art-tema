@@ -7,17 +7,13 @@
  * @author hgodinho.com
  */
 
-if (have_posts()) {?>
-	<?php
-if (is_singular('autores')) {?>
-	<?php
-get_template_part('template-parts/obra/content', 'cartao-obra-no-loop');
-	?>
-	<?php
-} else {
-	while (have_posts()): the_post();
-	get_template_part('template-parts/obra/content', 'cartao-obra-no-loop');
-endwhile;
-}?>
-<?php
-}?>
+if (have_posts()) {
+    if (is_singular('autores')) {
+        get_template_part('template-parts/obra/content', 'cartao-obra-no-loop');
+
+    } else {
+        while (have_posts()): the_post();
+            get_template_part('template-parts/obra/content', 'cartao-obra-no-loop');
+        endwhile;
+    }
+}

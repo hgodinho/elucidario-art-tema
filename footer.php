@@ -15,8 +15,8 @@
 
 
 <div class="back-to-top">
-	<a class="topbutton btn btn-outline-primary btn-lg shadow-lg rounded-0 float-right hidden back-to-top-bg text-white" href="#" role="button"
-		alt="Voltar ao topo"><i class="fas fa-angle-up"></i></a>
+	<a class="topbutton btn btn-outline-primary btn-lg shadow-lg rounded-0 float-right hidden back-to-top-bg text-white"
+		href="#" role="button" alt="Voltar ao topo"><i class="fas fa-angle-up"></i></a>
 </div>
 
 
@@ -24,18 +24,18 @@
 	<div class="container bg-transparent text-light">
 		<div class="row py-4">
 			<div class="col-md-12 col-lg-4 py-4">
-				<h3>Wiki-Ema</h3>
+				<h3><?php echo get_bloginfo('name')?></h3>
 				<p class="lead">
-					Descubra a Coleção Ema Klabin
+					<?php echo get_bloginfo('description')?>
 				</p>
 			</div>
 			<div class="col-md-12 col-lg-4 py-4">
 				<h3>Institucional</h3>
 				<ul>
-					<li><a href="" class="text-white">A Casa-museu</a></li>
-					<li><a href="" class="text-white">Sobre</a></li>
-					<li><a href="" class="text-white">Programação</a></li>
-					<li><a href="" class="text-white">Contato</a></li>
+					<li><a href="https://emaklabin.org.br/" class="text-white">A Casa-museu</a></li>
+					<li><a href="https://emaklabin.org.br/sobre" class="text-white">Sobre</a></li>
+					<li><a href="https://emaklabin.org.br/programacao" class="text-white">Programação</a></li>
+					<li><a href="https://emaklabin.org.br/contato" class="text-white">Contato</a></li>
 				</ul>
 
 			</div>

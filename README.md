@@ -1,7 +1,14 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.25`
+- @version `0.26`
 - @source https://emaklabin.org.br
+
+## `0.26`
+- layout da page padrão adicionado
+- melhorias nas obras relacionados no single-obra
+- melhorias no cartão de obras
+- melhorias no menu
+- melhorias no códigos preparativas para mudança de nome
 
 ## `0.25`
 - webhook no github adicionado para quando houver novo commit atualizar automaticamente pelo GitHub Updater

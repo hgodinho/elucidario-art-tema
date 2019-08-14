@@ -2,12 +2,14 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.25
+ * @version 0.26
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
+
+ const THEME_VERSION = "beta 0.26";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
@@ -164,6 +166,8 @@ function query_arquivo_principal($query)
 
     if ($query->is_tax(array('autor_az')) && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '20');
+        $query->set('orderby', 'post_title');
+        $query->set('order', 'ASC');
     }
 
     if ($query->is_post_type_archive('autores') && !is_admin() && $query->is_main_query()) {

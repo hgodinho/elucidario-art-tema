@@ -32,6 +32,13 @@ if (is_front_page(  )) {
 }
 
 /**
+ * Formulário de busca para Page
+ */
+if (is_page(  )) {
+    wiki_ema_search_form('autores, obras', 'buscar obra');
+}
+
+/**
  * Formulário de busca para Arquivo de autores
  */
 if (is_post_type_archive(array('autores')) or is_tax('autor_az')) {

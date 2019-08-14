@@ -43,11 +43,14 @@ Ajuste na tabela de informações do cartão de obras
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
+  margin-right: 0;
   font-size: 1.5rem;
   line-height: inherit;
   white-space: nowrap;
   font-family: "Lucida Bright", Georgia;
+}
+.navbar-span{
+  margin-right: 1rem;
 }
 
 /**

@@ -369,4 +369,19 @@ if (is_single(array('ambientes', 'classificacoes', 'nucleos', 'ema-klabin'))) {
     </div>
 </div>
 <?php
+}
+
+/**
+ * Header para page
+ */
+if (is_page()) {
+    ?>
+<div class="row">
+    <div class="col-12 pt-4">
+        <h1 class="display-3 text-primary">
+            <?php the_title();?>
+        </h1>
+    </div>
+</div>
+<?php
 }?>

@@ -17,7 +17,10 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
 <section id="primary" class="content-area">
 	<main id="main" class="container">
+<?php
 
+//var_dump($wp_query);
+?>
 		<?php if (have_posts()) {?>
 
 		<div class="container py-4">

@@ -4,16 +4,7 @@
 			"path": "."
 		},
 		{
-			"path": "/Users/henriquegodinho/Google Drive/PÓS/espm - comunicação e design digital/wiki-ema/wiki-ema-front-end/protótipo 2"
-		},
-		{
-			"path": "/Users/henriquegodinho/Local Sites/emaklabin/app/public/wp-content/themes/twentynineteen"
-		},
-		{
-			"path": "/Users/henriquegodinho/Local Sites/emaklabinwiki/app/public/wp-content/plugins/wiki-ema"
+			"path": "/Users/henriquegodinho/Local Sites/wikiema/app/public/wp-content/plugins/wiki-ema"
 		}
-	],
-	"settings": {
-		"git.ignoreLimitWarning": true
-	}
+	]
 }

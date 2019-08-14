@@ -18,7 +18,7 @@ if (!is_home()) {
     echo '<li class="breadcrumb-item"><a href="';
     echo get_site_url();
     echo '">';
-    echo 'Wiki-Ema';
+    echo get_bloginfo('name');
     echo "</a></li>";
 
     if (is_singular('autores')) {
