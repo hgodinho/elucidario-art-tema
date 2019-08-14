@@ -1,7 +1,10 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.26`
+- @version `0.27`
 - @source https://emaklabin.org.br
+
+## `0.27`
+- fix no layout dos cartoes das obras relacionadas que não mostrava o autor
 
 ## `0.26`
 - layout da page padrão adicionado
