@@ -24,6 +24,8 @@ $descricao_obj = get_field_object('field_5bfdeeb084777');
 $thumbnail = get_the_post_thumbnail(get_the_ID(), '', array('class' => 'image mx-auto d-block'));
 $thumbnail_link = get_the_post_thumbnail_url(get_the_ID(), 'full');
 $linkobra = get_permalink();
+$meta = get_post_meta( get_the_ID());
+//var_dump($meta['ficha_autor']);
 
 /**
  * taxonomias obras variaveis
@@ -31,8 +33,21 @@ $linkobra = get_permalink();
 $ambiente = get_the_terms(get_the_ID(), 'ambiente');
 $nucleo = get_the_terms(get_the_ID(), 'nucleo');
 $classificacao = get_the_terms(get_the_ID(), 'classificacao');
+$last_classificacao = end($classificacao);
+//var_dump($last_classificacao->name);
 ?>
-
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org/",
+		"@type": "VisualArtwork",
+		"name": "<?php echo get_the_title(); ?>",
+		"artMedium": "<?php echo $material_obj['value']; ?>",
+		"artForm": "<?php echo $last_classificacao->name; ?>",
+		"artist": "<?php echo end($meta['ficha_autor']); ?>",
+		"dateCreated": "<?php echo $dataperiodo_obj['value']; ?>",
+		"description": "<?php echo get_the_content(); ?>"
+	}
+</script>
 <?php if (!is_front_page()) {?>
 <div class="col-12 px-0 py-4">
 	<?php

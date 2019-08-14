@@ -16,7 +16,7 @@
 		<div class="container">
 			<span class="navbar-span">
 				<a class="navbar-brand" href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name') ?></a>
-				<a href="<?php get_site_url( )?>/sobre" class="badge badge-pill badge-light mt-2 " style="font-size:11px"><?php echo THEME_VERSION; ?></a>
+				<a href="<?php echo get_site_url( )?>/sobre" class="badge badge-pill badge-light mt-2 " style="font-size:11px"><?php echo THEME_VERSION; ?></a>
 			</span>
 			<button class="navbar-toggler rounded-circle shadow-lg nav-bar-toggle-color border border-secondary"
 				type="button" data-toggle="collapse" data-target="#menuWikiEma" aria-controls="menuWikiEma"
