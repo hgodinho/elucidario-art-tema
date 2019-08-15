@@ -14,7 +14,7 @@
 </div><!-- / .site-content no header -->
 
 
-<div class="back-to-top">
+<div class="back-to-top d-print-none">
 	<a class="topbutton btn btn-outline-primary bg-secondary btn-lg shadow-lg rounded-0 float-right hidden  text-white"
 		href="#" role="button" alt="Voltar ao topo"><i class="fas fa-angle-up"></i></a>
 </div>
@@ -29,7 +29,7 @@
 					<?php echo get_bloginfo('description')?>
 				</p>
 			</div>
-			<div class="col-md-12 col-lg-4 py-4">
+			<div class="col-md-12 col-lg-4 py-4 d-print-none">
 				<h3>Institucional</h3>
 				<ul>
 					<li><a href="https://emaklabin.org.br/" class="text-white">A Casa-museu</a></li>
@@ -37,9 +37,8 @@
 					<li><a href="https://emaklabin.org.br/programacao" class="text-white">Programação</a></li>
 					<li><a href="https://emaklabin.org.br/contato" class="text-white">Contato</a></li>
 				</ul>
-
 			</div>
-			<div class="col-md-12 col-lg-4 py-4">
+			<div class="col-md-12 col-lg-4 py-4 d-print-none">
 				<h3>Assine nossa Newsletter</h3>
 				<form>
 					<div class="form-group">

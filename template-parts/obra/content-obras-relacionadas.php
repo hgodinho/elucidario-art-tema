@@ -60,7 +60,7 @@ function obra_relacionada(WP_Query $relacionado_query = null)
 <?php
 if ($relacionado_query->have_posts()) {?>
 
-<div class="container-fluid">
+<div class="container-fluid d-print-none">
     <div class="row pt-3">
         <div class="container mb-5">
             <?php

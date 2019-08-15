@@ -8,7 +8,7 @@
 $casa_museu = ' - Casa-museu Ema Klabin';
 include get_template_directory() . '/template-parts/modal/modal-copiar-informacoes.php';
 ?>
-<div class="btn-group w-100 content-box btn-size-fix" role="group" aria-label="botões de funções">
+<div class="btn-group w-100 content-box btn-size-fix d-print-none" role="group" aria-label="botões de funções">
 
     <div class="btn-group w-25 content-box" role="group">
         <button id="sharebuttons" type="button"

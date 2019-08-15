@@ -1,7 +1,11 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.28.1`
+- @version `0.28.2`
 - @source https://emaklabin.org.br
+
+## `0.28.2`
+- shadow no `p class lead` do jumbotrom
+- `d-print-none` em elementos no layout obra-single para o layout print ficar mais agradável
 
 ## `0.28.1`
 - inicio do SEO, com JSON-LD no content-obra.php

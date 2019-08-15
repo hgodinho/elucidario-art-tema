@@ -47,7 +47,7 @@ function wiki_ema_jumbotron_home(WP_Query $obra_do_mes = null)
                 <div class="col-xl-12">
                     <div class="row-fluid mb-4">
                         <div class="">
-                            <p class="lead text-left">
+                            <p class="lead text-left legenda-jumbotrom">
                                 Obra do mês:
                             </p>
                             <p class="legenda-jumbotrom text-left">
