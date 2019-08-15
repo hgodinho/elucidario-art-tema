@@ -2,14 +2,14 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.28.2
+ * @version 0.28.3
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
 
- const THEME_VERSION = "beta 0.28.2";
+ const THEME_VERSION = "beta 0.28.3";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';

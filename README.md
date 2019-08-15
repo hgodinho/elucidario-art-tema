@@ -1,7 +1,10 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.28.2`
+- @version `0.28.3`
 - @source https://emaklabin.org.br
+
+## `0.28.3`
+- correção no jumbotrom home 
 
 ## `0.28.2`
 - shadow no `p class lead` do jumbotrom
