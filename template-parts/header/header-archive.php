@@ -13,7 +13,7 @@
 if (is_post_type_archive('obras')) {?>
 <div class="col-12 pt-4">
     <h1 class="display-3 text-primary">
-        Obras do acervo
+        Obras na Coleção
     </h1>
     <p class="lead text-muted">
         <?php
@@ -56,7 +56,7 @@ echo 'Página 1';
 if (is_post_type_archive('autores')) {?>
 <div class="col-12 pt-4">
     <h1 class="display-3 text-primary">
-        Autores no acervo
+        Autores na Coleção
     </h1>
     <p class="lead text-muted">
         <?php

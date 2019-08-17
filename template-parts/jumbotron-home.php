@@ -18,7 +18,7 @@ function wiki_ema_jumbotron_home(WP_Query $obra_do_mes = null)
 
 <div class="jumbotrom-fluid d-flex text-center text-white "
     style="background-image: url('<?php echo $thumbnail_obradomes ?>'); background-repeat: no-repeat; background-position: center center; background-size:cover; height: 600px;">
-    <div class="jumbotrom-overlay h-100 w-100" style="height: 600px;"></div>
+    <div class="jumbotrom-overlay h-100 w-100"></div>
 
     <div class="container-fluid d-flex">
 

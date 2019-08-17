@@ -31,6 +31,7 @@ $ambientes = get_terms(
         'orderby' => 'count',
         'order' => 'DESC',
         'parent' => 0,
+        'exclude' => '69'
     )
 );
 ?>
