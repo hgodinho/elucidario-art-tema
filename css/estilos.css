@@ -72,7 +72,7 @@ Ajuste na tabela de informações do cartão de obras
   right: 45px;
   bottom: 45px;
   position: fixed;
-  z-index: 10000;
+  z-index: 1035;
 }
 
 .back-to-top-bg {

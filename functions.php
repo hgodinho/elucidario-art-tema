@@ -2,14 +2,14 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.29
+ * @version 0.29.1 β
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
 
- const THEME_VERSION = "0.29 β";
+ const THEME_VERSION = "0.29.1 β";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
@@ -110,13 +110,13 @@ function wikiema_wp_setup()
                 '/obra-a-z',
                 false
             );
-            //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
+            add_action('save_post', array($glossary, 'auto_glossary_on_save'));
 
             /**
              * chamar actions seguintes somente 1 vez
              */
-            //add_action('init', array($glossary, 'recursive_glossary_post_1'));
-            //add_action('init', array($glossary, 'recursive_glossary_post_2'));
+            add_action('init', array($glossary, 'recursive_glossary_post_1'));
+            add_action('init', array($glossary, 'recursive_glossary_post_2'));
         }
     }
 }

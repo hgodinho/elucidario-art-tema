@@ -12,7 +12,7 @@
  */
 ?>
 <div class="container-flex sticky-top bg-primary border-bottom shadow-lg" id="menu-wiki-ema">
-	<nav class="navbar navbar-expand-lg navbar-dark " role="navigation">
+	<nav class="navbar navbar-expand-lg navbar-dark" role="navigation">
 		<div class="container">
 			<span class="navbar-span">
 				<a class="navbar-brand" href="<?php echo get_site_url(); ?>"><?php echo get_bloginfo('name') ?></a>
@@ -30,7 +30,7 @@
 					'container' => 'div',
 					'container_class' => 'collapse navbar-collapse',
 					'container_id' => 'menuWikiEma',
-					'menu_class' => 'nav navbar-nav text-white',
+					'menu_class' => 'nav navbar-nav',
 					'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
 					'walker' => new WP_Bootstrap_Navwalker(),
 				));

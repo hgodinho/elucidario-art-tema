@@ -1,13 +1,15 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.29`
+- @version `0.29.1 β`
 - @source https://emaklabin.org.br
+
+## `0.29.1 β`
+
 
 ## `0.29` 
 - `!important` na height do jumbotrom
 - `exclude` Reserva Técnica da query da página de Ambientes
 - Mudança no termo `Acervo` para `Coleção` no single obra e autores
-
 
 ## `0.28.3`
 - correção no jumbotrom home 

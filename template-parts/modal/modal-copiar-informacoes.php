@@ -18,7 +18,7 @@
     <div class="modal-content">
 
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Copie as informações de citação desta obra</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Citação</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -32,34 +32,42 @@
             $first_word_array = array($first_word);
             $result_array = array_diff($obra_fix, $first_word_array);
             $result_string = implode(' ', $result_array);
-            ?>
+            $colecao = 'Coleção Fundação Ema Klabin. ';
 
+            ?>
+            <p class="lead">
+                Pretende citar esta página em algum artigo científico?
+            </p>
+            <p>
+                Copie as informações do campo abaixo e cole nas Referências do seu artigo.
+            </p>
             <div class="input-group mb-3">
                 <?php
             $value = trim(mb_strtoupper($first_word, $encoding));
-            //echo trim(mb_strtoupper($first_word, $encoding));
             if(!empty($result_array)){
-                //echo ' ' . trim($result_string);
                 $value .= ' ' . trim($result_string);
             }
             if($descricao_obj['value']){
-                //echo ': ' . strip_tags(trim($descricao_obj['value']));
                 $value .= ': ' . strip_tags(trim($descricao_obj['value']));
             }
             if($nome_autor){
-                //echo '. ' . $nome_autor . '. ';
                 $value .= '. ' . $nome_autor . '. ';
             }
             if($origem_obj['value']){
-                //echo $origem_obj['value'] . '. ';
-                $value .= $origem_obj['value'] . '. ';
+                $value .= $origem_obj['value'] . ', ';
+            }
+            if($dataperiodo_obj['value']){
+                $value .= $dataperiodo_obj['value'] . '. ';
+            } else{
+                $value .= 'Data desconhecida. ';
             }
             if($dimensoes_obj['value']){
-                //echo $dimensoes_obj['value'] . '. ';
                 $value .= $dimensoes_obj['value'] . '. ';
             }
+            $value .= $colecao;
+            $value .= 'Acesso em ' . strftime('%d/%m/%Y', strtotime('today')) . '. ';
         ?>
-                <textarea id="text_area_copy" class="form-control"
+                <textarea id="text_area_copy" rows="5" class="form-control"
                     aria-label="Copiar Informações"><?php echo $value;?></textarea>
                 <div class="input-group-append">
                     <button class="btn btn-primary" type="button" id="copiar_infos">Copiar</button>
@@ -68,8 +76,8 @@
             <div class="alert alert-danger" id="msg" role="alert">Copie as informações.
             </div>
             <p class="small">
-                Fez referência a esta obra em algum artigo ou similar? Envie para nós uma cópia para que possamos
-                arquivar em nosso banco de dados. <a href="mailto:wiki@emaklabin.org.br">wiki@emaklabin.org.br</a>
+                Nos envie uma cópia para que possamos
+                arquivar em nosso banco de dados. <a href="mailto:pesquisa@emaklabin.org.br?subject=Citação%20de%20obra">pesquisa@emaklabin.org.br</a>
             </p>
 
         </div>
