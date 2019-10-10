@@ -31,30 +31,57 @@
 			</div>
 			<div class="col-md-12 col-lg-4 py-4 d-print-none">
 				<h3>Institucional</h3>
-				<ul>
-					<li><a href="https://emaklabin.org.br/" class="text-white">A Casa-museu</a></li>
-					<li><a href="https://emaklabin.org.br/sobre" class="text-white">Sobre</a></li>
-					<li><a href="https://emaklabin.org.br/programacao" class="text-white">Programação</a></li>
-					<li><a href="https://emaklabin.org.br/contato" class="text-white">Contato</a></li>
-				</ul>
+				<?php
+				wp_nav_menu( array( 
+					'theme_location' => 'rodape', 
+					'container_class' => 'menu-rodape' ) ); 
+				?>
 			</div>
 			<div class="col-md-12 col-lg-4 py-4 d-print-none">
 				<h3>Assine nossa Newsletter</h3>
-				<form>
+				
+				<!--
+				<form method="post" enctype="multipart/form-data"
+					action="https://38.e-goi.com//w/1ege12HueB5cNPfySe3c1d585a">
 					<div class="form-group">
-						<label for="NomeNewsletter" class="sr-only">Nome</label>
-						<input type="text" class="form-control" id="NomeNewsletter" placeholder="Nome">
+					<input type="hidden" name="lista" value="1">
+					<input type="hidden" name="cliente" value="225689">
+					<input type="hidden" name="lang" id="lang_id" value="br">
+					<input type="hidden" name="formid" id="formid" value="15">
+					<label for="fname_45" easylabel="Nome">
+						Nome *
+					</label>
+					<input type="text" name="fname_45" id="fname_45" value="">
+					<label for="email_46" easylabel="E-mail">
+						E-mail *
+					</label>
+					<input type="email" name="email_46" id="email_46" value="">
+					<input type="submit" value="submit">
+				</form>
+				-->
+
+				
+				<form method="post" enctype="multipart/form-data"
+					action="https://38.e-goi.com//w/1ege12HueB5cNPfySe3c1d585a">
+					<div class="form-group">
+										<input type="hidden" name="lista" value="1">
+					<input type="hidden" name="cliente" value="225689">
+					<input type="hidden" name="lang" id="lang_id" value="br">
+					<input type="hidden" name="formid" id="formid" value="15">
+						<label for="fname_45" class="sr-only" easylabel="Nome">Nome</label>
+						<input type="text" class="form-control" name="fname_45" id="fname_45" placeholder="Nome">
 					</div>
 					<div class="form-group">
-						<label for="EmailNewsletter" class="sr-only">Endereço de e-mail</label>
-						<input type="email" class="form-control" id="EmailNewsletter" aria-describedby="emailHelp"
+						<label for="email_46" easylabel="E-mail" class="sr-only">Endereço de e-mail</label>
+						<input type="email" name="email_46" id="email_46" class="form-control" aria-describedby="emailHelp"
 							placeholder="Email">
 						<small id="emailHelp" class="form-text text-light">*Nunca compartilharemos seus dados
 							com
 							terceiros.</small>
 					</div>
-					<button type="submit" class="btn btn-success">Assinar</button>
+					<button type="submit" value="submit" class="btn btn-success">Assinar</button>
 				</form>
+				
 			</div>
 		</div>
 		<div class="row border-top py-4">

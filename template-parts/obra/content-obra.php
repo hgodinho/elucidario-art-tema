@@ -58,7 +58,21 @@ get_search_form();?>
 <!-- titulo obra -->
 <div class="col py-4 pl-0">
 	<h1 class="blog-post-title text-primary">
-		<?php the_title();?>,
+		<?php 
+
+		$words = array(
+			'a', 'de', 'do', 'da', 'das', 'dos', 
+			'e', 'no', 'na', 'uma', 'um', 'em'
+		);
+		$titulos = explode(' ', get_the_title());
+		foreach ($titulos as $key => $titulo){
+			if(!$key or !in_array($titulo, $words))
+			$titulos[$key] = ucwords($titulo);
+		}
+		$novotitulo = implode(' ', $titulos);
+		echo $novotitulo;
+		
+		?>,
 		<small class="text-muted">
 			<?php echo $dataperiodo_obj['value'] . '. '; ?>
 		</small>

@@ -226,3 +226,7 @@ Ajuste na tabela de informações do cartão de obras
   border-bottom: 2px solid!important;
   border-color: rgb(1, 200, 164)!important;
 }
+
+.menu-rodape ul li a{
+  color: #FFF!important;
+}

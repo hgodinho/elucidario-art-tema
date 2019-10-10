@@ -2,14 +2,14 @@
 /**
  * Funções do tema para Wiki-Ema
  *
- * @version 0.29.1 β
+ * @version 0.30 β
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
 
- const THEME_VERSION = "0.29.1 β";
+ const THEME_VERSION = "0.30 β";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
@@ -94,7 +94,12 @@ function wikiema_wp_setup()
     /**
      * registra menu personalizado
      */
-    register_nav_menu('primario', 'Primário');
+    register_nav_menus( 
+        array(
+            'primario' => 'Primário',
+            'rodape' => 'Rodapé'
+    )
+);
 
     /**
      * Cria taxonomias para menu alfabético.
@@ -110,13 +115,13 @@ function wikiema_wp_setup()
                 '/obra-a-z',
                 false
             );
-            add_action('save_post', array($glossary, 'auto_glossary_on_save'));
+            //add_action('save_post', array($glossary, 'auto_glossary_on_save'));
 
             /**
              * chamar actions seguintes somente 1 vez
              */
-            add_action('init', array($glossary, 'recursive_glossary_post_1'));
-            add_action('init', array($glossary, 'recursive_glossary_post_2'));
+            //add_action('init', array($glossary, 'recursive_glossary_post_1'));
+            //add_action('init', array($glossary, 'recursive_glossary_post_2'));
         }
     }
 }
@@ -154,6 +159,8 @@ function query_arquivo_principal($query)
 {
     if ($query->is_post_type_archive('obras') && !is_admin() && $query->is_main_query()) {
         $query->set('posts_per_page', '9');
+        $query->set('orderby', 'id');
+        $query->set('order', 'ASC');
     }
 
     if ($query->is_tax(array('obra_az')) && !is_admin() && $query->is_main_query()) {

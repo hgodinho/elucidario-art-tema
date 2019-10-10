@@ -1,10 +1,14 @@
 # Template para Wiki-Ema
 - [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.29.1 β`
+- @version `0.30 β`
 - @source https://emaklabin.org.br
 
-## `0.29.1 β`
-
+## `0.30 β`
+- menu de rodape adicionado, com classe css também no estilos.css
+- inicio de implementação de formulário de newsletter
+- logo da fundação adicionado no header-menu.php
+- função que capitaliza os títulos das obras omitindo conjunções, preposições e artigos 
+@todo melhorar função de capitalização dos títulos, transformas em função na functions.php e chamar nos templates em que é necessário a conversão das strings.
 
 ## `0.29` 
 - `!important` na height do jumbotrom
