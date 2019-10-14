@@ -1,6 +1,6 @@
 <?php
 /**
- * template para página 'Ambientes' no Custom-post wiki_ema
+ * template para página 'Ambientes' no Custom-post elucidario_art
  *
  * responsável por exibir o arquivo de taxonomias ambientes,
  * listando cada ambiente criado na custom taxonomy

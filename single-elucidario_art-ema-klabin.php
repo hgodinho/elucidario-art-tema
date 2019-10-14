@@ -1,6 +1,6 @@
 <?php
 /**
- * Template para página 'Classificação' no Custom-post wiki_ema
+ * Template para página 'Classificação' no Custom-post elucidario_art
  *
  * responsável por exibir o arquivo de taxonomias classificação,
  * listando cada classificação criada na custom taxonomy

@@ -8,10 +8,10 @@
  * @author hgodinho <ola@hgodinho.com>
  */
 
- function wiki_ema_cartoes_obras(){
+ function elucidario_art_cartoes_obras(){
     echo 'cartoes obras carregado';
     wp_die();
  }
 
- add_action('wp_ajax_wiki_ema_cartoes_obras','wiki_ema_cartoes_obras');
- add_action('wp_ajax_nopriv_wiki_ema_cartoes_obras','wiki_ema_cartoes_obras');
+ add_action('wp_ajax_elucidario_art_cartoes_obras','elucidario_art_cartoes_obras');
+ add_action('wp_ajax_nopriv_elucidario_art_cartoes_obras','elucidario_art_cartoes_obras');

@@ -8,7 +8,7 @@
  * @author hgodinho <ola@hgodinho.com>
  */
 
-function wiki_ema_listar_autores()
+function elucidario_art_listar_autores()
 {
     global $post;
     ?>
@@ -44,5 +44,5 @@ function wiki_ema_listar_autores()
 
 }
 
-add_action('wp_ajax_wiki_ema_listar_autores', 'wiki_ema_listar_autores');
-add_action('wp_ajax_nopriv_wiki_ema_listar_autores', 'wiki_ema_listar_autores');
+add_action('wp_ajax_elucidario_art_listar_autores', 'elucidario_art_listar_autores');
+add_action('wp_ajax_nopriv_elucidario_art_listar_autores', 'elucidario_art_listar_autores');

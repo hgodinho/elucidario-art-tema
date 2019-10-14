@@ -1,15 +1,15 @@
 <?php
 /**
- * Template para página 'Classificação' no Custom-post wiki_ema
+ * template para página 'Núcleos' no Custom-post elucidario_art
  *
- * responsável por exibir o arquivo de taxonomias classificação,
- * listando cada classificação criada na custom taxonomy
+ * responsável por exibir o arquivo de taxonomias nucleos,
+ * listando cada  nucleo criada na custom taxonomy
  *
  * @package WordPress
  * @subpackage Elucidário.art
  *
  * @version 0.3
- * @since 0.3
+ * @since 0.5
  *
  * @author hgodinho.com
  */
@@ -22,9 +22,9 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 /**
  * Query principal
  */
-$classificacoes = get_terms(
+$nucleos = get_terms(
     array(
-        'taxonomy' => 'classificacao',
+        'taxonomy' => 'nucleo',
         'hide_empty' => true,
         'orderby' => 'count',
         'order' => 'DESC',
@@ -36,7 +36,7 @@ $classificacoes = get_terms(
     <main role="main" class="container">
 
         <?php
-if (!empty($classificacoes) && !is_wp_error($classificacoes)) {
+if (!empty($nucleos) && !is_wp_error($nucleos)) {
     ?>
         <div class="container py-4">
             <div class="row">
@@ -54,17 +54,17 @@ get_template_part('template-parts/header/header', 'archive');?>
         <div class="container">
             <div class="row py-4">
                 <?php
-foreach ($classificacoes as $classificacao) {
-        $link = get_term_link($classificacao);
+foreach ($nucleos as $nucleo) {
+        $link = get_term_link($nucleo);
 
         $args = array(
             'posts_per_page' => '1',
             'post_type' => 'obras',
             'tax_query' => array(
                 array(
-                    'taxonomy' => 'classificacao',
+                    'taxonomy' => 'nucleo',
                     'field' => 'name',
-                    'terms' => $classificacao->name,
+                    'terms' => $nucleo->name,
                 ),
             ),
         );
@@ -82,16 +82,16 @@ foreach ($classificacoes as $classificacao) {
 
                         <div class="card-body">
                             <h5 class="card-title mb-0 titulo-cartao mb-3">
-                                <?php echo mb_strtoupper($classificacao->name, 'UTF-8'); ?>
+                                <?php echo mb_strtoupper($nucleo->name, 'UTF-8'); ?>
                             </h5>
                             <p class="card-text"><span class="text-muted">→
                                     <?php
-if ($classificacao->count > 1) {
-            echo $classificacao->count;?>
+if ($nucleo->count > 1) {
+            echo $nucleo->count;?>
                                     itens</span>
                                 <?php
 } else {
-            echo $classificacao->count;?>
+            echo $nucleo->count;?>
                                 item</span>
                                 <?php
 }?>

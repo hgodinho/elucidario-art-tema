@@ -6,7 +6,7 @@
  *
  * @since 0.1
  */
-function wiki_ema_jumbotron_home(WP_Query $obra_do_mes = null)
+function elucidario_art_jumbotron_home(WP_Query $obra_do_mes = null)
 {
     if ($obra_do_mes->have_posts()) {
         while ($obra_do_mes->have_posts()): $obra_do_mes->the_post();

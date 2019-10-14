@@ -23,7 +23,7 @@
 				<a href="<?php echo get_site_url( )?>/sobre" class="badge badge-pill badge-light mt-2 " style="font-size:11px"><?php echo THEME_VERSION; ?></a>
 			</span>
 			<button class="navbar-toggler rounded-circle shadow-lg nav-bar-toggle-color border border-secondary"
-				type="button" data-toggle="collapse" data-target="#menuWikiEma" aria-controls="menuWikiEma"
+				type="button" data-toggle="collapse" data-target="#menuElucidarioArt" aria-controls="menuElucidarioArt"
 				aria-expanded="false" aria-label="Alternar navegação">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -33,7 +33,7 @@
 					'depth' => 2,
 					'container' => 'div',
 					'container_class' => 'collapse navbar-collapse',
-					'container_id' => 'menuWikiEma',
+					'container_id' => 'menuElucidarioArt',
 					'menu_class' => 'nav navbar-nav',
 					'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
 					'walker' => new WP_Bootstrap_Navwalker(),

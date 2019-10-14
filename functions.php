@@ -25,7 +25,7 @@ require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/clas
  */
 global $bootstrap_version;
 
-function wikiema_enqueue_styles()
+function elucidarioart_enqueue_styles()
 {
     $bootstrap_version = '4.3.1';
     wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/custom-bootstrap.min.css', '', $bootstrap_version);
@@ -46,7 +46,7 @@ function wikiema_enqueue_styles()
  *
  * @return void
  */
-function wikiema_enqueue_scripts()
+function elucidarioart_enqueue_scripts()
 {
     $bootstrap_version = '4.3.1';
     $dependencies = array('jquery');
@@ -77,7 +77,7 @@ function wikiema_enqueue_scripts()
  *
  * @return void
  */
-function wikiema_wp_setup()
+function elucidarioart_wp_setup()
 {
     /**
      * funcionalidades do tema
@@ -208,9 +208,9 @@ function custom_query_vars_filter($vars)
 /**
  * add_action
  */
-add_action('wp_enqueue_scripts', 'wikiema_enqueue_styles');
-add_action('wp_enqueue_scripts', 'wikiema_enqueue_scripts');
-add_action('after_setup_theme', 'wikiema_wp_setup');
+add_action('wp_enqueue_scripts', 'elucidarioart_enqueue_styles');
+add_action('wp_enqueue_scripts', 'elucidarioart_enqueue_scripts');
+add_action('after_setup_theme', 'elucidarioart_wp_setup');
 add_action('pre_get_posts', 'query_arquivo_principal');
 
 /**

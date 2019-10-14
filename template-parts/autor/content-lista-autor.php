@@ -2,7 +2,7 @@
 /**
  * Template part: Lista autor
  *
- * lista todos os autores no single-wiki_ema-autores.php
+ * lista todos os autores no single-elucidario_art-autores.php
  *
  * @version 0.1
  * @since 0.4

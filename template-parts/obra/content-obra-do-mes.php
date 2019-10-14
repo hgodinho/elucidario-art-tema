@@ -8,7 +8,7 @@
  * @since 0.1
  */
 
-function wiki_ema_destaque_home(WP_Query $obra_do_mes = null)
+function elucidario_art_destaque_home(WP_Query $obra_do_mes = null)
 {
 	global $wp_query;
 	if($obra_do_mes == null){

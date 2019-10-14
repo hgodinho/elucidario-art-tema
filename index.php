@@ -32,8 +32,8 @@ $obra_do_mes = new WP_Query($args);
 <section id="primary" class="content-area">
 
 	<?php
-if (function_exists('wiki_ema_jumbotron_home')) {
-    wiki_ema_jumbotron_home($obra_do_mes);
+if (function_exists('elucidario_art_jumbotron_home')) {
+    elucidario_art_jumbotron_home($obra_do_mes);
 }
 
 ?>

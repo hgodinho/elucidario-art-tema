@@ -64,7 +64,7 @@ if (class_exists('WP_Glossary_Bootstrap')) {
 
                 <div class="col col-lg-12 col-10">
                     <?php
-if (!function_exists('wiki_ema_listar_autores')) {
+if (!function_exists('elucidario_art_listar_autores')) {
     get_template_part('template-parts/autor/content', 'tabela-autor');?>
                 </div>
 
@@ -73,7 +73,7 @@ if (!function_exists('wiki_ema_listar_autores')) {
     if (have_posts()): while (have_posts()): the_post();?>
                 <div class="list-group" id="lista-autores">
                     <?php
-        wiki_ema_listar_autores();?>
+        elucidario_art_listar_autores();?>
                 </div>
                 <?php
     endwhile;

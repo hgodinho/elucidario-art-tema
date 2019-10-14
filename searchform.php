@@ -6,7 +6,7 @@
  * @author hgodinho.com
  */
 
-function wiki_ema_search_form(string $types = '', string $placeholder = '')
+function elucidario_art_search_form(string $types = '', string $placeholder = '')
 {?>
 
 <form id="search" class="shadow-sm d-print-none" action="<?php echo get_site_url(); ?>" method="get">
@@ -28,63 +28,63 @@ function wiki_ema_search_form(string $types = '', string $placeholder = '')
  * Formulário de busca para Home page Elucidário.art
  */
 if (is_front_page(  )) {
-    wiki_ema_search_form('autores, obras', 'buscar obra');
+    elucidario_art_search_form('autores, obras', 'buscar obra');
 }
 
 /**
  * Formulário de busca para Page
  */
 if (is_page(  )) {
-    wiki_ema_search_form('autores, obras', 'buscar obra');
+    elucidario_art_search_form('autores, obras', 'buscar obra');
 }
 
 /**
  * Formulário de busca para Arquivo de autores
  */
 if (is_post_type_archive(array('autores')) or is_tax('autor_az')) {
-    wiki_ema_search_form('obras, autores', 'buscar autor');
+    elucidario_art_search_form('obras, autores', 'buscar autor');
 }
 
 /**
  * Formulário de busca para Single Autores
  */
 if (is_singular(array('autores'))) {
-    wiki_ema_search_form('obras, autores', 'buscar autor');
+    elucidario_art_search_form('obras, autores', 'buscar autor');
 }
 
 /**
  * Formulário de busca para Single Obras
  */
 if (is_singular(array('obras'))) {
-    wiki_ema_search_form('obras, autores', 'buscar obra');
+    elucidario_art_search_form('obras, autores', 'buscar obra');
 }
 
 /**
  * Formulário de busca para Arquivo de Taxonomias (Ambientes, Núcleos e Classificações)
  */
 if (is_single(array('Ambientes', 'Núcleos', 'Classificações', 'Ema Klabin'))) {
-    wiki_ema_search_form('obras, autores', 'buscar obra');
+    elucidario_art_search_form('obras, autores', 'buscar obra');
 }
 
 /**
  * Formulário de busca para Single Taxonomy (ambientes, nucleos e classificacoes)
  */
 if (is_tax(array('ambiente', 'nucleo', 'classificacao'))) {
-    wiki_ema_search_form('obras, autores', 'buscar obra');
+    elucidario_art_search_form('obras, autores', 'buscar obra');
 }
 
 /**
  * Formulário de busca para arquivo de obras
  */
 if (is_post_type_archive(array('obras')) or is_tax('obra_az')) {
-    wiki_ema_search_form('', 'buscar obra');
+    elucidario_art_search_form('', 'buscar obra');
 }
 
 /**
  * Formulário de busca SERP (search engine results page)
  */
 if (is_search()) {
-    wiki_ema_search_form('obras, autores', 'buscar obra');
+    elucidario_art_search_form('obras, autores', 'buscar obra');
 }
 
 ?>
