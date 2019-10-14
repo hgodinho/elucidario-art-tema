@@ -5,7 +5,7 @@
  * Utilizado em diversos templates ao longo do tema.
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  * @since 0.1
  */
 

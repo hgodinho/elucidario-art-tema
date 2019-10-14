@@ -1,9 +1,9 @@
 <?php
 /**
- * Head do tema Wiki-Ema
+ * Head do tema Elucidário.art
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.1
  * @since 0.3
@@ -48,4 +48,4 @@
 
 	<?php get_template_part('template-parts/header/header','menu'); ?>
 
-	<div class="container-fluid px-0 site-content" id="body-wiki-ema">
+	<div class="container-fluid px-0 site-content" id="body-elucidario-art">

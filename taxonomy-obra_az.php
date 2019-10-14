@@ -3,7 +3,7 @@
  * template para taxonomia autor_az single term
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.2
  * @since 0.5

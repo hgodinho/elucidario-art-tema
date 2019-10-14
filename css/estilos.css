@@ -1,11 +1,11 @@
 /**
- * Theme Name: Wiki-Ema template
- * Theme URI: https://emaklabin.org.br/wiki-ema
- * Description: Template da Wiki-Ema
+ * Theme Name: Elucidário.art
+ * Theme URI: https://emaklabin.org.br/explore
+ * Description: Tema do Elucidário.art
  * Version: 0.29
  * Author: hgodinho
  * Author URI: https://hgodinho.com
- * Text Domain: wiki-ema-template
+ * Text Domain: elucidario-art
 */
 
 .linhaCinza {
@@ -229,4 +229,8 @@ Ajuste na tabela de informações do cartão de obras
 
 .menu-rodape ul li a{
   color: #FFF!important;
+}
+
+#menu-menu-principal .menu-item a.nav-link{
+  font-size:1.188rem;
 }

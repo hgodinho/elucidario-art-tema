@@ -2,13 +2,11 @@
 /**
  * template para página 'Ambientes' no Custom-post wiki_ema
  *
- * @url wiki-ema/pag/ambientes/
- *
  * responsável por exibir o arquivo de taxonomias ambientes,
  * listando cada ambiente criado na custom taxonomy
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.3
  * @since 0.3
@@ -31,7 +29,7 @@ $ambientes = get_terms(
         'orderby' => 'count',
         'order' => 'DESC',
         'parent' => 0,
-        'exclude' => '69'
+        'exclude' => '5' // Reserva-técnica
     )
 );
 ?>

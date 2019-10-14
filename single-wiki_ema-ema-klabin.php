@@ -2,14 +2,12 @@
 /**
  * Template para página 'Classificação' no Custom-post wiki_ema
  *
- * @url wiki-ema/pag/classificacoes/
- *
  * responsável por exibir o arquivo de taxonomias classificação,
  * listando cada classificação criada na custom taxonomy
  *
  * @package WordPress
- * @subpackage Wiki-Ema
- *
+ * @subpackage Elucidário.art
+ * 
  * @version 0.3
  * @since 0.3
  *

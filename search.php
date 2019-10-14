@@ -4,7 +4,7 @@
  *
  *
  * @package WordPress
- * @subpackage Wiki-ema
+ * @subpackage Elucidário.art
  *
  * @version 0.2
  * @since 0.4

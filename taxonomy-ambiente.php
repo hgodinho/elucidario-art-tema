@@ -3,7 +3,7 @@
  * template para taxonomia ambiente single term
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.3
  * @since 0.3

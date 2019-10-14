@@ -5,7 +5,7 @@
  * exibe as informações de cada autor cadastrado
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.5
  * @since 0.1

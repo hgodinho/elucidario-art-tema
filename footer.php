@@ -1,9 +1,9 @@
 <?php
 /**
- * Footer template para Wiki-Ema
+ * Footer template para Elucidário.art
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.1
  * @since 0.1

@@ -1,6 +1,6 @@
 <?php
 /**
- * Formulários simples de busca da wiki-ema
+ * Formulários simples de busca do Elucidário.art
  *
  * @since 0.6
  * @author hgodinho.com
@@ -25,7 +25,7 @@ function wiki_ema_search_form(string $types = '', string $placeholder = '')
 }
 
 /**
- * Formulário de busca para Home page Wiki-Ema
+ * Formulário de busca para Home page Elucidário.art
  */
 if (is_front_page(  )) {
     wiki_ema_search_form('autores, obras', 'buscar obra');

@@ -2,13 +2,11 @@
 /**
  * template para página 'Núcleos' no Custom-post wiki_ema
  *
- * @url wiki-ema/pag/nucleos/
- *
  * responsável por exibir o arquivo de taxonomias nucleos,
  * listando cada  nucleo criada na custom taxonomy
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.3
  * @since 0.5

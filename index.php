@@ -1,9 +1,9 @@
 <?php
 /**
- * Home-page da Wiki-Ema
+ * Home-page da Elucidário.art
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.2
  * @since 0.3

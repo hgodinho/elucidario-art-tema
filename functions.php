@@ -1,15 +1,15 @@
 <?php
 /**
- * Funções do tema para Wiki-Ema
+ * Funções do tema para Elucidario.art
  *
- * @version 0.30 β
+ * @version 0.31 β
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
 
- const THEME_VERSION = "0.30 β";
+ const THEME_VERSION = "0.31 β";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
@@ -38,7 +38,7 @@ function wikiema_enqueue_styles()
     wp_register_style('owlcarousel2', get_template_directory_uri() . '/inc/owl/owl.theme.default.min.css');
 
     $dependencies = array('bootstrap', 'font-awesome', 'estilos', 'owlcarousel', 'owlcarousel2');
-    wp_enqueue_style('wikiema-style', get_stylesheet_uri(), $dependencies);
+    wp_enqueue_style('elucidario-art-style', get_stylesheet_uri(), $dependencies);
 }
 
 /**
@@ -64,11 +64,11 @@ function wikiema_enqueue_scripts()
      */
 
     $versao = rand(0, 999);
-    wp_enqueue_script('wiki-ema-app', get_template_directory_uri() . '/js/wiki-ema.js', null, $versao, false);
-    $wp_wiki_ema_vars = array(
+    wp_enqueue_script('elucidario-art-app', get_template_directory_uri() . '/js/elucidario-art.js', null, $versao, false);
+    $elucidario_art_vars = array(
         'ajaxurl' => admin_url('admin-ajax.php'),
     );
-    wp_localize_script('wiki-ema-app', 'wiki_ema', $wp_wiki_ema_vars);
+    wp_localize_script('elucidario-art-app', 'elucidario_art', $elucidario_art_vars);
 
 }
 

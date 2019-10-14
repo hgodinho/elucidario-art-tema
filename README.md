@@ -1,7 +1,10 @@
-# Template para Wiki-Ema
-- [Wiki-Ema](https://github.com/hgodinho/wiki-ema)
-- @version `0.30 β`
+# Template para Elucidário.art
+- [Elucidário.art](https://github.com/hgodinho/wiki-ema)
+- @version `0.31 β`
 - @source https://emaklabin.org.br
+
+## `0.31 β`
+- mudança de nome para Elucidário.art
 
 ## `0.30 β`
 - menu de rodape adicionado, com classe css também no estilos.css

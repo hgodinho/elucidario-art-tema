@@ -5,7 +5,7 @@
  * exibe as informações de cada obra cadastrada
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.3
  * @since 0.1

@@ -3,7 +3,7 @@
  * Snippet de obras relacionadas
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @since 0.3
  * @version 0.1

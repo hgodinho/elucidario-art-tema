@@ -2,10 +2,10 @@
 /**
  * Archive template para Obras
  *
- * responsável por exibir o arquivo de obras
+ * Responsável por exibir o arquivo de obras
  *
  * @package WordPress
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  *
  * @version 0.2
  * @since 0.3

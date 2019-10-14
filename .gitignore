@@ -1,7 +1,6 @@
 .DS_Store
 /.vscode/
 /vendor/
-wiki-ema.code-workspace
 /doc/
 reserva.php
 inc/alphabetical-pagination/.github

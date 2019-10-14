@@ -5,7 +5,7 @@
  * @package WordPress
  * @package Meta-Box
  * @source https://docs.metabox.io/fields/fieldset-text/
- * @subpackage Wiki-Ema
+ * @subpackage Elucidário.art
  * 
  * @version 0.3
  * @since 0.1
