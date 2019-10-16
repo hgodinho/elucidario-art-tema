@@ -37,7 +37,9 @@ if (!is_home()) {
         echo 'Obras</a>';
         if (is_single()) {
             echo "</li><li class='breadcrumb-item active'>";
-            the_title();
+            if(function_exists('capitular')){
+                capitular(get_the_title());
+            }
             echo '</li>';
         }
     } elseif (is_tax('ambiente')) {
@@ -104,35 +106,10 @@ if (!is_home()) {
     } elseif (is_search()) {
         $search_query = get_search_query();
         echo "</li><li class='breadcrumb-item active'>";
-        echo "Resultados de busca para: " . $search_query;
+        echo "<i class='fas fa-search'></i> → " . $search_query;
         echo '</li>';
     }
 }
-
-/*
-} elseif (is_tag()) {
-single_tag_title();
-} elseif (is_day()) {
-echo "<li class='breadcrumb-item'>Archive for ";
-the_time('F jS, Y');
-echo '</li>';
-} elseif (is_month()) {
-echo "<li class='breadcrumb-item'>Archive for ";
-the_time('F, Y');
-echo '</li>';
-} elseif (is_year()) {
-echo "<li class='breadcrumb-item'>Archive for ";
-the_time('Y');
-echo '</li>';
-} elseif (is_author()) {
-echo "<li class='breadcrumb-item'>Author Archive";
-echo '</li>';
-} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-echo "<li>Blog Archives";
-echo '</li>';
-}
- */
-
 echo '</ol>';
 echo '</nav>';
 echo '</div>';

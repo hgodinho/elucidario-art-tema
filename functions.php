@@ -197,6 +197,32 @@ function get_taxonomy_archive_link(string $taxonomy = null)
 }
 
 /**
+ * Função capitular
+ * Pega uma string e capitula todas as primeiras letras de cada palavra
+ * com exceção de conjunções, preposições e artigos
+ */
+
+function capitular($string, $echo = true){
+    $words = array(
+        'a', 'de', 'do', 'da', 'das', 'dos', 
+        'e', 'no', 'nos', 'nas', 'na', 'uma', 
+        'um', 'em', 'como', 'o'
+    );
+    $titlelower = strtolower($string);
+    $titulos = explode(' ', $titlelower);
+    foreach ($titulos as $key => $titulo){
+        if(!$key or !in_array($titulo, $words))
+        $titulos[$key] = ucwords($titulo);
+    }
+    $novotitulo = implode(' ', $titulos);
+    if($echo == true){
+    echo $novotitulo;
+    } else{
+        return $novotitulo;
+    }
+}
+
+/**
  * Custom Query_vars
  */
 function custom_query_vars_filter($vars)

@@ -28,6 +28,7 @@ while ($connected->have_posts()): $connected->the_post();
 
 
 	<div class="col-12">
+        <small>autoria:</small>
 	    <h3>
 	        <?php the_title();?>
 	    </h3>

@@ -59,19 +59,9 @@ get_search_form();?>
 <div class="col py-4 pl-0">
 	<h1 class="blog-post-title text-primary">
 		<?php 
-
-		$words = array(
-			'a', 'de', 'do', 'da', 'das', 'dos', 
-			'e', 'no', 'na', 'uma', 'um', 'em'
-		);
-		$titulos = explode(' ', get_the_title());
-		foreach ($titulos as $key => $titulo){
-			if(!$key or !in_array($titulo, $words))
-			$titulos[$key] = ucwords($titulo);
-		}
-		$novotitulo = implode(' ', $titulos);
-		echo $novotitulo;
-		
+		if(function_exists('capitular')){
+		capitular(get_the_title());
+	}
 		?>,
 		<small class="text-muted">
 			<?php echo $dataperiodo_obj['value'] . '. '; ?>
@@ -122,7 +112,7 @@ if (is_front_page()) {
 	<div class="col-12 col-lg-5">
 		<div class="row mb-4">
 			<!-- autor -->
-			<?php get_template_part('template-parts/obra/content', 'resumo_autor');?>
+			<?php get_template_part('template-parts/autor/content', 'resumo_autor');?>
 			<!-- // autor -->
 		</div>
 

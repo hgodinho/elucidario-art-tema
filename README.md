@@ -1,7 +1,15 @@
 # Template para Elucidário.art
-- [Elucidário.art](https://github.com/hgodinho/wiki-ema)
-- @version `0.31 β`
-- @source https://emaklabin.org.br
+- [Elucidário.art (tema)](https://github.com/hgodinho/elucidario-art-tema)
+- @version `0.32 β`
+- @source https://elucidario.art
+
+
+[EM ANDAMENTO] 
+[ALTERAR VERSAO EM: readme.md, style.css, estilos,css, functions.php]
+## `0.32 β` 
+- função `capitular($string, $echo = true)` que capitaliza as primeiras letras de cada palavra com exceção de conjunções, preposições e artigos.
+por padrão `$echo = true`, se `$echo = false` então `return`.
+- comentei a linha que gerava as letras no alphabetical-pagination mesmo quando elas não continham itens.
 
 ## `0.31 β`
 - mudança de nome para Elucidário.art

@@ -87,7 +87,11 @@ echo 'Página 1';
 					<tr>
 						<td>
 							<a href="<?php the_permalink();?>" class="text-decoration-none">
-								<?php the_title();?>
+								<?php 
+										if(function_exists('capitular')){
+											capitular(get_the_title());
+										}
+								?>
 							</a>
 						</td>
 						<?php $fichatecnica_autor = get_field('ficha_tecnica');?>

@@ -182,7 +182,8 @@ foreach (range('a', 'z') as $i):
                     if (in_array($i, $alphabet)) {
                         printf('<a class="btn-az-single btn btn-outline-secondary ' . $tax_name_1 . ' %s"  href="%s" >%s</a>', $current, get_term_link($i, $tax_name_1), strtoupper($i) );
                     } else {
-                        printf('<a class="btn-az-single btn btn-outline-secondary ' . $tax_name_1 . ' %s disabled" tabindex="-1" aria-disabled="true">%s</a>', $current, strtoupper($i) );
+                        //printf('<a class="btn-az-single btn btn-outline-secondary ' . $tax_name_1 . ' %s disabled" tabindex="-1" aria-disabled="true">%s</a>', $current, strtoupper($i) );
+                        // ver changelog versao `0.32 β` 
                     }
                 endforeach;
                 ?>
@@ -209,7 +210,8 @@ foreach (range('a', 'z') as $i):
                     if (in_array($i, $alphabet)) {
                         printf('<a class="btn-az-single btn btn-outline-secondary ' . $tax_name_2 . ' %s" href="%s">%s</a>', $current, get_term_link($i, $tax_name_2), strtoupper($i));
                     } else {
-                        printf('<a class="btn-az-single btn btn-outline-secondary ' . $tax_name_2 . ' %s disabled" tabindex="-1" aria-disabled="true">%s</a>', $current, strtoupper($i));
+                        //printf('<a class="btn-az-single btn btn-outline-secondary ' . $tax_name_2 . ' %s disabled" tabindex="-1" aria-disabled="true">%s</a>', $current, strtoupper($i));
+                        // ver changelog versao `0.32 β` 
                     }
                 endforeach;
                 ?>

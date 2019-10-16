@@ -27,9 +27,10 @@ function elucidario_art_jumbotron_home(WP_Query $obra_do_mes = null)
                 <div class="row align-items-center mt-5">
                     <div class="col-xl-12">
                         <div class="row justify-content-center align-self-center mt-5">
-                            <h1 class="text-white display-4"><span
+                        <h1 class="hidden"><?php echo get_bloginfo('name'); ?></h1>    
+                        <h2 class="text-white display-4 mx-1"><span
                                     class="text-shadow"><?php echo get_bloginfo('description'); ?></span>
-                            </h1>
+                            </h2>
                             <!-- formulario de busca -->
                             <div class="col-12">
                                 <div class="d-flex justify-content-center mt-5">
@@ -51,7 +52,10 @@ function elucidario_art_jumbotron_home(WP_Query $obra_do_mes = null)
                                 Obra do mês:
                             </p>
                             <p class="legenda-jumbotrom text-left">
-                                <?php the_title();
+                                <?php 
+                            		if(function_exists('capitular')){
+                                        capitular(get_the_title());
+                                    }
                             echo ' (';
                             echo $fichatecnica_obra['dataperiodo'];
                             echo '). ';
