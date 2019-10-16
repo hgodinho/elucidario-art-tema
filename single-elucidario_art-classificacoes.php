@@ -67,6 +67,8 @@ foreach ($classificacoes as $classificacao) {
                     'terms' => $classificacao->name,
                 ),
             ),
+            'orderby' => 'id',
+            'order' => 'DESC'
         );
         $imagequery = get_posts($args);
         $image = get_the_post_thumbnail($imagequery[0]->ID, 'cartoes-thumb-obra');

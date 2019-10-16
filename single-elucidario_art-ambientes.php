@@ -29,7 +29,7 @@ $ambientes = get_terms(
         'orderby' => 'count',
         'order' => 'DESC',
         'parent' => 0,
-        'exclude' => '5' // Reserva-técnica
+        'exclude' => '5,41' // Reserva-técnica
     )
 );
 ?>

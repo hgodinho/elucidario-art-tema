@@ -39,7 +39,7 @@ $result_array = array_diff($the_post_content, $first_paragraph_array);
                 </h1>
             </div>
 
-            <div class="d-flex flex-wrap align-content-end" style="height:600px">
+            <div class="d-flex flex-wrap align-content-end " style="height:600px">
                 <div class="col-md-6">
                     <p class="text-white ml-auto">
                         <?php echo $first_paragraph;?>

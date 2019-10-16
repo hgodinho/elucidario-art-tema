@@ -80,7 +80,7 @@ Ajuste na tabela de informações do cartão de obras
 }
 
 .navbar-toggler {
-  background: linear-gradient(rgb(1, 200, 164), rgb(26, 48, 142)) !important;
+  background: linear-gradient(#533C57, #185D61) !important;
   padding: 0.75rem 0.75rem;
   /*margin-right: 0.5rem;*/
 }
@@ -91,7 +91,7 @@ Ajuste na tabela de informações do cartão de obras
 
 
 .bg-primary {
-  background: linear-gradient(rgb(26, 48, 142), rgb(1, 200, 164)) !important;
+  background: linear-gradient( #248A8F,#89628F) !important;
   /*background-color: #22941e !important;*/
 }
 
@@ -111,7 +111,7 @@ Ajuste na tabela de informações do cartão de obras
   position: absolute;
   top: 30%;
   left: 0;
-  color: #00904671;
+  color: #248A8F;
   font-size: 30vw;
 }
 
@@ -119,7 +119,7 @@ Ajuste na tabela de informações do cartão de obras
   position: absolute;
   top: 30%;
   right: 0;
-  color: #00904671;
+  color: #248A8F;
   font-size: 30vw;
 }
 
@@ -224,7 +224,7 @@ Ajuste na tabela de informações do cartão de obras
   border-right: 2px solid!important;
   border-left: 2px solid!important;
   border-bottom: 2px solid!important;
-  border-color: rgb(1, 200, 164)!important;
+  border-color: #89628F!important;
 }
 
 .menu-rodape ul li a{

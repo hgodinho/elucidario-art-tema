@@ -67,6 +67,8 @@ foreach ($nucleos as $nucleo) {
                     'terms' => $nucleo->name,
                 ),
             ),
+            'orderby' => 'id',
+            'order' => 'ASC'
         );
         $imagequery = get_posts($args);
         $image = get_the_post_thumbnail($imagequery[0]->ID, 'cartoes-thumb-obra');

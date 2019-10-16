@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "autoprefixer": "*",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-clean-css": "^4.0.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",

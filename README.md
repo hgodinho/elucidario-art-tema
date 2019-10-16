@@ -10,6 +10,10 @@
 - função `capitular($string, $echo = true)` que capitaliza as primeiras letras de cada palavra com exceção de conjunções, preposições e artigos.
 por padrão `$echo = true`, se `$echo = false` então `return`.
 - comentei a linha que gerava as letras no alphabetical-pagination mesmo quando elas não continham itens.
+- novos parâmetros de ordem nas query das páginas single-elucidario_art-classificacoes e nucleos, esses novos parâmetros procuram por imagens de cada classificação ou núcleo, prezando pela ordem pelo ID 
+- mudança nas cores primárias e secundárias.
+- acréscimo de css no scss do bootstrap para gerar um underline no link ativo do menu
+- omissão do ambiente recepção na lista de ambientes
 
 ## `0.31 β`
 - mudança de nome para Elucidário.art
