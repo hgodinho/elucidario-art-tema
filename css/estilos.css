@@ -142,7 +142,11 @@ Ajuste na tabela de informações do cartão de obras
 
 .legenda-jumbotrom {
   color: white;
-  text-shadow: 1px 1px 1px #333333;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.legenda-jumbotrom a{
+  color: #248A8F!important;
+  text-shadow: 0.8px 0.8px 0.8px rgba(0, 0, 0, 0.6);
 }
 
 .jumbotrom-fix {
