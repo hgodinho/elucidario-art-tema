@@ -12,7 +12,14 @@ function elucidario_art_jumbotron_home(WP_Query $obra_do_mes = null)
         while ($obra_do_mes->have_posts()): $obra_do_mes->the_post();
             $fichatecnica_obra = get_field('ficha_tecnica');
             $fotografo = get_field('fotografo');
-            $thumbnail_obradomes = get_the_post_thumbnail_url(get_the_ID(), 'full');
+
+            //var_dump(get_field('imagem-obra-do-mes'));
+            if(get_field('imagem-obra-do-mes')){
+                $img_obra_do_mes = get_field('imagem-obra-do-mes');
+                $thumbnail_obradomes = $img_obra_do_mes['url'];
+            } else{
+                $thumbnail_obradomes = get_the_post_thumbnail_url(get_the_ID(), 'full');
+            }
             $obra_link = get_the_permalink( );
             ?>
 
@@ -27,8 +34,8 @@ function elucidario_art_jumbotron_home(WP_Query $obra_do_mes = null)
                 <div class="row align-items-center mt-5">
                     <div class="col-xl-12">
                         <div class="row justify-content-center align-self-center mt-5">
-                        <h1 class="hidden"><?php echo get_bloginfo('name'); ?></h1>    
-                        <h2 class="text-white display-4 mx-1"><span
+                            <h1 class="hidden"><?php echo get_bloginfo('name'); ?></h1>
+                            <h2 class="text-white display-4 mx-1"><span
                                     class="text-shadow"><?php echo get_bloginfo('description'); ?></span>
                             </h2>
                             <!-- formulario de busca -->
@@ -79,7 +86,7 @@ function elucidario_art_jumbotron_home(WP_Query $obra_do_mes = null)
                                 echo $fotografo . ' ';
                             }
                             ?>
-                            <a href="<?php echo $obra_link;?>" class="text-secondary">Ver obra →</a>
+                                <a href="<?php echo $obra_link;?>" class="text-secondary">Ver obra →</a>
                             </p>
                         </div>
                     </div>

@@ -2,14 +2,14 @@
 /**
  * Funções do tema para Elucidario.art
  *
- * @version 0.32 β
+ * @version 0.33 β
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
 
- const THEME_VERSION = "0.32 β";
+ const THEME_VERSION = "0.33 β";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
@@ -245,11 +245,3 @@ add_action('pre_get_posts', 'query_arquivo_principal');
 add_filter('image_size_names_choose', 'tamanho_imagem_personalizado');
 //add_filter('query_vars', 'custom_query_vars_filter');
 //add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
-
-add_filter( 'github_updater_set_options',
-	function () {
-		return array( 
-			'elucidario-art-tema'    => '336f8c64c51ca35bd065e4368cf65c29e920411c',
-			'github_access_token' => '336f8c64c51ca35bd065e4368cf65c29e920411c',
-		);
-	} );

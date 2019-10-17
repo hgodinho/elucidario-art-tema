@@ -1,11 +1,16 @@
 # Template para Elucidário.art
 - [Elucidário.art (tema)](https://github.com/hgodinho/elucidario-art-tema)
-- @version `0.32 β`
+- @version `0.33 β`
 - @source https://elucidario.art
 
 
 [EM ANDAMENTO] 
 [ALTERAR VERSAO EM: readme.md, style.css, estilos,css, functions.php]
+## `0.33 β`
+- acréscimo de campo de imagem extra na obra para melhorar o crop do jumbotrom obra do mês
+
+
+***
 ## `0.32 β` 
 - função `capitular($string, $echo = true)` que capitaliza as primeiras letras de cada palavra com exceção de conjunções, preposições e artigos.
 por padrão `$echo = true`, se `$echo = false` então `return`.
