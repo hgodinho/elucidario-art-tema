@@ -245,3 +245,11 @@ add_action('pre_get_posts', 'query_arquivo_principal');
 add_filter('image_size_names_choose', 'tamanho_imagem_personalizado');
 //add_filter('query_vars', 'custom_query_vars_filter');
 //add_filter('wp_nav_menu_items', 'add_search_form', 10, 2);
+
+add_filter( 'github_updater_set_options',
+	function () {
+		return array( 
+			'elucidario-art-tema'    => '336f8c64c51ca35bd065e4368cf65c29e920411c',
+			'github_access_token' => '336f8c64c51ca35bd065e4368cf65c29e920411c',
+		);
+	} );
