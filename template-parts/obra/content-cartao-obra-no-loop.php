@@ -41,18 +41,25 @@ $meta = get_post_meta( get_the_ID());
                         <?php echo end($meta['ficha_autor']); ?>
                     </td>
                 </tr>
+                <?php 
+                if($material['value']){
+                ?>
                 <tr>
                     <th scope="row" class="cartao-obra-row">Material<br>ou Técnica</th>
                     <td>
                         <?php echo $material['value']; ?>
                     </td>
                 </tr>
+                <?php }
+                if($dimensoes['value']){
+                ?>
                 <tr>
                     <th scope="row" class="cartao-obra-row">Medidas</th>
                     <td>
                         <?php echo $dimensoes['value']; ?>
                     </td>
                 </tr>
+                <?php } ?>
                 <tr>
                     <th scope="row" class="cartao-obra-row">Tombo</th>
                     <td>

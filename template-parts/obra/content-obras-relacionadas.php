@@ -114,18 +114,24 @@ while ($relacionado_query->have_posts()): $relacionado_query->the_post();
 		                                <?php echo end($meta['ficha_autor']); ?>
 		                            </td>
 		                        </tr>
+                                <?php 
+                                if($material['value']){?>
 		                        <tr>
 		                            <th scope="row" class="cartao-obra-row">Material<br>ou técnica</th>
 		                            <td>
-		                                <?php echo $material['value']; ?>
+                                        <?php echo $material['value']; ?>
 		                            </td>
 		                        </tr>
+                                <?php }
+                                if($dimensoes['value']){
+                                ?>
 		                        <tr>
 		                            <th scope="row" class="cartao-obra-row">Medidas</th>
 		                            <td>
 		                                <?php echo $dimensoes['value']; ?>
 		                            </td>
 		                        </tr>
+                                <?php } ?>
 		                        <tr>
 		                            <th scope="row" class="cartao-obra-row">Tombo</th>
 		                            <td>
