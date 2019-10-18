@@ -214,7 +214,7 @@ function capitular($string, $echo = true){
     $titlelower = strtolower($string);
     $titulos = explode(' ', $titlelower);
     foreach ($titulos as $key => $titulo){
-        if(!$key or !in_array($titulo, $words)){}
+        if(!$key or !in_array($titulo, $words)){
         $titulos[$key] = ucwords($titulo);
     }
         }
