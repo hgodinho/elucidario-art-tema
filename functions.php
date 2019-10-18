@@ -2,14 +2,14 @@
 /**
  * Funções do tema para Elucidario.art
  *
- * @version 0.33 β
+ * @version 0.33β
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
 
- const THEME_VERSION = "0.33 β";
+ const THEME_VERSION = "0.33β";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
@@ -24,13 +24,16 @@ require_once get_template_directory() . '/inc/wp-bootstrap-navwalker-master/clas
  * @return void
  */
 global $bootstrap_version;
+$versao = rand(0, 999);
 
 function elucidarioart_enqueue_styles()
 {
     $bootstrap_version = '4.3.1';
+    $versao_estilos = THEME_VERSION;
+
     wp_register_style('bootstrap', get_template_directory_uri() . '/bootstrap/css/custom-bootstrap.min.css', '', $bootstrap_version);
     wp_register_style('font-awesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
-    wp_register_style('estilos', get_template_directory_uri() . '/css/estilos.css');
+    wp_register_style('estilos', get_template_directory_uri() . '/css/estilos.css', '', $versao_estilos);
     /**
      * @subpackage OwlCarousel
      */
@@ -63,8 +66,8 @@ function elucidarioart_enqueue_scripts()
      * Ajax Insert
      */
 
-    $versao = rand(0, 999);
-    wp_enqueue_script('elucidario-art-app', get_template_directory_uri() . '/js/elucidario-art.js', null, $versao, false);
+    $versao_js = THEME_VERSION;
+    wp_enqueue_script('elucidario-art-app', get_template_directory_uri() . '/js/elucidario-art.js', null, $versao_js, false);
     $elucidario_art_vars = array(
         'ajaxurl' => admin_url('admin-ajax.php'),
     );
@@ -211,9 +214,10 @@ function capitular($string, $echo = true){
     $titlelower = strtolower($string);
     $titulos = explode(' ', $titlelower);
     foreach ($titulos as $key => $titulo){
-        if(!$key or !in_array($titulo, $words))
+        if(!$key or !in_array($titulo, $words)){}
         $titulos[$key] = ucwords($titulo);
     }
+        }
     $novotitulo = implode(' ', $titulos);
     if($echo == true){
     echo $novotitulo;

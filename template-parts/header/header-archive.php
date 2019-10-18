@@ -312,15 +312,20 @@ echo 'Página 1';
  */
 if (is_tax(array('ambiente'))) {?>
 <div class="row">
-    <div class="col-12 col-lg-7 pt-4">
+    <div class="col-12 pt-4">
         <h1 class="display-3 text-primary">
             <?php
 echo single_term_title('', false); ?>
         </h1>
 
-        <p>
+        <div class="col-12 pt-4">
+        <?php get_template_part('template-parts/carousel/carousel', 'ambiente');?>
+        </div>
+
+        <p class="pt-4">
             <?php echo term_description(); ?>
         </p>
+
         <p class="lead text-muted">
             <?php
 if ($wp_query->found_posts > 1) {
@@ -347,10 +352,6 @@ echo 'Página 1';
 
         <?php
 }?>
-    </div>
-
-    <div class="col-12 col-lg-5 pt-4">
-        <?php get_template_part('template-parts/carousel/carousel', 'ambiente');?>
     </div>
 </div>
 <?php
