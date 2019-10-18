@@ -21,14 +21,12 @@ if (!empty($imagem1) && !empty($imagem2) && !empty($imagem3)) {
         <div class="carousel-item active">
             <img src="<?php echo $imagem1['url']; ?>" class="d-block w-100" alt="<?php echo $imagem1['alt'] ?>" />
             <div class="carousel-caption d-none d-md-block">
-                <div class="legenda-carousel">
                     <h5>
                         <?php echo $imagem1['title']; ?>
                     </h5>
                     <p class="small">
                         <?php echo $imagem1['description']; ?>
                     </p>
-                </div>
             </div>
         </div>
 
