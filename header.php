@@ -32,7 +32,7 @@
       xfbml      : true,
       version    : 'v3.3'
     });
-      
+ 
     FB.AppEvents.logPageView();   
       
   };
@@ -44,6 +44,23 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+	<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Museum",
+      "url": "http://emaklabin.org.br/",
+      "openingHours": "We Th Fr Sa Su 14:00-18:00",
+      "address": "Rua Portugal, 43 – Jd. Europa, São Paulo – SP",
+      "logo": "http://emaklabin.org.br/site/wp-content/uploads/2017/04/logoverde-01.png",
+      "telephone": "+55 11 3897-3232",
+      "sameAs": [
+        "https://www.facebook.com/fundacaoemaklabin",
+        "https://instagram.com/emaklabin",
+        "https://twitter.com/emaklabin",
+        "https://www.youtube.com/channel/UC9FBIZFjSOlRviuz_Dy1i2w"
+      ]
+    }
+      </script>
 
 
 	<?php get_template_part('template-parts/header/header','menu'); ?>

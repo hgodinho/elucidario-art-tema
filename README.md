@@ -1,16 +1,18 @@
 # Template para Elucidário.art
 - [Elucidário.art (tema)](https://github.com/hgodinho/elucidario-art-tema)
-- @version `0.35β`
+- @version `0.36β`
 - @source https://elucidario.art
 
 
 
 [ALTERAR VERSAO EM: readme.md, style.css, estilos,css, functions.php]
+## `0.36β`
+- acréscimo de dato estruturado de museu no header.php
+
+***
 ## `0.35β`
 - acréscimo de the_content() em classificacoes e núcleos
 
-
-***
 ## `0.34β`
 - ajuste no layout das taxonomias ambientes
 
