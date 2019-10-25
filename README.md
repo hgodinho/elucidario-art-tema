@@ -1,17 +1,21 @@
 # Template para Elucidário.art
 - [Elucidário.art (tema)](https://github.com/hgodinho/elucidario-art-tema)
-- @version `0.37β`
+- @version `0.38β`
 - @source https://elucidario.art
 
 
 
 [ALTERAR VERSAO EM: readme.md, style.css, estilos,css, functions.php]
+## `0.38β`
+- bug fix no jumbotrom home com imagem da obra do mês que estava com nome do campo errado.
+
+
+***
 ## `0.37β`
 - alteração na query de imagens de classificação, para evitar que mostre objetos quebrados logo de cara.
 - reorganização do db na parte de classificações para que as classificações fiquem mais claras, acréscimo da hierarquia diretamente no nome. ex: `Objetos Domésticos - Mobiliário`
 - adicionada integração com o Google Arts&Culture: adicionado campo nas obras para inserção de url de embed, adicionado o iframe no layout de obras, adicionado iframe no layout da página ambiente para embutir a url de embed da visita virtual
 
-***
 ## `0.36β`
 - acréscimo de dato estruturado de museu no header.php
 

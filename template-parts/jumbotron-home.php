@@ -13,9 +13,8 @@ function elucidario_art_jumbotron_home(WP_Query $obra_do_mes = null)
             $fichatecnica_obra = get_field('ficha_tecnica');
             $fotografo = get_field('fotografo');
 
-            //var_dump(get_field('imagem-obra-do-mes'));
-            if(get_field('imagem-obra-do-mes')){
-                $img_obra_do_mes = get_field('imagem-obra-do-mes');
+            if(get_field('imagem_obra_do_mes')){
+                $img_obra_do_mes = get_field('imagem_obra_do_mes');
                 $thumbnail_obradomes = $img_obra_do_mes['url'];
             } else{
                 $thumbnail_obradomes = get_the_post_thumbnail_url(get_the_ID(), 'full');
