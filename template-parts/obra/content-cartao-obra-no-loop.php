@@ -15,7 +15,7 @@ $material = get_field_object('field_5bfd46fcb4648');
 $dimensoes = get_field_object('field_5bfd47ebb4649');
 $tombo = get_field_object('field_5bfd4663b4645');
 $meta = get_post_meta( get_the_ID());
-//var_dump($meta);
+$ambiente = get_the_terms(get_the_ID(), 'ambiente');
 ?>
 <div class="col col-md-10 col-lg-4">
     <div class="card mb-5 rounded-0 shadow">
@@ -57,6 +57,14 @@ $meta = get_post_meta( get_the_ID());
                     <th scope="row" class="cartao-obra-row">Medidas</th>
                     <td>
                         <?php echo $dimensoes['value']; ?>
+                    </td>
+                </tr>
+                <?php } 
+                if($ambiente) {?>
+                <tr>
+                    <th scope="row" class="cartao-obra-row">Ambiente</th>
+                    <td>
+                        <?php echo $ambiente['0']->name; ?>
                     </td>
                 </tr>
                 <?php } ?>

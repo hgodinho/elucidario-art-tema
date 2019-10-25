@@ -20,6 +20,8 @@ $material_obj = get_field_object('field_5bfd46fcb4648');
 $dimensoes_obj = get_field_object('field_5bfd47ebb4649');
 $fotografo_obj = get_field_object('field_5c0ec52b96602');
 $descricao_obj = get_field_object('field_5bfdeeb084777');
+$googleac = get_field('google_a&c');
+//var_dump($googleac);
 
 $thumbnail = get_the_post_thumbnail(get_the_ID(), '', array('class' => 'image mx-auto d-block'));
 $thumbnail_link = get_the_post_thumbnail_url(get_the_ID(), 'full');
@@ -223,23 +225,34 @@ if ($fotografo_obj['value']) {?>
 		</div>
 		<!-- // informações tabela -->
 	</div>
+
 	<!-- descrição -->
 	<?php
 if ($descricao_obj['value']) {
     ?>
 	<div class="col-12 mt-4">
-		<h4>Descrição:</h4>
+		<h3>Descrição:</h4>
 		<p>
 			<?php echo $descricao_obj['value']; ?>
 		</p>
 	</div>
 	<?php
-}
+} ?>
 
-?>
-
-
+	<!-- Google A&C -->
 	<?php
+if ($googleac) {
+    ?>
+	<div class="col-12 mt-4">
+		<h5>Google Arts&Culture (alta resolução):</h5>	
+		<div class="embed-responsive embed-responsive-16by9 mt-4">
+  <iframe class="embed-responsive-item" src="<?php echo esc_url($googleac)?>" allowfullscreen></iframe>
+</div>
+		</div>
+	<?php
+} ?>
+
+<?php
 /**
  * Image Modal
  */

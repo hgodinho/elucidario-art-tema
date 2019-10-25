@@ -53,7 +53,28 @@ get_template_part('template-parts/header/header', 'archive');?>
         </div>
 
         <div class="container">
-            <div class="row pt-4">
+            <div class="row">
+
+                <?php 
+if (have_posts()): while (have_posts()): the_post();
+$conteudo = get_the_content();
+if($conteudo){?>
+                <div class="col-12 mt-4">
+                    <h5 class="mb-3">Visita virtual:</h5>
+                    <div class="embed-responsive embed-responsive-16by9 mb-4">
+                        <iframe class="embed-responsive-item" src="<?php echo esc_url($conteudo)?>"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <?php
+}
+                endwhile;
+            endif;
+?>
+
+                <div class="col-12 my-3">
+                    <h5>Obras por ambiente:</h5>
+                </div>
                 <?php
 foreach ($ambientes as $ambiente) {
         $imagem1 = get_field('imagem_1', $ambiente);

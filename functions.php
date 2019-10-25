@@ -2,14 +2,14 @@
 /**
  * Funções do tema para Elucidario.art
  *
- * @version 0.36β
+ * @version 0.37β
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *
  * Bootstrap @version 4.3.1
  */
 
- const THEME_VERSION = "0.36β";
+ const THEME_VERSION = "0.37β";
 
 require_once get_template_directory() . '/inc/numeric-pagination/wp-bootstrap4.1-pagination.php';
 require_once get_template_directory() . '/inc/alphabetical-pagination/wp-bootstrap-alphabetical-pagination.php';
