@@ -17,7 +17,7 @@ get_template_part('template-parts/header/header', 'breadcrumb');
 
 <section id="primary" class="content-area">
 	<main id="main" class="container">
-<?php
+		<?php
 
 //var_dump($wp_query);
 ?>
@@ -72,9 +72,10 @@ echo 'Página 1';
 		</div>
 
 		<div class="container">
-			<table class="table table-hover table-responsive-md">
+			<table class="table table-hover table-striped table-responsive-md">
 				<thead>
 					<tr>
+						<th scope="col">Imagem</th>
 						<th scope="col">Nome</th>
 						<th scope="col">Tipo</th>
 					</tr>
@@ -87,6 +88,13 @@ echo 'Página 1';
 					<tr>
 						<td>
 							<a href="<?php the_permalink();?>" class="text-decoration-none">
+								<?php if(get_the_post_thumbnail()){
+								the_post_thumbnail(array(100,100));	
+								}?>
+							</a>
+						</td>
+						<td>
+							<a href="<?php the_permalink();?>" class="text-decoration-none">
 								<?php 
 										if(function_exists('capitular')){
 											capitular(get_the_title());
@@ -97,7 +105,7 @@ echo 'Página 1';
 						<?php $fichatecnica_autor = get_field('ficha_tecnica');?>
 						<td>
 							<?php
-    if ($post->post_type == 'obras') {
+    	if ($post->post_type == 'obras') {
             echo 'obra';
         }
         if ($post->post_type == 'autores') {
@@ -123,8 +131,6 @@ endwhile;
 }
 ?>
 		</div>
-
-
 		</div>
 	</main>
 </section>

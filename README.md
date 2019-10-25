@@ -1,16 +1,18 @@
 # Template para Elucidário.art
 - [Elucidário.art (tema)](https://github.com/hgodinho/elucidario-art-tema)
-- @version `0.38β`
+- @version `0.39β`
 - @source https://elucidario.art
 
 
 
 [ALTERAR VERSAO EM: readme.md, style.css, estilos,css, functions.php]
+## `0.39β`
+- acréscimo de thumbnail no layout `search.php`
+
+***
 ## `0.38β`
 - bug fix no jumbotrom home com imagem da obra do mês que estava com nome do campo errado.
 
-
-***
 ## `0.37β`
 - alteração na query de imagens de classificação, para evitar que mostre objetos quebrados logo de cara.
 - reorganização do db na parte de classificações para que as classificações fiquem mais claras, acréscimo da hierarquia diretamente no nome. ex: `Objetos Domésticos - Mobiliário`
