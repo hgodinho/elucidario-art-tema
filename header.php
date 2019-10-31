@@ -44,6 +44,8 @@
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
+
+<!-- SCHEMA.ORG -> museum -->
 	<script type="application/ld+json">
     {
       "@context": "http://schema.org",
@@ -62,7 +64,19 @@
     }
       </script>
 
-
 	<?php get_template_part('template-parts/header/header','menu'); ?>
+
+
+  <!-- Integração com o VLibras http://vlibras.gov.br/ -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
 	<div class="container-fluid px-0 site-content" id="body-elucidario-art">
