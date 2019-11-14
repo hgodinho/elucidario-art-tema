@@ -1,15 +1,18 @@
 # Template para Elucidário.art
 - [Elucidário.art (tema)](https://github.com/hgodinho/elucidario-art-tema)
-- @version `0.40β`
+- @version `0.41β`
 - @source https://elucidario.art
 
 
 
 [ALTERAR VERSAO EM: readme.md, style.css, estilos,css, functions.php]
+## `0.41β`
+- mudança no layout do single term ambiente, acréscimo de accordion para organizar melhor as informações.
+
+***
 ## `0.40β`
 - integração com o VLibras -> `http://vlibras.gov.br/`
 
-***
 ## `0.39β`
 - acréscimo de thumbnail no layout `search.php`
 

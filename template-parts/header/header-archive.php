@@ -317,21 +317,50 @@ if (is_tax(array('ambiente'))) {?>
             <?php
 echo single_term_title('', false); ?>
         </h1>
-
-        <div class="col-12 pt-4">
-        <?php get_template_part('template-parts/carousel/carousel', 'ambiente');?>
+        <div class="accordion mb-4" id="accordionAmbientes">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                            aria-expanded="false" aria-controls="collapseOne">
+                            Imagens
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                    data-parent="#accordionAmbientes">
+                    <div class="card-body">
+                        <?php get_template_part('template-parts/carousel/carousel', 'ambiente');?>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseTwo"
+                            aria-expanded="false" aria-controls="collapseTwo">
+                            Descrição
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                    data-parent="#accordionAmbientes">
+                    <div class="card-body">
+                        <?php
+                        echo term_description(  );
+                        ?>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <p class="pt-4">
-            <?php echo term_description(); ?>
-        </p>
-
         <p class="lead text-muted">
             <?php
 if ($wp_query->found_posts > 1) {
-    echo $wp_query->found_posts . ' itens';
+    echo $wp_query->found_posts . ' itens em ';
+    echo single_term_title( );
 } else {
-    echo $wp_query->found_posts . ' item';
+    echo $wp_query->found_posts . ' item em';
+    echo single_term_title( );
 }
     echo ' → ';
     ?>
