@@ -2,7 +2,7 @@
 /**
  * Funções do tema para Elucidario.art
  *
- * @version 0.41β
+ * @version 0.42β
  * @since 0.1
  * @author hgodinho <ola@hgodinho.com>
  *

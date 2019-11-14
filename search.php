@@ -76,8 +76,8 @@ echo 'Página 1';
 				<thead>
 					<tr>
 						<th scope="col">Imagem</th>
-						<th scope="col">Nome</th>
 						<th scope="col">Tipo</th>
+						<th scope="col">Nome</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -93,16 +93,7 @@ echo 'Página 1';
 								}?>
 							</a>
 						</td>
-						<td>
-							<a href="<?php the_permalink();?>" class="text-decoration-none">
-								<?php 
-										if(function_exists('capitular')){
-											capitular(get_the_title());
-										}
-								?>
-							</a>
-						</td>
-						<?php $fichatecnica_autor = get_field('ficha_tecnica');?>
+						<?php //$fichatecnica_autor = get_field('ficha_tecnica');?>
 						<td>
 							<?php
     	if ($post->post_type == 'obras') {
@@ -112,6 +103,15 @@ echo 'Página 1';
             echo 'autor';
         }
         ?>
+						</td>
+						<td>
+							<a href="<?php the_permalink();?>" class="text-decoration-none">
+								<?php 
+										if(function_exists('capitular')){
+											capitular(get_the_title());
+										}
+								?>
+							</a>
 						</td>
 					</tr>
 					<?php
