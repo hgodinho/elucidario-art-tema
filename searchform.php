@@ -3,7 +3,7 @@
  * Formulários simples de busca do Elucidário.art
  *
  * @since 0.6
- * @author hgodinho.com
+ * @author hgod.in
  */
 
 function elucidario_art_search_form(string $types = '', string $placeholder = '')

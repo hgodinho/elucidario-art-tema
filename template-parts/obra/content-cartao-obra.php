@@ -4,7 +4,7 @@
  *
  * @version 0.3
  * @since 0.4
- * @author hgodinho.com
+ * @author hgod.in
  */
 
 if (have_posts()) {

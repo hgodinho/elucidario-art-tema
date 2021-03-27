@@ -5,7 +5,7 @@
  * @version 0.1
  * @since 0.3
  *
- * @author hgodinho.com
+ * @author hgod.in
  */
 $term = get_queried_object();
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

@@ -1,11 +1,14 @@
 # Template para Elucidário.art
 - [Elucidário.art (tema)](https://github.com/hgodinho/elucidario-art-tema)
-- @version `0.42β`
+- @version `0.43β`
 - @source https://elucidario.art
 
 
 
 [ALTERAR VERSAO EM: readme.md, style.css, estilos,css, functions.php]
+## `0.43β`
+- mudança de url de autor em todos os arquivos (hgod.in)
+
 ## `0.42β`
 - inversão da ordem de informações da tabela do search.php, agora informa antes o tipo `autor` ou `obra` e depois o nome.
 

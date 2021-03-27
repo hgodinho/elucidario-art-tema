@@ -4,7 +4,7 @@
  *
  * @version 0.2
  * @since 0.7
- * @author hgodinho.com
+ * @author hgod.in
  */
 ?>
 <?php

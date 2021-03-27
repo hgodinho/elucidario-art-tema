@@ -5,7 +5,7 @@
  * @version 0.4
  * @since 0.1
  *
- * @author hgodinho.com
+ * @author hgod.in
  */
 
 //var_dump($wp_query);

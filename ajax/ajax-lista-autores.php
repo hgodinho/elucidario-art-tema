@@ -5,7 +5,7 @@
  * Utilizada em diversos templates
  * @todo listar todos os templates
  *
- * @author hgodinho <ola@hgodinho.com>
+ * @author hgodinho <ola@hgod.in>
  */
 
 function elucidario_art_listar_autores()

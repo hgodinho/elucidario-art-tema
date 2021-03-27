@@ -2,7 +2,7 @@
 /**
  * Modal de Ampliação da Imagem
  *
- * @author hgodinho.com
+ * @author hgod.in
  *
  * @version 0.1
  * @since 0.4

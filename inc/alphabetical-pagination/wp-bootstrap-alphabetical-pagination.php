@@ -13,7 +13,7 @@
  * @package Wordpress
  * @package Bootstrap
  *
- * @author hgodinho <ola@hgodinho.com>
+ * @author hgodinho <ola@hgod.in>
  */
 
 if (!class_exists('WP_Glossary_Bootstrap')) {

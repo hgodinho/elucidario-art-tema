@@ -11,7 +11,7 @@
  * @version 0.3
  * @since 0.5
  *
- * @author hgodinho.com
+ * @author hgod.in
  */
 
 /**

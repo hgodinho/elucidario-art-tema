@@ -8,7 +8,7 @@
  * @version 0.2
  * @since 0.3
  *
- * @author hgodinho.com
+ * @author hgod.in
  */
 get_header();
 include get_template_directory().'/template-parts/jumbotron-home.php';

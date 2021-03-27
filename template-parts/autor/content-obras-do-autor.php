@@ -5,7 +5,7 @@
  * @version 0.2
  * @since 0.2
  *
- * @author hgodinho.com
+ * @author hgod.in
  *
  */
 //wp_reset_query();
