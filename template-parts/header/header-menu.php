@@ -18,7 +18,7 @@
 				<a class="navbar-brand" href="<?php echo get_site_url(); ?>">
 				<?php 
 				//echo get_bloginfo('name') ?>
-				<img src="<?php echo get_template_directory_uri(); ?>/inc/images/LOGO_WEB_BRANCO_H.png" width="150px" alt="Logo Casa-museu Ema Klabin">
+				<img src="<?php echo get_template_directory_uri(); ?>/inc/images/logo-branco.png" width="140px" alt="Logo Casa Museu Ema Klabin">
 				</a>
 				<a href="<?php echo get_site_url( )?>/sobre" class="badge badge-pill badge-light mt-2 " style="font-size:11px"><?php echo THEME_VERSION; ?></a>
 			</span>

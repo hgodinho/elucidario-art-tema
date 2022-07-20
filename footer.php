@@ -28,7 +28,7 @@
 					<?php echo get_bloginfo('description')?>
 				</p>
 				<a href="https://emaklabin.org.br/">
-				<img src="<?php echo get_template_directory_uri() . '/inc/images/LOGO_WEB_BRANCO_H.png' ?>">
+				<img class="logo-footer" src="<?php echo get_template_directory_uri() . '/inc/images/logo-branco.png' ?>">
 				<a>
 				<p style="margin-top:15px">Criado com ❤ por 
 				<a style="font-size:22px; font-family:Lucida;" href="http://elucidario.art/?utm_source=ema-klabin&utm_medium=rodape&utm_campaign=elucidario-ema-klabin"

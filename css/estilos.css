@@ -51,9 +51,7 @@ Ajuste na tabela de informações do cartão de obras
 
 .navbar-brand {
   display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 0;
+  margin-right: 10px;
   font-size: 1.5rem;
   line-height: inherit;
   white-space: nowrap;
@@ -62,6 +60,10 @@ Ajuste na tabela de informações do cartão de obras
 
 .navbar-span {
   margin-right: 1rem;
+}
+
+.logo-footer {
+  width: 70%;
 }
 
 /**
@@ -80,7 +82,7 @@ Ajuste na tabela de informações do cartão de obras
 }
 
 .navbar-toggler {
-  background: linear-gradient(#533C57, #185D61) !important;
+  background: #006B62 !important;
   padding: 0.75rem 0.75rem;
   /*margin-right: 0.5rem;*/
 }
@@ -91,7 +93,7 @@ Ajuste na tabela de informações do cartão de obras
 
 
 .bg-primary {
-  background: linear-gradient( #248A8F,#89628F) !important;
+  background: #006B62 !important;
   /*background-color: #22941e !important;*/
 }
 
@@ -228,7 +230,7 @@ Ajuste na tabela de informações do cartão de obras
   border-right: 2px solid!important;
   border-left: 2px solid!important;
   border-bottom: 2px solid!important;
-  border-color: #89628F!important;
+  border-color: #006B62!important;
 }
 
 .menu-rodape ul li a{
